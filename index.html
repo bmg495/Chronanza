@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Era — Daily Chronology Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #FAF9F6;
+            --card-bg: #FFFFFF;
+            --text-main: #1A1A1A;
+            --text-muted: #666666;
+            --border-color: #D3D3C9;
+            --tile-bg: #EFEFE6;
+            --tile-hover: #E4E4DB;
+            --accent-green: #2E7D32;
+            --accent-green-bg: #E8F5E9;
+            --accent-red: #D32F2F;
+            --accent-red-bg: #FFEBEE;
+            --shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --card-bg: #1E1E1E;
+                --text-main: #F4F4F5;
+                --text-muted: #A1A1AA;
+                --border-color: #3F3F46;
+                --tile-bg: #27272A;
+                --tile-hover: #323238;
+                --accent-green: #34D399;
+                --accent-green-bg: rgba(52, 211, 153, 0.15);
+                --accent-red: #F87171;
+                --accent-red-bg: rgba(248, 113, 113, 0.15);
+                --shadow: 0 4px 16px rgba(0,0,0,0.3);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-family: 'Newsreader', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .game-container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .puzzle-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+        }
+
+        .category-badge {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .moves-count {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .instructions {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        /* 3x3 Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 12px;
+            aspect-ratio: 1 / 1;
+            width: 100%;
+        }
+
+        .tile {
+            background-color: var(--tile-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            cursor: grab;
+            user-select: none;
+            transition: background-color 0.15s, border-color 0.15s, transform 0.15s;
+            position: relative;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .tile:active {
+            cursor: grabbing;
+        }
+
+        .tile.dragging {
+            opacity: 0.4;
+        }
+
+        .tile.drag-over {
+            border-color: var(--text-main);
+            background-color: var(--tile-hover);
+            transform: scale(1.02);
+        }
+
+        .tile.correct {
+            background-color: var(--accent-green-bg);
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+            cursor: default;
+        }
+
+        .tile-text {
+            font-weight: 500;
+            line-height: 1.25;
+            width: 100%;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        button.btn {
+            flex: 1;
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: background-color 0.15s;
+        }
+
+        button.btn:hover {
+            background-color: var(--tile-hover);
+        }
+
+        button.btn-primary {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            border-color: var(--text-main);
+        }
+
+        button.btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 100;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .modal-content h2 {
+            font-family: 'Newsreader', serif;
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .modal-content p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .share-grid-preview {
+            font-family: monospace;
+            background: var(--tile-bg);
+            padding: 12px;
+            border-radius: 6px;
+            letter-spacing: 4px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Era</h1>
+        <div class="subtitle" id="date-subtitle">Daily Chronology Puzzle</div>
+    </header>
+
+    <div class="game-container">
+        <div class="puzzle-info">
+            <span class="category-badge" id="category-name">Loading...</span>
+            <span class="moves-count" id="moves-display">Swaps: 0</span>
+        </div>
+
+        <div class="instructions">Drag or tap tiles to reorder them chronologically from oldest (top-left) to newest (bottom-right).</div>
+
+        <div class="grid" id="game-grid"></div>
+
+        <div class="controls">
+            <button class="btn" id="shuffle-btn">Shuffle Unsolved</button>
+            <button class="btn btn-primary" id="check-btn">Check Order</button>
+        </div>
+    </div>
+
+    <!-- Victory Modal -->
+    <div class="modal" id="victory-modal">
+        <div class="modal-content">
+            <h2>Brilliant!</h2>
+            <p id="victory-message">You successfully solved today's timeline.</p>
+            <div class="share-grid-preview" id="share-grid-text">🟩🟩🟩<br>🟩🟩🟩<br>🟩🟩🟩</div>
+            <button class="btn btn-primary" id="share-btn">Share Results</button>
+        </div>
+    </div>
+
+    <script>
+        const puzzles = [
+            { category: "Space Exploration Milestones", items: [
+                { text: "Sputnik 1 launched", year: 1957 },
+                { text: "Yuri Gagarin orbits Earth", year: 1961 },
+                { text: "Apollo 11 Moon Landing", year: 1969 },
+                { text: "Skylab space station launched", year: 1973 },
+                { text: "Voyager 1 enters interstellar space", year: 2012 },
+                { text: "Mars Curiosity rover lands", year: 2012 },
+                { text: "SpaceX launches first commercial crew", year: 2020 },
+                { text: "James Webb Space Telescope deployed", year: 2021 },
+                { text: "First private crewed spacewalk (Polaris Dawn)", year: 2024 }
+            ]},
+            { category: "Computing & Internet History", items: [
+                { text: "ENIAC computer activated", year: 1946 },
+                { text: "ARPANET first message sent", year: 1969 },
+                { text: "First commercial microprocessor (Intel 4004)", year: 1971 },
+                { text: "Apple Macintosh released", year: 1984 },
+                { text: "World Wide Web publicly launched", year: 1991 },
+                { text: "Google founded", year: 1998 },
+                { text: "Wikipedia launched", year: 2001 },
+                { text: "First iPhone released", year: 2007 },
+                { text: "ChatGPT public release", year: 2022 }
+            ]}
+        ];
+
+        const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+        const currentPuzzle = puzzles[dayOfYear % puzzles.length];
+
+        let tiles = [];
+        let moves = 0;
+        let gameWon = false;
+        let draggedIndex = null;
+        let selectedIndex = null;
+
+        document.getElementById('category-name').textContent = currentPuzzle.category;
+        document.getElementById('date-subtitle').textContent = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+        function initGame() {
+            const sorted = [...currentPuzzle.items].sort((a, b) => a.year - b.year);
+            tiles = sorted.map((item, idx) => ({ ...item, originalIndex: idx }));
+            
+            do {
+                tiles.sort(() => Math.random() - 0.5);
+            } while (isCurrentlySolved());
+
+            moves = 0;
+            gameWon = false;
+            updateMoves();
+            renderGrid();
+        }
+
+        function isCurrentlySolved() {
+            for (let i = 0; i < tiles.length; i++) {
+                if (tiles[i].originalIndex !== i) return false;
+            }
+            return true;
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById('game-grid');
+            grid.innerHTML = '';
+
+            tiles.forEach((tile, index) => {
+                const el = document.createElement('div');
+                el.className = 'tile';
+                if (tile.originalIndex === index && gameWon) {
+                    el.classList.add('correct');
+                }
+                if (selectedIndex === index) {
+                    el.style.borderColor = 'var(--text-main)';
+                    el.style.borderWidth = '3px';
+                }
+
+                el.draggable = !gameWon;
+                el.dataset.index = index;
+
+                const textSpan = document.createElement('span');
+                textSpan.className = 'tile-text';
+                textSpan.textContent = tile.text;
+                el.appendChild(textSpan);
+
+                adjustFontSize(textSpan);
+
+                el.addEventListener('dragstart', handleDragStart);
+                el.addEventListener('dragover', handleDragOver);
+                el.addEventListener('dragleave', handleDragLeave);
+                el.addEventListener('drop', handleDrop);
+                el.addEventListener('dragend', handleDragEnd);
+                el.addEventListener('click', () => handleTileClick(index));
+
+                grid.appendChild(el);
+            });
+        }
+
+        function adjustFontSize(el) {
+            let fontSize = 0.95;
+            el.style.fontSize = `${fontSize}rem`;
+            while (el.scrollHeight > el.clientHeight && fontSize > 0.6) {
+                fontSize -= 0.05;
+                el.style.fontSize = `${fontSize}rem`;
+            }
+        }
+
+        function handleDragStart(e) {
+            draggedIndex = parseInt(e.currentTarget.dataset.index);
+            e.currentTarget.classList.add('dragging');
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.currentTarget.classList.add('drag-over');
+        }
+
+        function handleDragLeave(e) {
+            e.currentTarget.classList.remove('drag-over');
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const targetIndex = parseInt(e.currentTarget.dataset.index);
+            if (draggedIndex !== null && draggedIndex !== targetIndex) {
+                const movedTile = tiles.splice(draggedIndex, 1)[0];
+                tiles.splice(targetIndex, 0, movedTile);
+                moves++;
+                updateMoves();
+                renderGrid();
+            }
+        }
+
+        function handleDragEnd(e) {
+            draggedIndex = null;
+            document.querySelectorAll('.tile').forEach(t => t.classList.remove('drag-over', 'dragging'));
+        }
+
+        function handleTileClick(index) {
+            if (gameWon) return;
+            if (selectedIndex === null) {
+                selectedIndex = index;
+                renderGrid();
+            } else if (selectedIndex === index) {
+                selectedIndex = null;
+                renderGrid();
+            } else {
+                const temp = tiles[selectedIndex];
+                tiles[selectedIndex] = tiles[index];
+                tiles[index] = temp;
+                selectedIndex = null;
+                moves++;
+                updateMoves();
+                renderGrid();
+            }
+        }
+
+        function updateMoves() {
+            const badge = document.getElementById('moves-display');
+            badge.textContent = `Swaps: ${moves}`;
+        }
+
+        document.getElementById('check-btn').addEventListener('click', () => {
+            if (gameWon) return;
+            renderGrid();
+            if (isCurrentlySolved()) {
+                gameWon = true;
+                renderGrid();
+                document.getElementById('victory-message').textContent = `You solved today's timeline in ${moves} swaps!`;
+                document.getElementById('victory-modal').classList.add('active');
+            } else {
+                const btn = document.getElementById('check-btn');
+                const originalText = btn.textContent;
+                btn.textContent = "Not quite right yet!";
+                btn.style.backgroundColor = "var(--accent-red)";
+                btn.style.color = "#FFF";
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = "";
+                    btn.style.color = "";
+                }, 1500);
+            }
+        });
+
+        document.getElementById('shuffle-btn').addEventListener('click', () => {
+            if (gameWon) return;
+            do {
+                tiles.sort(() => Math.random() - 0.5);
+            } while (isCurrentlySolved());
+            moves++;
+            updateMoves();
+            renderGrid();
+        });
+
+        document.getElementById('share-btn').addEventListener('click', () => {
+            const shareText = `Era Game — Daily Chronology\nSolved in ${moves} swaps!\n🟩🟩🟩\n🟩🟩🟩\n🟩🟩🟩`;
+            navigator.clipboard.writeText(shareText).then(() => {
+                const btn = document.getElementById('share-btn');
+                btn.textContent = "Copied to Clipboard!";
+                setTimeout(() => btn.textContent = "Share Results", 2000);
+            });
+        });
+
+        initGame();
+    </script>
+</body>
+</html>
