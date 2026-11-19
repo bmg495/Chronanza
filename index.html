@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronanza – Daily Timeline Puzzle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F6F3EC;
+            --surface-color: #FCFBF7;
+            --text-color: #23201E;
+            --text-muted: #6E6862;
+            --border-color: #23201E;
+            --accent-gold: #E5B84B;
+            --accent-green: #1E6F50;
+            --accent-red: #C84B31;
+            --card-hover: #EFEAE0;
+            --shadow: 0 3px 0 #23201E;
+            --shadow-sm: 0 2px 0 #23201E;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #191716;
+            --surface-color: #262321;
+            --text-color: #F7F4ED;
+            --text-muted: #A8A19B;
+            --border-color: #D4CEC5;
+            --accent-gold: #F0C45C;
+            --accent-green: #278E66;
+            --accent-red: #E05A3D;
+            --card-hover: #322E2B;
+            --shadow: 0 3px 0 #D4CEC5;
+            --shadow-sm: 0 2px 0 #D4CEC5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 14px 16px 24px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Top Header: Logo + Title on left, 3 buttons on right */
+        header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 4px 2px 14px;
+            margin-bottom: 14px;
+            border-bottom: 1.5px solid rgba(35, 32, 30, 0.16);
+        }
+
+        [data-theme="dark"] header {
+            border-bottom-color: rgba(212, 206, 197, 0.18);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo-icon {
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-logo-icon svg {
+            height: 100%;
+            width: auto;
+            display: block;
+            overflow: visible;
+        }
+
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            color: var(--text-color);
+        }
+
+        .header-btns {
+            display: flex;
+            gap: 8px;
+        }
+
+        .icon-btn {
+            background: var(--surface-color);
+            border: 2px solid var(--border-color);
+            border-radius: 999px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.1s, background-color 0.1s;
+            color: var(--text-color);
+        }
+
+        .icon-btn:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        /* Subtitle & Category Banner */
+        .subtitle-area {
+            text-align: center;
+            margin-bottom: 14px;
+            width: 100%;
+        }
+
+        .edition-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .category-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            background: var(--accent-gold);
+            color: #23201E;
+            padding: 7px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 999px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 10px;
+        }
+
+        .game-subtitle {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .game-subtitle strong {
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        /* Timeline Scale Strip */
+        .timeline-scale {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            padding: 0 2px;
+        }
+
+        .timeline-scale-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .timeline-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            border: 1.75px solid var(--border-color);
+            background: var(--surface-color);
+            display: inline-block;
+        }
+
+        .timeline-dot.filled {
+            background: var(--border-color);
+        }
+
+        .timeline-scale-line {
+            flex: 1;
+            height: 1.5px;
+            background: rgba(35, 32, 30, 0.25);
+        }
+
+        [data-theme="dark"] .timeline-scale-line {
+            background: rgba(212, 206, 197, 0.25);
+        }
+
+        /* 3x3 Grid Board */
+        .board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .tile {
+            background-color: var(--surface-color);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            min-height: 132px;
+            padding: 10px 8px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            cursor: grab;
+            box-shadow: var(--shadow);
+            transition: transform 0.15s, background-color 0.15s, border-color 0.15s;
+            position: relative;
+        }
+
+        .tile:active {
+            cursor: grabbing;
+        }
+
+        .tile.selected {
+            border-color: var(--accent-gold);
+            background-color: var(--card-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 0 var(--border-color);
+        }
+
+        .tile.dragging {
+            opacity: 0.4;
+        }
+
+        .tile.drag-over {
+            border-style: dashed;
+            border-color: var(--accent-green);
+            background-color: rgba(30, 111, 80, 0.08);
+        }
+
+        .tile-slot-badge {
+            align-self: flex-start;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--text-color);
+            background: var(--bg-color);
+            border: 1.75px solid var(--border-color);
+            border-radius: 6px;
+            padding: 3px 6px;
+            margin-bottom: 8px;
+        }
+
+        .tile-text {
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            line-height: 1.3;
+            color: var(--text-color);
+            margin: auto 0;
+            word-break: break-word;
+        }
+
+        .tile-year {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-top: 6px;
+            display: none;
+        }
+
+        .tile.locked {
+            cursor: default;
+            background-color: var(--surface-color);
+            border-color: var(--accent-green);
+        }
+
+        .tile.locked .tile-slot-badge {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .tile.locked .tile-year {
+            display: block;
+        }
+
+        .board-hint {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        /* Attempts Bar */
+        .attempts-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 14px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .attempt-pips {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .attempt-pip {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            background: var(--accent-gold);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .attempt-pip.used {
+            background: var(--accent-red);
+            transform: scale(0.9);
+        }
+
+        /* Controls Area */
+        .controls {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            background: var(--accent-green);
+            color: #FFFFFF;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+
+        .btn-primary:active {
+            transform: translateY(3px);
+            box-shadow: none;
+        }
+
+        footer {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        /* Modal Overlays */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+            padding: 20px;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal {
+            background: var(--surface-color);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            padding: 24px;
+            box-shadow: 0 8px 0 var(--border-color);
+            position: relative;
+            transform: translateY(10px);
+            transition: transform 0.2s;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.open .modal {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--text-color);
+            font-weight: 700;
+        }
+
+        .modal h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+        }
+
+        .modal p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .modal-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent-gold);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #23201E;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            margin-top: 8px;
+        }
+
+        .modal-btn:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--border-color);
+            color: var(--bg-color);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s, transform 0.2s;
+            z-index: 200;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        @keyframes pulse-wrong {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); border-color: var(--accent-red); }
+            100% { transform: scale(1); }
+        }
+
+        .shake {
+            animation: pulse-wrong 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <div class="header-logo-icon" aria-hidden="true">
+                    <svg viewBox="0 0 112 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="84" y1="31" x2="84" y2="43" stroke="var(--border-color)" stroke-width="6" stroke-linecap="round"/>
+                        <circle cx="84" cy="18" r="14" fill="var(--accent-gold)" stroke="var(--border-color)" stroke-width="6"/>
+                        <path d="M84 11V18L89.5 21" stroke="var(--border-color)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="6" y="43" width="36" height="39" rx="9" fill="var(--bg-color)" stroke="var(--border-color)" stroke-width="6"/>
+                        <path d="M46 62.5H61M56.5 57.5L62 62.5L56.5 67.5" stroke="var(--border-color)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <rect x="66" y="43" width="36" height="39" rx="9" fill="var(--accent-green)" stroke="var(--border-color)" stroke-width="6"/>
+                    </svg>
+                </div>
+                <h1>Chronanza</h1>
+            </div>
+            <div class="header-btns">
+                <button class="icon-btn" id="stats-btn" aria-label="Statistics">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                </button>
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <svg id="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="icon-btn" id="help-btn" aria-label="How to Play">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Subtitle & Category -->
+        <div class="subtitle-area">
+            <div class="edition-meta" id="edition-meta">NOV 18, 2026 • DAILY #1</div>
+            <div class="category-badge" id="category-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span id="category-text">GENERAL KNOWLEDGE &amp; WORLD MILESTONES</span>
+            </div>
+            <div class="game-subtitle">Order today's archive from <strong>1 Earliest</strong> to <strong>9 Latest</strong>.</div>
+        </div>
+
+        <!-- Timeline Scale Bar -->
+        <div class="timeline-scale" aria-hidden="true">
+            <span class="timeline-scale-label"><span class="timeline-dot"></span> 1 EARLIEST</span>
+            <span class="timeline-scale-line"></span>
+            <span class="timeline-scale-label">1–3 &rarr; 4–6 &rarr; 7–9</span>
+            <span class="timeline-scale-line"></span>
+            <span class="timeline-scale-label">9 LATEST <span class="timeline-dot filled"></span></span>
+        </div>
+
+        <!-- 3x3 Grid Board -->
+        <div class="board" id="game-board"></div>
+
+        <p class="board-hint">Drag cards between slots to shift order, or tap two to swap.</p>
+
+        <!-- Attempts Indicator -->
+        <div class="attempts-container" id="attempts-container">
+            <span>Attempts remaining:</span>
+            <div class="attempt-pips">
+                <div class="attempt-pip" data-index="0"></div>
+                <div class="attempt-pip" data-index="1"></div>
+                <div class="attempt-pip" data-index="2"></div>
+                <div class="attempt-pip" data-index="3"></div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="btn-primary" id="check-btn">Check Timeline</button>
+        </div>
+
+        <footer>&copy; 2026 Chronanza. Daily History &amp; Culture Archive.</footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Already Guessed This Order!</div>
+
+    <!-- Help Modal -->
+    <div class="modal-overlay" id="help-modal">
+        <div class="modal">
+            <button class="modal-close" id="help-close">&times;</button>
+            <h2>How to Play</h2>
+            <p><strong>Chronanza</strong> is a daily timeline puzzle where you arrange 9 historical milestones from <strong>1 Earliest</strong> to <strong>9 Latest</strong>.</p>
+            <p>&bull; <strong>Drag and drop</strong> any card onto another to swap their positions, or tap one card and then another to swap.</p>
+            <p>&bull; Tap <strong>Check Timeline</strong> to lock in cards that are in their exact chronological slot.</p>
+            <p>&bull; You have 4 attempts to complete the full timeline.</p>
+            <button class="modal-btn" id="help-got-it">Let's Play</button>
+        </div>
+    </div>
+
+    <!-- Stats Modal -->
+    <div class="modal-overlay" id="stats-modal">
+        <div class="modal">
+            <button class="modal-close" id="stats-close">&times;</button>
+            <h2>Statistics</h2>
+            <div id="stats-content" style="margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6;">
+                <p><strong>Games Played:</strong> <span id="stat-played">0</span></p>
+                <p><strong>Wins:</strong> <span id="stat-wins">0</span></p>
+                <p><strong>Current Streak:</strong> <span id="stat-streak">0</span></p>
+            </div>
+            <button class="modal-btn" id="share-btn">Share Result 📋</button>
+        </div>
+    </div>
+
+    <script>
+        const DAILY_PUZZLE = {
+            id: 1,
+            date: "2026-11-18",
+            editionLabel: "NOV 18, 2026 • DAILY #1",
+            category: "GENERAL KNOWLEDGE & WORLD MILESTONES",
+            events: [
+                { id: 1, text: "Gutenberg Prints the Movable-Type Bible", year: 1455 },
+                { id: 2, text: "Galileo Observes Moons of Jupiter", year: 1610 },
+                { id: 3, text: "First Successful Steam Locomotive Run", year: 1804 },
+                { id: 4, text: "First Transatlantic Telegraph Cable Laid", year: 1858 },
+                { id: 5, text: "First Powered Airplane Flight", year: 1903 },
+                { id: 6, text: "First Commercial Jetliner Service Begins", year: 1952 },
+                { id: 7, text: "World Wide Web Invented by Tim Berners-Lee", year: 1989 },
+                { id: 8, text: "First Smartphone Released to Public", year: 1994 },
+                { id: 9, text: "First Photograph of a Black Hole Unveiled", year: 2019 }
+            ]
+        };
+
+        let currentTiles = [];
+        let lockedStates = [false, false, false, false, false, false, false, false, false];
+        let attemptsLeft = 4;
+        let selectedIndex = null;
+        let draggedIndex = null;
+        let gameOver = false;
+        let gameWon = false;
+        let previousGuesses = new Set();
+
+        let stats = JSON.parse(localStorage.getItem('chronanza_stats')) || { played: 0, wins: 0, streak: 0 };
+
+        function initGame() {
+            document.getElementById('edition-meta').textContent = DAILY_PUZZLE.editionLabel;
+            document.getElementById('category-text').textContent = DAILY_PUZZLE.category;
+
+            let shuffled = [...DAILY_PUZZLE.events];
+            shuffled.sort((a, b) => (a.id * 7 % 9) - (b.id * 5 % 9));
+
+            currentTiles = shuffled;
+            renderBoard();
+            updateAttemptsUI();
+        }
+
+        function renderBoard() {
+            const board = document.getElementById('game-board');
+            board.innerHTML = '';
+
+            currentTiles.forEach((tile, index) => {
+                const el = document.createElement('div');
+                el.className = `tile ${lockedStates[index] ? 'locked' : ''} ${selectedIndex === index ? 'selected' : ''}`;
+                el.setAttribute('draggable', !lockedStates[index]);
+                el.dataset.index = index;
+
+                el.innerHTML = `
+                    <span class="tile-slot-badge">${index + 1}</span>
+                    <div class="tile-text">${tile.text}</div>
+                    <span class="tile-year">${tile.year}</span>
+                `;
+
+                el.addEventListener('dragstart', handleDragStart);
+                el.addEventListener('dragover', handleDragOver);
+                el.addEventListener('dragleave', handleDragLeave);
+                el.addEventListener('drop', handleDrop);
+                el.addEventListener('dragend', handleDragEnd);
+                el.addEventListener('click', () => handleTileClick(index));
+
+                board.appendChild(el);
+            });
+        }
+
+        function handleTileClick(index) {
+            if (gameOver || lockedStates[index]) return;
+
+            if (selectedIndex === null) {
+                selectedIndex = index;
+            } else if (selectedIndex === index) {
+                selectedIndex = null;
+            } else {
+                let temp = currentTiles[selectedIndex];
+                currentTiles[selectedIndex] = currentTiles[index];
+                currentTiles[index] = temp;
+                selectedIndex = null;
+            }
+            renderBoard();
+        }
+
+        function handleDragStart(e) {
+            if (gameOver || lockedStates[this.dataset.index]) {
+                e.preventDefault();
+                return;
+            }
+            draggedIndex = parseInt(this.dataset.index);
+            this.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+            const targetTile = e.target.closest('.tile');
+            if (targetTile && !lockedStates[targetTile.dataset.index]) {
+                targetTile.classList.add('drag-over');
+            }
+        }
+
+        function handleDragLeave(e) {
+            const targetTile = e.target.closest('.tile');
+            if (targetTile) {
+                targetTile.classList.remove('drag-over');
+            }
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const targetTile = e.target.closest('.tile');
+            if (!targetTile) return;
+            targetTile.classList.remove('drag-over');
+
+            const dropIndex = parseInt(targetTile.dataset.index);
+            if (draggedIndex !== null && draggedIndex !== dropIndex && !lockedStates[dropIndex]) {
+                let temp = currentTiles[draggedIndex];
+                currentTiles.splice(draggedIndex, 1);
+                currentTiles.splice(dropIndex, 0, temp);
+                selectedIndex = null;
+                renderBoard();
+            }
+        }
+
+        function handleDragEnd() {
+            draggedIndex = null;
+            document.querySelectorAll('.tile').forEach(t => t.classList.remove('dragging', 'drag-over'));
+        }
+
+        document.getElementById('check-btn').addEventListener('click', () => {
+            if (gameOver) return;
+
+            const sequenceKey = currentTiles.map(t => t.id).join(',');
+            if (previousGuesses.has(sequenceKey)) {
+                showToast("Already Guessed This Order!");
+                return;
+            }
+            previousGuesses.add(sequenceKey);
+
+            const sortedEvents = [...DAILY_PUZZLE.events].sort((a, b) => a.year - b.year);
+            let correctCount = 0;
+
+            currentTiles.forEach((tile, index) => {
+                if (!lockedStates[index] && tile.id === sortedEvents[index].id) {
+                    lockedStates[index] = true;
+                }
+                if (tile.id === sortedEvents[index].id) {
+                    correctCount++;
+                }
+            });
+
+            if (correctCount === 9) {
+                gameWon = true;
+                gameOver = true;
+                currentTiles.forEach((_, idx) => lockedStates[idx] = true);
+                renderBoard();
+                recordWin();
+                setTimeout(() => openStatsModal(), 500);
+            } else {
+                attemptsLeft--;
+                updateAttemptsUI();
+
+                if (attemptsLeft <= 0) {
+                    gameOver = true;
+                    currentTiles = sortedEvents;
+                    currentTiles.forEach((_, idx) => lockedStates[idx] = true);
+                    renderBoard();
+                    recordLoss();
+                    setTimeout(() => openStatsModal(), 500);
+                } else {
+                    document.getElementById('game-board').classList.add('shake');
+                    setTimeout(() => document.getElementById('game-board').classList.remove('shake'), 300);
+                    showToast(`${correctCount}/9 events correctly placed.`);
+                }
+            }
+        });
+
+        function updateAttemptsUI() {
+            const pips = document.querySelectorAll('.attempt-pip');
+            pips.forEach((pip, idx) => {
+                pip.className = 'attempt-pip';
+                if (idx >= attemptsLeft) {
+                    pip.classList.add('used');
+                }
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        function recordWin() {
+            stats.played++;
+            stats.wins++;
+            stats.streak++;
+            localStorage.setItem('chronanza_stats', JSON.stringify(stats));
+        }
+
+        function recordLoss() {
+            stats.played++;
+            stats.streak = 0;
+            localStorage.setItem('chronanza_stats', JSON.stringify(stats));
+        }
+
+        function openStatsModal() {
+            document.getElementById('stat-played').textContent = stats.played;
+            document.getElementById('stat-wins').textContent = stats.wins;
+            document.getElementById('stat-streak').textContent = stats.streak;
+            document.getElementById('stats-modal').classList.add('open');
+        }
+
+        document.getElementById('share-btn').addEventListener('click', () => {
+            const sortedEvents = [...DAILY_PUZZLE.events].sort((a, b) => a.year - b.year);
+            let gridEmoji = "";
+            for (let i = 0; i < 9; i += 3) {
+                let rowStr = "";
+                for (let j = 0; j < 3; j++) {
+                    rowStr += (currentTiles[i + j].id === sortedEvents[i + j].id) ? "🟩" : "🟥";
+                }
+                gridEmoji += rowStr + "\n";
+            }
+            const shareText = `⏳ Chronanza #${DAILY_PUZZLE.id} • ${gameWon ? (4 - attemptsLeft) : 'X'}/4\n\n${gridEmoji}\nhttps://chronanza.com`;
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(shareText).then(() => {
+                    showToast("Copied results to clipboard!");
+                });
+            }
+        });
+
+        const helpModal = document.getElementById('help-modal');
+        const statsModal = document.getElementById('stats-modal');
+
+        document.getElementById('help-btn').addEventListener('click', () => helpModal.classList.add('open'));
+        document.getElementById('help-close').addEventListener('click', () => helpModal.classList.remove('open'));
+        document.getElementById('help-got-it').addEventListener('click', () => helpModal.classList.remove('open'));
+
+        document.getElementById('stats-btn').addEventListener('click', () => openStatsModal());
+        document.getElementById('stats-close').addEventListener('click', () => statsModal.classList.remove('open'));
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        let currentTheme = localStorage.getItem('chronanza_theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('chronanza_theme', 'light');
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('chronanza_theme', 'dark');
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+            }
+        });
+
+        initGame();
+    </script>
+</body>
+</html>
