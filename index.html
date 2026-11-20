@@ -1165,7 +1165,7 @@
     </main>
 
     <footer>
-        &copy; 2026 Chronanza. Daily History &amp; Culture Archive.
+        &copy; 2026 Chronanza. Daily History Puzzle.
     </footer>
 
     <!-- Toast Notification -->
@@ -1200,11 +1200,11 @@
 
             <div class="example-grid">
                 <div class="example-tile locked">
-                    <div style="font-weight:800; letter-spacing:0.02em; margin-bottom:4px;">WRIGHT BROTHERS' FIRST POWERED FLIGHT</div>
-                    <div style="display:inline-block; padding:2px 8px; border-radius:999px; background:var(--accent-emerald-deep); font-family:'JetBrains Mono', monospace; font-weight:700; font-size:11px;">1903 • LOCKED</div>
+                    <div style="font-weight:800; letter-spacing:0.02em; margin-bottom:4px;">THE BEATLES' RELEASE ABBEY ROAD</div>
+                    <div style="display:inline-block; padding:2px 8px; border-radius:999px; background:var(--accent-emerald-deep); font-family:'JetBrains Mono', monospace; font-weight:700; font-size:11px;">1969 • LOCKED</div>
                 </div>
                 <div class="example-tile wrong">
-                    <div style="font-weight:800; letter-spacing:0.02em; margin-bottom:4px;">FALL OF THE BERLIN WALL</div>
+                    <div style="font-weight:800; letter-spacing:0.02em; margin-bottom:4px;">SUPER MARIO BROS. RELEASED</div>
                     <div style="font-family:'JetBrains Mono', monospace; font-weight:700; font-size:11px;">MISPLACED • SHIFT IT</div>
                 </div>
             </div>
@@ -2273,7 +2273,7 @@
                     : 'Archive Unsolved';
 
                 const scoreText = isWin ? `${gameState.attempts.length}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`;
-                document.getElementById('stats-sub').textContent = `⏳ Chronanza #${dailyInfo.puzzleNumber} • ${scoreText} (${dailyInfo.puzzle.theme})`;
+                document.getElementById('stats-sub').textContent = `⏳ Chronanza • ${scoreText} (${dailyInfo.puzzle.theme})`;
 
                 document.getElementById('stats-emoji-grid').innerHTML = gameState.attempts
                     .map((row, idx) => {
@@ -2298,7 +2298,7 @@
                 breakdownSection.classList.remove('hidden');
             } else {
                 document.getElementById('stats-heading').textContent = 'Archivist Record';
-                document.getElementById('stats-sub').textContent = `⏳ Chronanza #${dailyInfo.puzzleNumber} • ${dailyInfo.formattedDate} (In Progress)`;
+                document.getElementById('stats-sub').textContent = `⏳ Chronanza • ${dailyInfo.formattedDate} (In Progress)`;
                 resultSection.classList.add('hidden');
                 breakdownSection.classList.add('hidden');
             }
