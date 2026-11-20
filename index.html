@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chronanza — Daily History &amp; Culture Archive</title>
-    <meta name="description" content="Reconstruct today's 9-event timeline in 4 attempts or fewer. A fresh historical archive unlocks every day.">
+    <title>Chronanza — Daily Timeline &amp; Culture Timeline</title>
+    <meta name="description" content="Reconstruct today's 9-event timeline in 4 attempts or fewer. A fresh historical Timeline unlocks every day.">
 
     <!-- Open Graph / iMessage / Social Link Preview -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://chronanza.com/">
-    <meta property="og:title" content="Chronanza — Daily History Puzzle">
+    <meta property="og:title" content="Chronanza — Daily Timeline Puzzle">
     <meta property="og:description" content="Reconstruct today's 9-event timeline in 4 attempts or fewer. A new theme every day.">
     <meta property="og:image" content="https://chronanza.com/og-image.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="900">
-    <meta property="og:image:alt" content="Chronanza — Daily History Puzzle">
+    <meta property="og:image:alt" content="Chronanza — Daily Timeline Puzzle">
 
     <!-- Twitter / X Large Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Chronanza — Daily History Puzzle">
+    <meta name="twitter:title" content="Chronanza — Daily Timeline Puzzle">
     <meta name="twitter:description" content="Reconstruct today's 9-event timeline in 4 attempts or fewer. A new theme every day.">
     <meta name="twitter:image" content="https://chronanza.com/og-image.jpg">
 
@@ -229,8 +229,8 @@
             font-weight: 800;
         }
 
-        /* Live Attempt History Emoji Strip */
-        .history-strip {
+        /* Live Attempt Timeline Emoji Strip */
+        .Timeline-strip {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -239,7 +239,7 @@
             margin-bottom: 6px;
         }
 
-        .history-row {
+        .Timeline-row {
             font-size: 12px;
             letter-spacing: 3px;
             line-height: 1;
@@ -1088,7 +1088,7 @@
                         <line x1="12" y1="17" x2="12.01" y2="17"></line>
                     </svg>
                 </button>
-                <button id="btn-stats" class="icon-btn" aria-label="Statistics & Archive" title="Statistics & Archive">
+                <button id="btn-stats" class="icon-btn" aria-label="Statistics & Timeline" title="Statistics & Timeline">
                     <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="18" y1="20" x2="18" y2="10"></line>
                         <line x1="12" y1="20" x2="12" y2="4"></line>
@@ -1119,7 +1119,7 @@
     <main>
         <!-- Centered Daily Challenge Subtitle & Category Pill aligned with the 3x3 Grid -->
         <div class="daily-header-block">
-            <div id="daily-meta" class="daily-subtitle">Nov 19, 2026 • Daily Archive</div>
+            <div id="daily-meta" class="daily-subtitle">Nov 19, 2026 • Daily Timeline</div>
             <div class="category-pill">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
@@ -1128,12 +1128,12 @@
                 <span id="puzzle-theme">General Knowledge &amp; World Milestones</span>
             </div>
             <p class="prompt-text">
-                Order today's archive from <strong>1 Earliest</strong> to <strong>9 Latest</strong>.
+                Order today's Timeline from <strong>1 Earliest</strong> to <strong>9 Latest</strong>.
             </p>
         </div>
 
-        <!-- Live Emoji History -->
-        <div id="history-strip" class="history-strip"></div>
+        <!-- Live Emoji Timeline -->
+        <div id="Timeline-strip" class="Timeline-strip"></div>
 
         <!-- Chronological Timeline Connector Bar -->
         <div class="flow-indicator">
@@ -1165,7 +1165,7 @@
     </main>
 
     <footer>
-        &copy; 2026 Chronanza. Daily History Puzzle.
+        &copy; 2026 Chronanza. Daily Timeline Puzzle.
     </footer>
 
     <!-- Toast Notification -->
@@ -1181,7 +1181,7 @@
                 </svg>
             </button>
             <h2 class="modal-title">How to Play Chronanza</h2>
-            <p class="modal-sub">Reconstruct today's 9-event timeline in 4 attempts or fewer. A fresh historical archive unlocks everyday at midnight.</p>
+            <p class="modal-sub">Reconstruct today's 9-event timeline in 4 attempts or fewer. A fresh historical Timeline unlocks everyday at midnight.</p>
 
             <ul class="how-list">
                 <li>
@@ -1209,7 +1209,7 @@
                 </div>
             </div>
 
-            <button class="btn btn-primary" style="width:100%;" data-close="modal-help">Start Today's Archive</button>
+            <button class="btn btn-primary" style="width:100%;" data-close="modal-help">Start Today's Timeline</button>
         </div>
     </div>
 
@@ -1269,7 +1269,7 @@
             <!-- Live Midnight Countdown -->
             <div class="countdown-box">
                 <div>
-                    <div class="countdown-label">Next Archive Unlocks In</div>
+                    <div class="countdown-label">Next Timeline Unlocks In</div>
                     <div style="font-size:11px; color:var(--ink-muted); font-weight:600;">Refreshes at midnight local time</div>
                 </div>
                 <div id="countdown-timer" class="countdown-time">00:00:00</div>
@@ -1286,7 +1286,7 @@
     <script>
         /**
          * CHRONANZA — DAILY CHRONOLOGICAL SORTING PUZZLE
-         * Featured Daily Archive (Thursday, Nov 19, 2026): General Knowledge & World Milestones
+         * Featured Daily Timeline (Thursday, Nov 19, 2026): General Knowledge & World Milestones
          * Complete, self-contained single-file implementation.
          */
 
@@ -1307,8 +1307,8 @@
                 ]
             },
             {
-                id: "sports-history",
-                theme: "Sports History & Iconic Moments",
+                id: "sports-Timeline",
+                theme: "Sports Timeline & Iconic Moments",
                 events: [
                     { id: "sp1", label: "First Modern Olympics Open in Athens", year: 1896, fact: "Athens welcomed 241 athletes from 14 nations to revive the ancient Olympic Games." },
                     { id: "sp2", label: "Babe Ruth Hits 60 Home Runs in a Season", year: 1927, fact: "New York Yankees slugger Babe Ruth set a single-season MLB record that stood for 34 years." },
@@ -1333,7 +1333,7 @@
                     { id: "mu6", label: "Nirvana Releases Nevermind", year: 1991, fact: "Driven by 'Smells Like Teen Spirit,' the album propelled Seattle grunge into the mainstream." },
                     { id: "mu7", label: "Apple Launches the iPod & iTunes", year: 2001, fact: "Steve Jobs unveiled the pocket digital music player promising '1,000 songs in your pocket.'" },
                     { id: "mu8", label: "Beyoncé Releases Surprise Visual Album", year: 2013, fact: "Her self-titled fifth studio album dropped overnight with zero prior promotion." },
-                    { id: "mu9", label: "Taylor Swift's Eras Tour Breaks Box Office Records", year: 2023, fact: "Launching in Glendale, Arizona, the stadium tour became the first in history to surpass $1 billion." }
+                    { id: "mu9", label: "Taylor Swift's Eras Tour Breaks Box Office Records", year: 2023, fact: "Launching in Glendale, Arizona, the stadium tour became the first in Timeline to surpass $1 billion." }
                 ]
             },
             {
@@ -1465,7 +1465,7 @@
 
         // DOM References
         const tileGridEl = document.getElementById('tile-grid');
-        const historyStripEl = document.getElementById('history-strip');
+        const TimelineStripEl = document.getElementById('Timeline-strip');
         const attemptsDotsEl = document.getElementById('attempts-dots');
         const btnSubmit = document.getElementById('btn-submit');
         const swapHintEl = document.getElementById('swap-hint');
@@ -1531,7 +1531,7 @@
                 puzzle
             };
 
-            document.getElementById('daily-meta').textContent = `${formattedDate} • Daily Archive`;
+            document.getElementById('daily-meta').textContent = `${formattedDate} • Daily Timeline`;
             document.getElementById('puzzle-theme').textContent = puzzle.theme;
         }
 
@@ -2197,12 +2197,12 @@
                 attemptsDotsEl.appendChild(dot);
             }
 
-            historyStripEl.innerHTML = '';
+            TimelineStripEl.innerHTML = '';
             gameState.attempts.forEach(row => {
                 const rowDiv = document.createElement('div');
-                rowDiv.className = 'history-row';
+                rowDiv.className = 'Timeline-row';
                 rowDiv.textContent = row.map(ok => (ok ? '🟩' : '🟥')).join('');
-                historyStripEl.appendChild(rowDiv);
+                TimelineStripEl.appendChild(rowDiv);
             });
         }
 
@@ -2220,12 +2220,12 @@
             } else {
                 btnSubmit.classList.remove('is-duplicate-guess');
                 btnSubmit.removeAttribute('aria-disabled');
-                btnSubmit.textContent = 'View Archive';
+                btnSubmit.textContent = 'View Timeline';
                 btnSubmit.onclick = () => openStatsModal();
                 swapHintEl.classList.remove('is-active-drop');
                 swapHintEl.textContent = gameState.status === 'won'
-                    ? `Timeline verified in ${gameState.attempts.length}/${MAX_ATTEMPTS} attempts! New archive unlocks at midnight.`
-                    : `Archive closed for today! Return tomorrow for a fresh timeline.`;
+                    ? `Timeline verified in ${gameState.attempts.length}/${MAX_ATTEMPTS} attempts! New Timeline unlocks at midnight.`
+                    : `Timeline closed for today! Return tomorrow for a fresh timeline.`;
             }
         }
 
@@ -2270,7 +2270,7 @@
                 const headlines = ['Grand Archivist!', 'Master Timekeeper!', 'Sharp Historian!', 'Right on Schedule!'];
                 document.getElementById('stats-heading').textContent = isWin
                     ? headlines[Math.min(gameState.attempts.length - 1, 3)]
-                    : 'Archive Unsolved';
+                    : 'Timeline Unsolved';
 
                 const scoreText = isWin ? `${gameState.attempts.length}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`;
                 document.getElementById('stats-sub').textContent = `⏳ Chronanza • ${scoreText} (${dailyInfo.puzzle.theme})`;
