@@ -1,0 +1,2408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronanza — Daily History &amp; Culture Archive</title>
+    <meta name="description" content="Reconstruct today's 9-event timeline in 4 attempts or fewer. A fresh historical archive unlocks every day.">
+
+    <!-- Open Graph / iMessage / Social Link Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chronanza.vercel.app/">
+    <meta property="og:title" content="Chronanza — Daily History Puzzle">
+    <meta property="og:description" content="Reconstruct today's 9-event timeline in 4 attempts or fewer. A new theme every day.">
+    <meta property="og:image" content="https://chronanza.vercel.app/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:alt" content="Chronanza — Daily History Puzzle">
+
+    <!-- Twitter / X Large Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chronanza — Daily History Puzzle">
+    <meta name="twitter:description" content="Reconstruct today's 9-event timeline in 4 attempts or fewer. A new theme every day.">
+    <meta name="twitter:image" content="https://chronanza.vercel.app/og-image.jpg">
+
+    <!-- iOS Home Screen Icon -->
+    <link rel="apple-touch-icon" href="og-image.jpg">
+
+    <!-- Typography: Fraunces (Masthead), Plus Jakarta Sans (UI & Cards), JetBrains Mono (Archival Dates & Badges) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,800&family=JetBrains+Mono:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Tactile Archival Palette */
+            --bg-page: #F7F4ED;
+            --bg-surface: #FFFDF9;
+            --bg-tile: #EFECE3;
+            --bg-tile-hover: #E6E1D3;
+            --ink-espresso: #23201E;
+            --ink-muted: #5F584F;
+            --border-subtle: #CFC8B8;
+
+            /* Signature Brand Accents */
+            --accent-gold: #E5B84B;
+            --accent-gold-dark: #C99A2E;
+            --accent-emerald: #1E6F50;
+            --accent-emerald-deep: #145039;
+            --accent-emerald-glow: rgba(30, 111, 80, 0.36);
+            --accent-terracotta: #C84B31;
+            --accent-terracotta-bg: #FBECE8;
+
+            /* Tactile Offset Depth */
+            --shadow-tactile: 0 3px 0 #23201E;
+            --shadow-tactile-sm: 0 2px 0 #23201E;
+            --modal-backdrop: rgba(35, 32, 30, 0.58);
+        }
+
+        html.dark {
+            --bg-page: #191715;
+            --bg-surface: #221F1D;
+            --bg-tile: #2A2623;
+            --bg-tile-hover: #35302C;
+            --ink-espresso: #F5F1E8;
+            --ink-muted: #B0A89C;
+            --border-subtle: #46403A;
+
+            --accent-gold: #E5B84B;
+            --accent-gold-dark: #F2CB6B;
+            --accent-emerald: #24825E;
+            --accent-emerald-deep: #1A6347;
+            --accent-emerald-glow: rgba(52, 211, 153, 0.4);
+            --accent-terracotta: #E05A3E;
+            --accent-terracotta-bg: #3C1D17;
+
+            --shadow-tactile: 0 3px 0 #0D0C0B;
+            --shadow-tactile-sm: 0 2px 0 #0D0C0B;
+            --modal-backdrop: rgba(0, 0, 0, 0.74);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-page);
+            color: var(--ink-espresso);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.25s ease, color 0.25s ease;
+            overflow-x: hidden;
+        }
+
+        /* Signature Tactile Header (Logo + Title left-aligned, utility icons right) */
+        header {
+            width: 100%;
+            border-bottom: 2px solid var(--ink-espresso);
+            background-color: var(--bg-page);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        .header-inner {
+            max-width: 540px;
+            margin: 0 auto;
+            padding: 0 16px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .brand-lockup {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .brand-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            color: var(--ink-espresso);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .icon-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            border: 2px solid var(--ink-espresso);
+            background-color: var(--bg-surface);
+            color: var(--ink-espresso);
+            box-shadow: var(--shadow-tactile-sm);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.1s ease, background-color 0.15s ease;
+        }
+
+        .icon-btn:hover {
+            background-color: var(--bg-tile);
+        }
+
+        .icon-btn:active {
+            transform: translateY(2px);
+            box-shadow: none;
+        }
+
+        /* Main Game Container */
+        main {
+            width: 100%;
+            max-width: 540px;
+            margin: 0 auto;
+            padding: 16px 16px 26px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Centered Daily Challenge Subtitle & Category Pill aligned with 3x3 Grid */
+        .daily-header-block {
+            width: 100%;
+            max-width: 356px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .daily-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--ink-muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+        .category-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 6px 14px;
+            margin-bottom: 7px;
+            border-radius: 9999px;
+            border: 2px solid var(--ink-espresso);
+            background-color: var(--accent-gold);
+            color: #23201E;
+            box-shadow: var(--shadow-tactile-sm);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            max-width: 100%;
+        }
+
+        .prompt-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-muted);
+            line-height: 1.35;
+        }
+
+        .prompt-text strong {
+            color: var(--ink-espresso);
+            font-weight: 800;
+        }
+
+        /* Live Attempt History Emoji Strip */
+        .history-strip {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            min-height: 12px;
+            margin-bottom: 6px;
+        }
+
+        .history-row {
+            font-size: 12px;
+            letter-spacing: 3px;
+            line-height: 1;
+            animation: popScale 0.22s ease-out;
+        }
+
+        /* Chronological Timeline Connector Bar */
+        .flow-indicator {
+            width: 100%;
+            max-width: 356px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--ink-espresso);
+            margin-bottom: 8px;
+            padding: 0 2px;
+            gap: 6px;
+        }
+
+        .flow-node {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .flow-node-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 9999px;
+            border: 1.5px solid var(--ink-espresso);
+            background-color: var(--accent-gold);
+        }
+
+        .flow-line {
+            flex: 1;
+            height: 2px;
+            background-color: var(--ink-espresso);
+            opacity: 0.22;
+            border-radius: 2px;
+        }
+
+        /* Strict Fixed-Size 3x3 Tactile Square Grid */
+        .tile-grid {
+            width: 100%;
+            max-width: 356px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-auto-rows: 1fr;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            position: relative;
+        }
+
+        @media (max-width: 388px) {
+            .tile-grid,
+            .flow-indicator,
+            .daily-header-block {
+                max-width: 100%;
+            }
+            .brand-title {
+                font-size: 24px;
+            }
+            .flow-indicator {
+                font-size: 8.5px;
+            }
+        }
+
+        /* Tactile Block Card matching the Chronanza Logo Squares */
+        .tile {
+            position: relative;
+            width: 100%;
+            min-width: 0;
+            min-height: 0;
+            aspect-ratio: 1 / 1;
+            box-sizing: border-box;
+            overflow: visible;
+            border-radius: 12px;
+            background-color: var(--bg-surface);
+            border: 2px solid var(--ink-espresso);
+            box-shadow: var(--shadow-tactile);
+            padding: 22px 6px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            cursor: grab;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: none;
+            transition: transform 0.14s cubic-bezier(0.2, 0.8, 0.2, 1),
+                        background-color 0.2s ease,
+                        border-color 0.2s ease,
+                        box-shadow 0.14s ease,
+                        opacity 0.15s ease;
+        }
+
+        .tile:hover:not(.is-locked):not(.is-disabled) {
+            background-color: var(--bg-tile);
+            transform: translateY(-1px);
+        }
+
+        .tile:active:not(.is-locked):not(.is-disabled) {
+            cursor: grabbing;
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 var(--ink-espresso);
+        }
+
+        /* Selected Tile for Tap-to-Swap: Warm Gold Highlight */
+        .tile.is-selected {
+            background-color: var(--accent-gold) !important;
+            border-color: var(--ink-espresso) !important;
+            color: #23201E !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 0 #23201E;
+        }
+
+        .tile.is-selected .tile-slot-badge {
+            background-color: #23201E;
+            color: var(--accent-gold);
+            border-color: #23201E;
+        }
+
+        .tile.swap-pop {
+            animation: swapPop 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .tile.is-dragging {
+            opacity: 0.32;
+            transform: scale(0.93);
+            border-style: dashed;
+            box-shadow: none;
+        }
+
+        /* Glowing Emerald Drag-and-Drop Placement Indicator */
+        .tile.insert-before,
+        .tile.insert-after {
+            border-color: var(--accent-emerald);
+            background-color: rgba(30, 111, 80, 0.12);
+            box-shadow: 0 3px 0 var(--accent-emerald), 0 0 14px var(--accent-emerald-glow);
+            z-index: 10;
+        }
+
+        .tile.insert-before {
+            transform: translateX(4px);
+        }
+
+        .tile.insert-after {
+            transform: translateX(-4px);
+        }
+
+        .drop-marker {
+            position: absolute;
+            top: -5px;
+            bottom: -5px;
+            width: 4px;
+            border-radius: 9999px;
+            background-color: var(--accent-emerald);
+            box-shadow: 0 0 0 2px var(--bg-page), 0 0 12px 3px var(--accent-emerald-glow);
+            z-index: 25;
+            pointer-events: none;
+            animation: dropPulse 0.85s ease-in-out infinite;
+        }
+
+        .tile.insert-before .drop-marker {
+            left: -8px;
+        }
+
+        .tile.insert-after .drop-marker {
+            right: -8px;
+        }
+
+        .drop-marker::before,
+        .drop-marker::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 11px;
+            height: 11px;
+            border-radius: 9999px;
+            background-color: var(--accent-emerald);
+            border: 2px solid var(--bg-page);
+            box-shadow: 0 0 8px var(--accent-emerald-glow);
+        }
+
+        .drop-marker::before {
+            top: -5px;
+        }
+
+        .drop-marker::after {
+            bottom: -5px;
+        }
+
+        @keyframes dropPulse {
+            0%, 100% { opacity: 1; transform: scaleY(1); }
+            50% { opacity: 0.82; transform: scaleY(0.95); }
+        }
+
+        /* Floating Touch/Pointer Drag Ghost */
+        .drag-ghost {
+            position: fixed;
+            pointer-events: none;
+            z-index: 100;
+            border-radius: 12px;
+            background-color: var(--accent-gold);
+            color: #23201E;
+            border: 2px solid #23201E;
+            box-shadow: 0 14px 28px rgba(35, 32, 30, 0.34);
+            padding: 22px 6px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transform: scale(1.06) rotate(1.5deg);
+            opacity: 0.96;
+        }
+
+        /* Locked Correct Tile: Forest Emerald */
+        .tile.is-locked {
+            background-color: var(--accent-emerald);
+            border-color: var(--ink-espresso);
+            color: #FFFFFF;
+            cursor: default;
+            touch-action: auto;
+            box-shadow: var(--shadow-tactile);
+            animation: flipLock 0.42s ease-out;
+        }
+
+        .tile.is-locked .tile-slot-badge {
+            background-color: var(--accent-gold);
+            color: #23201E;
+            border-color: var(--ink-espresso);
+        }
+
+        .tile.victory-pulse {
+            animation: victoryPulse 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        /* Incorrect Flash State: Terracotta */
+        .tile.is-wrong {
+            background-color: var(--accent-terracotta-bg);
+            border-color: var(--accent-terracotta);
+            color: var(--accent-terracotta);
+            animation: tileShake 0.48s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        }
+
+        /* Corner Position Badge (1 .. 9) */
+        .tile-slot-badge {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            min-width: 20px;
+            height: 18px;
+            padding: 0 4px;
+            border-radius: 6px;
+            background-color: var(--bg-tile);
+            border: 1.5px solid var(--ink-espresso);
+            color: var(--ink-espresso);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Corner Lock Icon */
+        .tile-lock-icon {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            opacity: 0.95;
+        }
+
+        /* Event Label (Auto-fitted to prevent orphan letters/words) */
+        .tile-label {
+            font-size: 13px;
+            font-weight: 800;
+            line-height: 1.18;
+            letter-spacing: 0.015em;
+            text-transform: uppercase;
+            word-break: normal;
+            overflow-wrap: break-word;
+            min-width: 0;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* Revealed Historical Year Pill on Locked Tiles */
+        .tile-year-pill {
+            flex-shrink: 0;
+            margin-top: 4px;
+            padding: 1px 7px;
+            border-radius: 9999px;
+            background-color: var(--accent-emerald-deep);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        /* Live Interaction & Placement Hint */
+        .swap-hint {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ink-muted);
+            margin-bottom: 14px;
+            text-align: center;
+            min-height: 18px;
+            transition: color 0.15s ease;
+        }
+
+        .swap-hint.is-active-drop {
+            color: var(--accent-emerald);
+            font-weight: 800;
+        }
+
+        /* Attempts Dots & Centered Check Timeline Button */
+        .controls-area {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            margin-top: auto;
+        }
+
+        .attempts-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--ink-muted);
+        }
+
+        .dots-wrap {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .attempt-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 9999px;
+            background-color: var(--accent-gold);
+            border: 1.5px solid var(--ink-espresso);
+            transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+        }
+
+        .attempt-dot.used {
+            background-color: var(--bg-tile);
+            opacity: 0.35;
+            transform: scale(0.82);
+        }
+
+        .btn-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .btn {
+            height: 48px;
+            padding: 0 28px;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 14.5px;
+            font-weight: 800;
+            cursor: pointer;
+            border: 2px solid var(--ink-espresso);
+            box-shadow: var(--shadow-tactile);
+            transition: transform 0.1s ease, background-color 0.15s ease, opacity 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:active:not(:disabled) {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 var(--ink-espresso);
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-emerald);
+            color: #FFFFFF;
+            min-width: 214px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-emerald-deep);
+        }
+
+        .btn-primary.is-duplicate-guess {
+            background-color: var(--bg-tile);
+            color: var(--ink-muted);
+            border-color: var(--border-subtle);
+            box-shadow: none;
+        }
+
+        .btn-primary.is-duplicate-guess:hover {
+            background-color: var(--bg-tile);
+        }
+
+        .btn-shake {
+            animation: tileShake 0.42s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        }
+
+        .btn-share {
+            background-color: var(--accent-gold);
+            color: #23201E;
+            width: 100%;
+        }
+
+        .btn-share:hover {
+            background-color: var(--accent-gold-dark);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Editorial Footer */
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 16px 18px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--ink-muted);
+            letter-spacing: 0.02em;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            background-color: var(--ink-espresso);
+            color: var(--bg-page);
+            border: 2px solid var(--accent-gold);
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 800;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 60;
+            text-align: center;
+            max-width: calc(100vw - 32px);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Modals */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: var(--modal-backdrop);
+            backdrop-filter: blur(3px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            z-index: 50;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal-card {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            max-height: 90vh;
+            overflow-y: auto;
+            background-color: var(--bg-surface);
+            color: var(--ink-espresso);
+            border: 2px solid var(--ink-espresso);
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 6px 0 var(--ink-espresso), 0 22px 45px rgba(0, 0, 0, 0.28);
+            animation: slideUpModal 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            border: 2px solid var(--ink-espresso);
+            background: var(--bg-tile);
+            color: var(--ink-espresso);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background-color: var(--accent-gold);
+            color: #23201E;
+        }
+
+        .modal-title {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .modal-sub {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-muted);
+            margin-bottom: 16px;
+            line-height: 1.45;
+        }
+
+        /* How-To Example Tiles */
+        .example-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 14px 0 18px;
+        }
+
+        .example-tile {
+            border-radius: 12px;
+            padding: 12px;
+            text-align: center;
+            font-size: 12px;
+            border: 2px solid var(--ink-espresso);
+            box-shadow: var(--shadow-tactile-sm);
+        }
+
+        .example-tile.locked {
+            background-color: var(--accent-emerald);
+            color: #FFFFFF;
+        }
+
+        .example-tile.wrong {
+            background-color: var(--accent-terracotta-bg);
+            border-color: var(--accent-terracotta);
+            color: var(--accent-terracotta);
+        }
+
+        .how-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 13.5px;
+            line-height: 1.45;
+            margin-bottom: 16px;
+        }
+
+        .how-list li {
+            display: flex;
+            gap: 10px;
+        }
+
+        .how-badge {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            background-color: var(--accent-gold);
+            border: 1.5px solid var(--ink-espresso);
+            color: #23201E;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Stats Grid */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            text-align: center;
+            padding: 12px 0;
+            border-top: 2px solid var(--border-subtle);
+            border-bottom: 2px solid var(--border-subtle);
+            margin-bottom: 14px;
+        }
+
+        .stat-val {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .stat-lbl {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--ink-muted);
+            margin-top: 4px;
+        }
+
+        /* Guess Distribution Bars */
+        .dist-section {
+            margin-bottom: 16px;
+        }
+
+        .dist-heading {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--ink-muted);
+            margin-bottom: 8px;
+        }
+
+        .dist-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .dist-num {
+            width: 14px;
+            text-align: right;
+            color: var(--ink-muted);
+        }
+
+        .dist-bar-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .dist-bar {
+            min-width: 24px;
+            height: 21px;
+            padding: 0 7px;
+            border-radius: 6px;
+            background-color: var(--bg-tile);
+            border: 1.5px solid var(--ink-espresso);
+            color: var(--ink-espresso);
+            font-size: 11px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-end;
+            transition: width 0.3s ease;
+        }
+
+        .dist-bar.highlight {
+            background-color: var(--accent-emerald);
+            color: #FFFFFF;
+        }
+
+        .emoji-box {
+            background-color: var(--bg-tile);
+            border: 1.5px solid var(--ink-espresso);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 3px;
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+
+        .countdown-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            border-radius: 12px;
+            border: 1.5px solid var(--ink-espresso);
+            background-color: var(--bg-tile);
+            margin-top: 14px;
+            margin-bottom: 18px;
+        }
+
+        .countdown-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--ink-muted);
+        }
+
+        .countdown-time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 18px;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Solved Timeline Breakdown */
+        .timeline-breakdown {
+            border-top: 2px solid var(--border-subtle);
+            padding-top: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .breakdown-heading {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--ink-muted);
+            margin-bottom: 4px;
+        }
+
+        .breakdown-item {
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1.5px solid var(--ink-espresso);
+            background-color: var(--bg-tile);
+        }
+
+        .breakdown-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--accent-emerald);
+            margin-bottom: 2px;
+        }
+
+        html.dark .breakdown-top {
+            color: #6EE7B7;
+        }
+
+        .breakdown-title {
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .breakdown-fact {
+            font-size: 12px;
+            color: var(--ink-muted);
+            line-height: 1.4;
+        }
+
+        /* Keyframe Animations */
+        @keyframes tileShake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-6px); }
+            40% { transform: translateX(6px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        @keyframes swapPop {
+            0% { transform: scale(1.04); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes flipLock {
+            0% { transform: scaleY(0.88); }
+            55% { transform: scaleY(1.04); }
+            100% { transform: scaleY(1); }
+        }
+
+        @keyframes victoryPulse {
+            0% { transform: scale(1); }
+            45% { transform: scale(1.07); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes popScale {
+            0% { transform: scale(0.95); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideUpModal {
+            0% { transform: translateY(18px) scale(0.98); opacity: 0; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Signature Tactile Navigation Bar: Inline Logo + Masthead on Left, Utility Icons on Right -->
+    <header>
+        <div class="header-inner">
+            <div class="brand-lockup">
+                <!-- Custom Inline SVG Chronanza Timeline & Gold Clock Emblem -->
+                <svg width="36" height="30" viewBox="0 0 68 56" fill="none" aria-hidden="true">
+                    <line x1="50" y1="18" x2="50" y2="28" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+                    <circle cx="50" cy="11" r="8.5" fill="#E5B84B" stroke="currentColor" stroke-width="3"/>
+                    <path d="M50 6.5V11L53 13" stroke="#23201E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="4" y="27" width="22" height="22" rx="5.5" fill="#EFECE3" stroke="currentColor" stroke-width="3"/>
+                    <path d="M29 38H37M34.5 35L37.5 38L34.5 41" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="39" y="27" width="22" height="22" rx="5.5" fill="#1E6F50" stroke="currentColor" stroke-width="3"/>
+                </svg>
+                <h1 class="brand-title">Chronanza</h1>
+            </div>
+
+            <div class="header-actions">
+                <button id="btn-help" class="icon-btn" aria-label="How to Play" title="How to Play">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                </button>
+                <button id="btn-stats" class="icon-btn" aria-label="Statistics & Archive" title="Statistics & Archive">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                </button>
+                <button id="btn-theme" class="icon-btn" aria-label="Toggle Dark Mode" title="Toggle Dark Mode">
+                    <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="icon-sun" class="hidden" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Game Board -->
+    <main>
+        <!-- Centered Daily Challenge Subtitle & Category Pill aligned with the 3x3 Grid -->
+        <div class="daily-header-block">
+            <div id="daily-meta" class="daily-subtitle">Nov 19, 2026 • Daily Archive #1</div>
+            <div class="category-pill">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span id="puzzle-theme">General Knowledge &amp; World Milestones</span>
+            </div>
+            <p class="prompt-text">
+                Order today's archive from <strong>1 Earliest</strong> to <strong>9 Latest</strong>.
+            </p>
+        </div>
+
+        <!-- Live Emoji History -->
+        <div id="history-strip" class="history-strip"></div>
+
+        <!-- Chronological Timeline Connector Bar -->
+        <div class="flow-indicator">
+            <span class="flow-node"><span class="flow-node-dot"></span>1 EARLIEST</span>
+            <div class="flow-line"></div>
+            <span>1–3 ➔ 4–6 ➔ 7–9</span>
+            <div class="flow-line"></div>
+            <span class="flow-node">9 LATEST<span class="flow-node-dot" style="background-color:var(--accent-emerald);"></span></span>
+        </div>
+
+        <!-- 9-Tile Fixed-Size 3x3 Tactile Square Grid -->
+        <div id="tile-grid" class="tile-grid" role="list"></div>
+
+        <p id="swap-hint" class="swap-hint">
+            Drag cards between slots to shift order, or tap two to swap.
+        </p>
+
+        <!-- Attempts Dots & Centered Primary Check Timeline Button -->
+        <div class="controls-area">
+            <div class="attempts-row">
+                <span>Attempts remaining:</span>
+                <div id="attempts-dots" class="dots-wrap"></div>
+            </div>
+
+            <div class="btn-row">
+                <button id="btn-submit" class="btn btn-primary">Check Timeline</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 Chronanza. Daily History &amp; Culture Archive.
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Copied to clipboard!</div>
+
+    <!-- MODAL: HOW TO PLAY -->
+    <div id="modal-help" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" data-close="modal-help" aria-label="Close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 class="modal-title">How to Play Chronanza</h2>
+            <p class="modal-sub">Reconstruct today's 9-event timeline in 4 attempts or fewer. A fresh historical archive unlocks every midnight.</p>
+
+            <ul class="how-list">
+                <li>
+                    <span class="how-badge">1</span>
+                    <span>Place the <strong>earliest</strong> milestone in slot <strong>1</strong> (top-left) and the <strong>latest</strong> in slot <strong>9</strong> (bottom-right).</span>
+                </li>
+                <li>
+                    <span class="how-badge">2</span>
+                    <span><strong>Drag any card</strong> to the left or right edge of another slot—an emerald marker shows where it will insert—or <strong>tap two cards</strong> to swap.</span>
+                </li>
+                <li>
+                    <span class="how-badge">3</span>
+                    <span>Press <strong>Check Timeline</strong> to lock in exact matches in forest emerald with their year revealed!</span>
+                </li>
+            </ul>
+
+            <div class="example-grid">
+                <div class="example-tile locked">
+                    <div style="font-weight:800; letter-spacing:0.02em; margin-bottom:4px;">WRIGHT BROTHERS' FIRST POWERED FLIGHT</div>
+                    <div style="display:inline-block; padding:2px 8px; border-radius:999px; background:var(--accent-emerald-deep); font-family:'JetBrains Mono', monospace; font-weight:700; font-size:11px;">1903 • LOCKED</div>
+                </div>
+                <div class="example-tile wrong">
+                    <div style="font-weight:800; letter-spacing:0.02em; margin-bottom:4px;">FALL OF THE BERLIN WALL</div>
+                    <div style="font-family:'JetBrains Mono', monospace; font-weight:700; font-size:11px;">MISPLACED • SHIFT IT</div>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="width:100%;" data-close="modal-help">Start Today's Archive</button>
+        </div>
+    </div>
+
+    <!-- MODAL: STATS & DAILY RESULTS -->
+    <div id="modal-stats" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close" data-close="modal-stats" aria-label="Close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <h2 id="stats-heading" class="modal-title">Archivist Record</h2>
+            <p id="stats-sub" class="modal-sub">Chronanza Daily Streak &amp; Results</p>
+
+            <div class="stats-bar">
+                <div>
+                    <div id="stat-played" class="stat-val">0</div>
+                    <div class="stat-lbl">Played</div>
+                </div>
+                <div>
+                    <div id="stat-winpct" class="stat-val">0</div>
+                    <div class="stat-lbl">Win %</div>
+                </div>
+                <div>
+                    <div id="stat-streak" class="stat-val">0</div>
+                    <div class="stat-lbl">Current Streak</div>
+                </div>
+                <div>
+                    <div id="stat-maxstreak" class="stat-val">0</div>
+                    <div class="stat-lbl">Max Streak</div>
+                </div>
+            </div>
+
+            <!-- Guess Distribution -->
+            <div class="dist-section">
+                <div class="dist-heading">Attempts Distribution</div>
+                <div id="guess-dist-bars"></div>
+            </div>
+
+            <!-- Today's Completed Emoji Grid & Signature Share -->
+            <div id="today-result-section" class="hidden">
+                <div id="stats-emoji-grid" class="emoji-box"></div>
+                <button id="btn-share" class="btn btn-share">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                    <span>Share Timeline Score</span>
+                </button>
+            </div>
+
+            <!-- Live Midnight Countdown -->
+            <div class="countdown-box">
+                <div>
+                    <div class="countdown-label">Next Archive Unlocks In</div>
+                    <div style="font-size:11px; color:var(--ink-muted); font-weight:600;">Refreshes at midnight local time</div>
+                </div>
+                <div id="countdown-timer" class="countdown-time">00:00:00</div>
+            </div>
+
+            <!-- True Chronological Timeline Breakdown -->
+            <div id="breakdown-section" class="timeline-breakdown hidden">
+                <div class="breakdown-heading">Verified Chronological Order</div>
+                <div id="breakdown-list" style="display:flex; flex-direction:column; gap:8px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * CHRONANZA — DAILY CHRONOLOGICAL SORTING PUZZLE
+         * Featured Daily Archive (Thursday, Nov 19, 2026): General Knowledge & World Milestones
+         * Complete, self-contained single-file implementation.
+         */
+
+        const DAILY_PUZZLES = [
+            {
+                id: "general-knowledge",
+                theme: "General Knowledge & World Milestones",
+                events: [
+                    { id: "gk1", label: "Gutenberg Prints the Movable-Type Bible", year: 1455, fact: "Johannes Gutenberg's movable-type press in Mainz sparked Europe's printing revolution." },
+                    { id: "gk2", label: "Newton Publishes Principia Mathematica", year: 1687, fact: "Isaac Newton formulated the laws of motion and universal gravitation in his landmark treatise." },
+                    { id: "gk3", label: "French Revolution Begins in Paris", year: 1789, fact: "Parisians stormed the Bastille fortress on July 14, 1789, igniting the French Revolution." },
+                    { id: "gk4", label: "Alexander Graham Bell Patents Telephone", year: 1876, fact: "Bell received U.S. Patent 174,465 and transmitted the first intelligible speech over wire." },
+                    { id: "gk5", label: "Wright Brothers' First Powered Flight", year: 1903, fact: "Orville and Wilbur Wright achieved sustained controlled powered flight at Kitty Hawk on December 17." },
+                    { id: "gk6", label: "Alexander Fleming Discovers Penicillin", year: 1928, fact: "Observing mold inhibit bacteria in a London lab dish, Fleming ushered in modern antibiotics." },
+                    { id: "gk7", label: "Apollo 11 First Moon Landing", year: 1969, fact: "Neil Armstrong and Buzz Aldrin touched down in the Sea of Tranquility on July 20, 1969." },
+                    { id: "gk8", label: "Fall of the Berlin Wall", year: 1989, fact: "Crowds dismantled the Cold War barrier dividing East and West Berlin on November 9, 1989." },
+                    { id: "gk9", label: "First Photograph of a Black Hole Unveiled", year: 2019, fact: "The Event Horizon Telescope collaboration captured the glowing shadow of supermassive black hole M87*." }
+                ]
+            },
+            {
+                id: "sports-history",
+                theme: "Sports History & Iconic Moments",
+                events: [
+                    { id: "sp1", label: "First Modern Olympics Open in Athens", year: 1896, fact: "Athens welcomed 241 athletes from 14 nations to revive the ancient Olympic Games." },
+                    { id: "sp2", label: "Babe Ruth Hits 60 Home Runs in a Season", year: 1927, fact: "New York Yankees slugger Babe Ruth set a single-season MLB record that stood for 34 years." },
+                    { id: "sp3", label: "Jesse Owens Wins Four Golds in Berlin", year: 1936, fact: "Owens captured gold in the 100m, 200m, long jump, and 4x100m relay at the 1936 Summer Games." },
+                    { id: "sp4", label: "Jackie Robinson Breaks MLB Color Barrier", year: 1947, fact: "Robinson started at first base for the Brooklyn Dodgers on April 15, integrating Major League Baseball." },
+                    { id: "sp5", label: "Roger Bannister Runs Sub-Four-Minute Mile", year: 1954, fact: "Bannister clocked 3:59.4 at Oxford's Iffley Road track, breaking a barrier long thought impossible." },
+                    { id: "sp6", label: "Muhammad Ali Upsets Sonny Liston", year: 1964, fact: "Fighting as Cassius Clay, the 22-year-old claimed the world heavyweight crown in Miami Beach." },
+                    { id: "sp7", label: "U.S. Hockey Pulls Off Miracle on Ice", year: 1980, fact: "American college players defeated the four-time defending gold medalist Soviet team at Lake Placid." },
+                    { id: "sp8", label: "Michael Jordan's Flu Game in NBA Finals", year: 1997, fact: "Battling severe illness, Jordan scored 38 points to lift Chicago to a crucial Game 5 victory in Utah." },
+                    { id: "sp9", label: "Usain Bolt Sets 100m World Record in Berlin", year: 2009, fact: "Jamaican sprinter Usain Bolt sprinted 100 meters in 9.58 seconds at the World Championships." }
+                ]
+            },
+            {
+                id: "music-eras",
+                theme: "Music & Album Eras",
+                events: [
+                    { id: "mu1", label: "Elvis Presley Records 'That's All Right'", year: 1954, fact: "Recorded at Sun Studio in Memphis, this track sparked the birth of rock and roll." },
+                    { id: "mu2", label: "The Beatles Debut on The Ed Sullivan Show", year: 1964, fact: "Over 73 million viewers watched the Fab Four's historic American television debut." },
+                    { id: "mu3", label: "Woodstock Music Festival Takes Place", year: 1969, fact: "More than 400,000 fans gathered on Max Yasgur's dairy farm in Bethel, New York." },
+                    { id: "mu4", label: "Sony Launches the First Walkman", year: 1979, fact: "The TPS-L2 portable cassette player revolutionized how people listened to music on the go." },
+                    { id: "mu5", label: "Michael Jackson Releases Thriller", year: 1982, fact: "Thriller became the best-selling album of all time and won a record 8 Grammy Awards." },
+                    { id: "mu6", label: "Nirvana Releases Nevermind", year: 1991, fact: "Driven by 'Smells Like Teen Spirit,' the album propelled Seattle grunge into the mainstream." },
+                    { id: "mu7", label: "Apple Launches the iPod & iTunes", year: 2001, fact: "Steve Jobs unveiled the pocket digital music player promising '1,000 songs in your pocket.'" },
+                    { id: "mu8", label: "Beyoncé Releases Surprise Visual Album", year: 2013, fact: "Her self-titled fifth studio album dropped overnight with zero prior promotion." },
+                    { id: "mu9", label: "Taylor Swift's Eras Tour Breaks Box Office Records", year: 2023, fact: "Launching in Glendale, Arizona, the stadium tour became the first in history to surpass $1 billion." }
+                ]
+            },
+            {
+                id: "tech-computing",
+                theme: "Tech & Computing",
+                events: [
+                    { id: "tc1", label: "Transistor Invented at Bell Labs", year: 1947, fact: "Bardeen, Brattain, and Shockley demonstrated the point-contact transistor." },
+                    { id: "tc2", label: "First Email Sent", year: 1971, fact: "Ray Tomlinson sent the first ARPANET network email and introduced the '@' symbol." },
+                    { id: "tc3", label: "Apple Macintosh Unveiled", year: 1984, fact: "Apple introduced the first mass-market personal computer with a GUI and mouse." },
+                    { id: "tc4", label: "World Wide Web Opens", year: 1991, fact: "Tim Berners-Lee published the first website at CERN for public access." },
+                    { id: "tc5", label: "Google Search Incorporated", year: 1998, fact: "Larry Page and Sergey Brin founded Google in a Menlo Park garage." },
+                    { id: "tc6", label: "Wikipedia Launches", year: 2001, fact: "The free collaborative encyclopedia went live on January 15." },
+                    { id: "tc7", label: "First iPhone Unveiled", year: 2007, fact: "Steve Jobs introduced Apple's touchscreen smartphone at Macworld." },
+                    { id: "tc8", label: "Bitcoin Whitepaper Published", year: 2008, fact: "Satoshi Nakamoto published the peer-to-peer electronic cash design." },
+                    { id: "tc9", label: "ChatGPT Released to Public", year: 2022, fact: "OpenAI launched ChatGPT, reaching 100 million monthly users in two months." }
+                ]
+            },
+            {
+                id: "cinema",
+                theme: "Classic Cinema & Blockbusters",
+                events: [
+                    { id: "mov1", label: "The Wizard of Oz Releases", year: 1939, fact: "MGM's Technicolor musical fantasy premiered in August 1939." },
+                    { id: "mov2", label: "Psycho Premieres", year: 1960, fact: "Alfred Hitchcock's thriller transformed horror cinema and theatrical release rules." },
+                    { id: "mov3", label: "The Godfather Releases", year: 1972, fact: "Francis Ford Coppola's crime epic won Best Picture at the 45th Academy Awards." },
+                    { id: "mov4", label: "Original Star Wars Releases", year: 1977, fact: "George Lucas's space opera redefined visual effects and summer blockbusters." },
+                    { id: "mov5", label: "Jurassic Park Premieres", year: 1993, fact: "Steven Spielberg's thriller blended groundbreaking CGI with full-scale animatronics." },
+                    { id: "mov6", label: "Toy Story Releases", year: 1995, fact: "Pixar released the world's first entirely computer-animated feature film." },
+                    { id: "mov7", label: "The Dark Knight Releases", year: 2008, fact: "Christopher Nolan's sequel became the first comic book film to cross $1 billion." },
+                    { id: "mov8", label: "Avengers: Endgame Releases", year: 2019, fact: "Marvel's 22-film culmination shattered opening weekend box office records globally." },
+                    { id: "mov9", label: "Parasite Wins Best Picture", year: 2020, fact: "Bong Joon-ho's thriller became the first non-English language Best Picture winner." }
+                ]
+            },
+            {
+                id: "video-games",
+                theme: "Video Game Evolution",
+                events: [
+                    { id: "vg1", label: "Atari Releases Pong", year: 1972, fact: "One of the earliest arcade hits, its prototype coin box jammed from overfilling." },
+                    { id: "vg2", label: "Pac-Man Arcade Debuts", year: 1980, fact: "Toru Iwatani's maze arcade game became an international pop culture icon." },
+                    { id: "vg3", label: "Super Mario Bros. Launches", year: 1985, fact: "Nintendo's NES platformer revitalized the North American home console market." },
+                    { id: "vg4", label: "Game Boy Launches", year: 1989, fact: "Nintendo's handheld launched bundled with Tetris and sold over 118 million units." },
+                    { id: "vg5", label: "Original PlayStation Launches", year: 1994, fact: "Sony's CD-ROM console became the first gaming system to sell 100 million units." },
+                    { id: "vg6", label: "World of Warcraft Launches", year: 2004, fact: "Blizzard's MMORPG set records for online subscription gaming." },
+                    { id: "vg7", label: "Nintendo Wii Launches", year: 2006, fact: "Motion controls brought Wii Sports into living rooms around the globe." },
+                    { id: "vg8", label: "Minecraft Public Alpha", year: 2009, fact: "Markus Persson released the sandbox builder that became the top-selling game ever." },
+                    { id: "vg9", label: "Nintendo Switch Launches", year: 2017, fact: "The hybrid console debuted worldwide alongside Breath of the Wild." }
+                ]
+            },
+            {
+                id: "literature-publishing",
+                theme: "Literature & Publishing",
+                events: [
+                    { id: "bk1", label: "Pride and Prejudice Published", year: 1813, fact: "Jane Austen's beloved novel of manners was first published in three volumes." },
+                    { id: "bk2", label: "The Great Gatsby Published", year: 1925, fact: "F. Scott Fitzgerald captured the Jazz Age on Long Island's North Shore." },
+                    { id: "bk3", label: "The Hobbit Published", year: 1937, fact: "J.R.R. Tolkien introduced Bilbo Baggins and Middle-earth to readers." },
+                    { id: "bk4", label: "George Orwell's 1984", year: 1949, fact: "Orwell's dystopian novel introduced 'Big Brother' and 'Newspeak' into everyday language." },
+                    { id: "bk5", label: "To Kill a Mockingbird", year: 1960, fact: "Harper Lee's Pulitzer Prize-winning novel was published in July 1960." },
+                    { id: "bk6", label: "Frank Herbert's Dune", year: 1965, fact: "The sci-fi epic set on desert planet Arrakis won the inaugural Nebula Award." },
+                    { id: "bk7", label: "First Harry Potter Book", year: 1997, fact: "Only 500 hardcover copies of 'Philosopher's Stone' were printed in its first UK run." },
+                    { id: "bk8", label: "The Da Vinci Code Releases", year: 2003, fact: "Dan Brown's mystery thriller became a worldwide publishing phenomenon." },
+                    { id: "bk9", label: "The Hunger Games Releases", year: 2008, fact: "Suzanne Collins introduced Katniss Everdeen and launched a YA blockbuster era." }
+                ]
+            },
+            {
+                id: "art-architecture",
+                theme: "Art & Architecture",
+                events: [
+                    { id: "ar1", label: "Brooklyn Bridge Opens", year: 1883, fact: "The hybrid cable-stayed suspension bridge linked Manhattan and Brooklyn." },
+                    { id: "ar2", label: "Eiffel Tower Completed", year: 1889, fact: "Built for the Paris World's Fair, it stood as the world's tallest structure for 41 years." },
+                    { id: "ar3", label: "Panama Canal Opens", year: 1914, fact: "The 50-mile waterway linked the Atlantic and Pacific Oceans across Central America." },
+                    { id: "ar4", label: "Empire State Building Opens", year: 1931, fact: "Constructed in just 410 days, the Art Deco skyscraper towered 102 stories." },
+                    { id: "ar5", label: "Golden Gate Bridge Opens", year: 1937, fact: "Painted International Orange, the suspension bridge spanned San Francisco Bay." },
+                    { id: "ar6", label: "Sydney Opera House Opens", year: 1973, fact: "Jørn Utzon's sail-roofed masterpiece was inaugurated by Queen Elizabeth II." },
+                    { id: "ar7", label: "Channel Tunnel Opens", year: 1994, fact: "The 31-mile undersea rail link connected England and France beneath the Channel." },
+                    { id: "ar8", label: "Millau Viaduct Opens", year: 2004, fact: "France's cable-stayed bridge became the tallest bridge structure in the world." },
+                    { id: "ar9", label: "Burj Khalifa Inaugurated", year: 2010, fact: "Dubai's supertall tower reached 828 meters (2,717 feet) into the sky." }
+                ]
+            }
+        ];
+
+        // Constants
+        const MAX_ATTEMPTS = 4;
+        const GRID_SIZE = 9;
+        const STATE_KEY_PREFIX = 'chronanza_daily_v3_';
+        const STATS_KEY = 'chronanza_lifetime_stats_v3';
+        const THEME_KEY = 'chronanza_theme';
+        const ONBOARD_KEY = 'chronanza_v3_onboarded';
+
+        // App State
+        let dailyInfo = {
+            dateKey: '2026-11-19',
+            formattedDate: 'Nov 19, 2026',
+            puzzleNumber: 1,
+            dailyPuzzleIndex: 0,
+            puzzle: DAILY_PUZZLES[0]
+        };
+
+        let gameState = {
+            tiles: [],
+            lockedIds: [],
+            attempts: [],
+            submittedOrders: [],
+            status: 'playing'
+        };
+
+        let lifetimeStats = {
+            played: 0,
+            won: 0,
+            currentStreak: 0,
+            maxStreak: 0,
+            guessDistribution: { 1: 0, 2: 0, 3: 0, 4: 0 },
+            lastCompletedDate: null
+        };
+
+        let selectedTileIndex = null;
+        let draggedTileIndex = null;
+        let currentDropInsertion = null;
+        let poppedTileIds = new Set();
+
+        // Touch / Pointer Drag State
+        let pointerDrag = {
+            active: false,
+            sourceIndex: null,
+            insertion: null,
+            startX: 0,
+            startY: 0,
+            ghostEl: null,
+            moved: false
+        };
+
+        // DOM References
+        const tileGridEl = document.getElementById('tile-grid');
+        const historyStripEl = document.getElementById('history-strip');
+        const attemptsDotsEl = document.getElementById('attempts-dots');
+        const btnSubmit = document.getElementById('btn-submit');
+        const swapHintEl = document.getElementById('swap-hint');
+
+        // Initialize Game
+        function init() {
+            initTheme();
+            computeTodaysPuzzle();
+            loadLifetimeStats();
+            loadOrCreatePuzzleState();
+            bindUIEvents();
+            startMidnightCountdown();
+            renderAll();
+
+            if (!localStorage.getItem(ONBOARD_KEY)) {
+                openModal('modal-help');
+                localStorage.setItem(ONBOARD_KEY, 'true');
+            } else if (gameState.status !== 'playing') {
+                setTimeout(() => openStatsModal(), 350);
+            }
+        }
+
+        // Theme Handling
+        function initTheme() {
+            const saved = localStorage.getItem(THEME_KEY);
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = saved === 'dark' || (!saved && prefersDark);
+            document.documentElement.classList.toggle('dark', isDark);
+            document.getElementById('icon-sun').classList.toggle('hidden', !isDark);
+            document.getElementById('icon-moon').classList.toggle('hidden', isDark);
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
+            document.getElementById('icon-sun').classList.toggle('hidden', !isDark);
+            document.getElementById('icon-moon').classList.toggle('hidden', isDark);
+        }
+
+        // Deterministic Daily Calendar Engine (Anchored so Nov 19, 2026 = Index 0: General Knowledge & World Milestones)
+        function computeTodaysPuzzle() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth();
+            const day = now.getDate();
+
+            const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const formattedDate = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+            const todayUtc = Date.UTC(year, month, day);
+            const anchorUtc = Date.UTC(2026, 10, 19); // Thursday, November 19, 2026 -> Index 0 (General Knowledge & World Milestones)
+            const daysSinceAnchor = Math.floor((todayUtc - anchorUtc) / 86400000);
+
+            const puzzleNumber = Math.max(1, daysSinceAnchor + 1);
+            const dailyPuzzleIndex = ((daysSinceAnchor % DAILY_PUZZLES.length) + DAILY_PUZZLES.length) % DAILY_PUZZLES.length;
+            const puzzle = DAILY_PUZZLES[dailyPuzzleIndex];
+
+            dailyInfo = {
+                dateKey,
+                formattedDate,
+                puzzleNumber,
+                dailyPuzzleIndex,
+                puzzle
+            };
+
+            document.getElementById('daily-meta').textContent = `${formattedDate} • Daily Archive #${puzzleNumber}`;
+            document.getElementById('puzzle-theme').textContent = puzzle.theme;
+        }
+
+        // Deterministic Seeded Shuffle
+        function seededShuffle(events, seedStr) {
+            let hash = 2166136261;
+            for (let i = 0; i < seedStr.length; i++) {
+                hash ^= seedStr.charCodeAt(i);
+                hash = Math.imul(hash, 16777619);
+            }
+            const rand = () => {
+                hash += 0x6D2B79F5;
+                let t = Math.imul(hash ^ (hash >>> 15), 1 | hash);
+                t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
+                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+            };
+
+            const arr = [...events];
+            for (let attempt = 0; attempt < 25; attempt++) {
+                for (let i = arr.length - 1; i > 0; i--) {
+                    const j = Math.floor(rand() * (i + 1));
+                    [arr[i], arr[j]] = [arr[j], arr[i]];
+                }
+                const matches = arr.reduce((acc, ev, idx) => acc + (ev.id === events[idx].id ? 1 : 0), 0);
+                if (matches <= 1) break;
+            }
+            return arr;
+        }
+
+        function getActiveStorageKey() {
+            return `${STATE_KEY_PREFIX}${dailyInfo.dateKey}`;
+        }
+
+        function getCurrentOrderSignature(tiles = gameState.tiles) {
+            return tiles.map(t => t.id).join('|');
+        }
+
+        function isDuplicateGuess(tiles = gameState.tiles) {
+            if (gameState.status !== 'playing' || !Array.isArray(gameState.submittedOrders)) return false;
+            return gameState.submittedOrders.includes(getCurrentOrderSignature(tiles));
+        }
+
+        function loadOrCreatePuzzleState() {
+            const storageKey = getActiveStorageKey();
+            const canonical = [...dailyInfo.puzzle.events].sort((a, b) => a.year - b.year);
+
+            try {
+                const raw = localStorage.getItem(storageKey);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    if (Array.isArray(parsed.tileIds) && parsed.tileIds.length === GRID_SIZE) {
+                        const eventMap = Object.fromEntries(canonical.map(ev => [ev.id, ev]));
+                        const restoredTiles = parsed.tileIds.map(id => eventMap[id]).filter(Boolean);
+                        if (restoredTiles.length === GRID_SIZE) {
+                            const restoredAttempts = Array.isArray(parsed.attempts) ? parsed.attempts : [];
+                            let restoredOrders = Array.isArray(parsed.submittedOrders) ? parsed.submittedOrders : [];
+                            if (restoredOrders.length === 0 && restoredAttempts.length > 0 && parsed.status === 'playing') {
+                                restoredOrders = [getCurrentOrderSignature(restoredTiles)];
+                            }
+                            gameState = {
+                                tiles: restoredTiles,
+                                lockedIds: Array.isArray(parsed.lockedIds) ? parsed.lockedIds : [],
+                                attempts: restoredAttempts,
+                                submittedOrders: restoredOrders,
+                                status: parsed.status || 'playing'
+                            };
+                            return;
+                        }
+                    }
+                }
+            } catch (err) {
+                console.warn('Resetting corrupted puzzle state:', err);
+            }
+
+            gameState = {
+                tiles: seededShuffle(canonical, `chronanza_archival_${dailyInfo.dateKey}`),
+                lockedIds: [],
+                attempts: [],
+                submittedOrders: [],
+                status: 'playing'
+            };
+            savePuzzleState();
+        }
+
+        function savePuzzleState() {
+            try {
+                localStorage.setItem(getActiveStorageKey(), JSON.stringify({
+                    tileIds: gameState.tiles.map(t => t.id),
+                    lockedIds: gameState.lockedIds,
+                    attempts: gameState.attempts,
+                    submittedOrders: gameState.submittedOrders,
+                    status: gameState.status
+                }));
+            } catch (_) {}
+        }
+
+        function loadLifetimeStats() {
+            try {
+                const raw = localStorage.getItem(STATS_KEY);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    const dist = parsed.guessDistribution || {};
+                    lifetimeStats = {
+                        played: Number(parsed.played) || 0,
+                        won: Number(parsed.won) || 0,
+                        currentStreak: Number(parsed.currentStreak) || 0,
+                        maxStreak: Number(parsed.maxStreak) || 0,
+                        guessDistribution: {
+                            1: Number(dist[1]) || 0,
+                            2: Number(dist[2]) || 0,
+                            3: Number(dist[3]) || 0,
+                            4: Number(dist[4]) || 0
+                        },
+                        lastCompletedDate: parsed.lastCompletedDate || null
+                    };
+                }
+            } catch (_) {}
+        }
+
+        function recordCompletedGame(didWin, attemptCount) {
+            if (lifetimeStats.lastCompletedDate === dailyInfo.dateKey) return;
+
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            const yesterdayKey = `${yesterday.getFullYear()}-${String(yesterday.getMonth() + 1).padStart(2, '0')}-${String(yesterday.getDate()).padStart(2, '0')}`;
+
+            lifetimeStats.played += 1;
+            if (didWin) {
+                lifetimeStats.won += 1;
+                const bucket = Math.min(Math.max(1, attemptCount), MAX_ATTEMPTS);
+                lifetimeStats.guessDistribution[bucket] = (lifetimeStats.guessDistribution[bucket] || 0) + 1;
+                lifetimeStats.currentStreak = (lifetimeStats.lastCompletedDate === yesterdayKey)
+                    ? lifetimeStats.currentStreak + 1
+                    : 1;
+                lifetimeStats.maxStreak = Math.max(lifetimeStats.maxStreak, lifetimeStats.currentStreak);
+            } else {
+                lifetimeStats.currentStreak = 0;
+            }
+            lifetimeStats.lastCompletedDate = dailyInfo.dateKey;
+
+            try {
+                localStorage.setItem(STATS_KEY, JSON.stringify(lifetimeStats));
+            } catch (_) {}
+        }
+
+        function swapTiles(idxA, idxB) {
+            if (gameState.status !== 'playing') return;
+            if (idxA === idxB || idxA < 0 || idxB < 0 || idxA >= GRID_SIZE || idxB >= GRID_SIZE) return;
+
+            const tileA = gameState.tiles[idxA];
+            const tileB = gameState.tiles[idxB];
+            if (gameState.lockedIds.includes(tileA.id) || gameState.lockedIds.includes(tileB.id)) return;
+
+            gameState.tiles[idxA] = tileB;
+            gameState.tiles[idxB] = tileA;
+            selectedTileIndex = null;
+            poppedTileIds = new Set([tileA.id, tileB.id]);
+
+            savePuzzleState();
+            renderTiles();
+            updateControlsUI();
+        }
+
+        function insertAndShiftTile(sourceIndex, targetIndex, side) {
+            if (gameState.status !== 'playing') return;
+            if (sourceIndex === null || targetIndex === null) return;
+            if (sourceIndex < 0 || sourceIndex >= GRID_SIZE || targetIndex < 0 || targetIndex >= GRID_SIZE) return;
+
+            const movingTile = gameState.tiles[sourceIndex];
+            if (!movingTile || gameState.lockedIds.includes(movingTile.id)) return;
+
+            const insertAt = side === 'before' ? targetIndex : targetIndex + 1;
+
+            const unlockedQueue = [];
+            for (let i = 0; i < GRID_SIZE; i++) {
+                const t = gameState.tiles[i];
+                if (!gameState.lockedIds.includes(t.id) && i !== sourceIndex) {
+                    unlockedQueue.push(t);
+                }
+            }
+
+            let unlockedBefore = 0;
+            for (let i = 0; i < insertAt; i++) {
+                if (i !== sourceIndex && !gameState.lockedIds.includes(gameState.tiles[i].id)) {
+                    unlockedBefore++;
+                }
+            }
+
+            unlockedQueue.splice(unlockedBefore, 0, movingTile);
+
+            const nextTiles = new Array(GRID_SIZE);
+            let qIdx = 0;
+            for (let i = 0; i < GRID_SIZE; i++) {
+                if (gameState.lockedIds.includes(gameState.tiles[i].id)) {
+                    nextTiles[i] = gameState.tiles[i];
+                } else {
+                    nextTiles[i] = unlockedQueue[qIdx++];
+                }
+            }
+
+            const changed = nextTiles.some((t, idx) => t.id !== gameState.tiles[idx].id);
+            selectedTileIndex = null;
+
+            if (changed) {
+                gameState.tiles = nextTiles;
+                poppedTileIds = new Set([movingTile.id]);
+                savePuzzleState();
+            }
+
+            renderTiles();
+            updateControlsUI();
+        }
+
+        function hasOrphanWordOrLetter(el) {
+            const range = document.createRange();
+            range.selectNodeContents(el);
+            const rects = range.getClientRects();
+            if (rects.length < 2) return false;
+
+            const lastRect = rects[rects.length - 1];
+            const secondLastRect = rects[rects.length - 2];
+            const fontSize = parseFloat(window.getComputedStyle(el).fontSize) || 12;
+            return lastRect.width < Math.max(secondLastRect.width * 0.25, fontSize * 1.45);
+        }
+
+        function fitTileLabels() {
+            const tileEls = tileGridEl.querySelectorAll('.tile');
+            tileEls.forEach(tileEl => {
+                const labelEl = tileEl.querySelector('.tile-label');
+                if (!labelEl) return;
+
+                let size = 13;
+                const minSize = 8.5;
+                labelEl.style.fontSize = `${size}px`;
+
+                const style = window.getComputedStyle(tileEl);
+                const padTop = parseFloat(style.paddingTop) || 22;
+                const padBottom = parseFloat(style.paddingBottom) || 8;
+                const padLeft = parseFloat(style.paddingLeft) || 6;
+                const padRight = parseFloat(style.paddingRight) || 6;
+
+                const yearPill = tileEl.querySelector('.tile-year-pill');
+                const pillHeight = yearPill ? (yearPill.offsetHeight + 4) : 0;
+
+                const availWidth = tileEl.clientWidth - padLeft - padRight;
+                const availHeight = tileEl.clientHeight - padTop - padBottom - pillHeight;
+
+                if (availWidth <= 0 || availHeight <= 0) return;
+
+                while (
+                    size > minSize &&
+                    (labelEl.scrollHeight > availHeight + 0.5 ||
+                     labelEl.scrollWidth > availWidth + 0.5 ||
+                     hasOrphanWordOrLetter(labelEl))
+                ) {
+                    size -= 0.5;
+                    labelEl.style.fontSize = `${size}px`;
+                }
+            });
+        }
+
+        function clearInsertionIndicators() {
+            document.querySelectorAll('.tile.insert-before, .tile.insert-after').forEach(el => {
+                el.classList.remove('insert-before', 'insert-after');
+            });
+            document.querySelectorAll('.drop-marker').forEach(marker => marker.remove());
+            swapHintEl.classList.remove('is-active-drop');
+            if (gameState.status === 'playing') {
+                swapHintEl.textContent = isDuplicateGuess()
+                    ? 'Already guessed this order — rearrange tiles before submitting.'
+                    : 'Drag cards between slots to shift order, or tap two to swap.';
+            }
+        }
+
+        function showInsertionIndicator(hit, sourceIndex) {
+            clearInsertionIndicators();
+            if (!hit || !hit.el) return;
+
+            hit.el.classList.add(hit.side === 'before' ? 'insert-before' : 'insert-after');
+
+            const marker = document.createElement('div');
+            marker.className = 'drop-marker';
+            hit.el.appendChild(marker);
+
+            const insertAt = hit.side === 'before' ? hit.targetIndex : hit.targetIndex + 1;
+            const destSlot = sourceIndex < insertAt ? insertAt : insertAt + 1;
+            const clampedSlot = Math.max(1, Math.min(GRID_SIZE, destSlot));
+
+            swapHintEl.classList.add('is-active-drop');
+            swapHintEl.textContent = `Release to place in slot #${clampedSlot}`;
+        }
+
+        function computeInsertionFromPoint(clientX, clientY, sourceIndex) {
+            const tileEls = Array.from(tileGridEl.querySelectorAll('.tile'));
+            let bestTileEl = null;
+            let bestDist = Infinity;
+
+            for (const el of tileEls) {
+                const r = el.getBoundingClientRect();
+                const clampedX = Math.max(r.left, Math.min(clientX, r.right));
+                const clampedY = Math.max(r.top, Math.min(clientY, r.bottom));
+                const dist = Math.hypot(clientX - clampedX, clientY - clampedY);
+                if (dist < bestDist) {
+                    bestDist = dist;
+                    bestTileEl = el;
+                }
+            }
+
+            if (!bestTileEl || bestDist > 42) return null;
+
+            const targetIndex = Number(bestTileEl.dataset.index);
+            const rect = bestTileEl.getBoundingClientRect();
+            const side = clientX < rect.left + rect.width / 2 ? 'before' : 'after';
+
+            if (targetIndex === sourceIndex) return null;
+
+            return { targetIndex, side, el: bestTileEl };
+        }
+
+        function submitOrder() {
+            if (gameState.status !== 'playing') return;
+
+            if (isDuplicateGuess()) {
+                btnSubmit.classList.remove('btn-shake');
+                void btnSubmit.offsetWidth;
+                btnSubmit.classList.add('btn-shake');
+
+                tileGridEl.querySelectorAll('.tile:not(.is-locked)').forEach(el => {
+                    el.classList.remove('is-wrong');
+                    void el.offsetWidth;
+                    el.classList.add('is-wrong');
+                });
+                setTimeout(() => {
+                    document.querySelectorAll('.tile.is-wrong').forEach(el => el.classList.remove('is-wrong'));
+                    btnSubmit.classList.remove('btn-shake');
+                }, 520);
+
+                showToast('Already guessed! Rearrange tiles before submitting.');
+                return;
+            }
+
+            selectedTileIndex = null;
+            poppedTileIds.clear();
+            const canonical = [...dailyInfo.puzzle.events].sort((a, b) => a.year - b.year);
+
+            const currentSig = getCurrentOrderSignature();
+            if (!gameState.submittedOrders.includes(currentSig)) {
+                gameState.submittedOrders.push(currentSig);
+            }
+
+            const roundResults = [];
+            const wrongIndices = [];
+
+            gameState.tiles.forEach((tile, idx) => {
+                const isExact = tile.id === canonical[idx].id;
+                roundResults.push(isExact);
+                if (isExact) {
+                    if (!gameState.lockedIds.includes(tile.id)) {
+                        gameState.lockedIds.push(tile.id);
+                    }
+                } else {
+                    wrongIndices.push(idx);
+                }
+            });
+
+            gameState.attempts.push(roundResults);
+
+            const solved = gameState.lockedIds.length === GRID_SIZE && roundResults.every(Boolean);
+            const exhausted = gameState.attempts.length >= MAX_ATTEMPTS;
+
+            if (solved) {
+                gameState.status = 'won';
+                recordCompletedGame(true, gameState.attempts.length);
+            } else if (exhausted) {
+                gameState.status = 'lost';
+                gameState.tiles = canonical;
+                gameState.lockedIds = canonical.map(e => e.id);
+                recordCompletedGame(false, MAX_ATTEMPTS);
+            }
+
+            savePuzzleState();
+            renderAll(wrongIndices);
+
+            if (gameState.status === 'playing' && wrongIndices.length > 0) {
+                setTimeout(() => {
+                    document.querySelectorAll('.tile.is-wrong').forEach(el => {
+                        el.classList.remove('is-wrong');
+                    });
+                }, 650);
+            }
+
+            if (gameState.status === 'won') {
+                const tiles = tileGridEl.querySelectorAll('.tile');
+                tiles.forEach((tileEl, i) => {
+                    setTimeout(() => {
+                        tileEl.classList.add('victory-pulse');
+                    }, i * 55);
+                });
+                setTimeout(() => {
+                    openStatsModal();
+                }, 980);
+            } else if (gameState.status === 'lost') {
+                setTimeout(() => {
+                    openStatsModal();
+                }, 950);
+            }
+        }
+
+        function formatAttemptAs3x3(row) {
+            const emojis = row.map(ok => (ok ? '🟩' : '🟥'));
+            return [
+                emojis.slice(0, 3).join(''),
+                emojis.slice(3, 6).join(''),
+                emojis.slice(6, 9).join('')
+            ];
+        }
+
+        function renderAll(wrongIndices = []) {
+            renderTiles(wrongIndices);
+            renderAttemptsUI();
+            updateControlsUI();
+        }
+
+        function renderTiles(wrongIndices = []) {
+            tileGridEl.innerHTML = '';
+
+            gameState.tiles.forEach((tile, idx) => {
+                const isLocked = gameState.lockedIds.includes(tile.id);
+                const isSelected = selectedTileIndex === idx;
+                const isWrong = wrongIndices.includes(idx);
+                const isPopped = poppedTileIds.has(tile.id);
+
+                const el = document.createElement('div');
+                el.className = 'tile';
+                el.setAttribute('role', 'listitem');
+                el.dataset.index = idx;
+
+                if (isLocked) el.classList.add('is-locked');
+                if (isSelected) el.classList.add('is-selected');
+                if (isWrong) el.classList.add('is-wrong');
+                if (isPopped && !isLocked && !isWrong) el.classList.add('swap-pop');
+                if (gameState.status !== 'playing') el.classList.add('is-disabled');
+
+                const badge = document.createElement('span');
+                badge.className = 'tile-slot-badge';
+                badge.textContent = `${idx + 1}`;
+                el.appendChild(badge);
+
+                if (isLocked) {
+                    const lockIcon = document.createElement('span');
+                    lockIcon.className = 'tile-lock-icon';
+                    lockIcon.innerHTML = `
+                        <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                        </svg>`;
+                    el.appendChild(lockIcon);
+                }
+
+                const label = document.createElement('div');
+                label.className = 'tile-label';
+                label.textContent = tile.label;
+                el.appendChild(label);
+
+                if (isLocked) {
+                    const yearPill = document.createElement('div');
+                    yearPill.className = 'tile-year-pill';
+                    yearPill.textContent = tile.displayYear || tile.year;
+                    el.appendChild(yearPill);
+                }
+
+                if (!isLocked && gameState.status === 'playing') {
+                    el.draggable = true;
+
+                    el.addEventListener('dragstart', (e) => {
+                        draggedTileIndex = idx;
+                        currentDropInsertion = null;
+                        selectedTileIndex = null;
+                        updateControlsUI();
+                        el.classList.add('is-dragging');
+                        e.dataTransfer.effectAllowed = 'move';
+                        try {
+                            e.dataTransfer.setData('text/plain', String(idx));
+                        } catch (_) {}
+                    });
+
+                    el.addEventListener('dragend', () => {
+                        draggedTileIndex = null;
+                        currentDropInsertion = null;
+                        clearInsertionIndicators();
+                        document.querySelectorAll('.tile.is-dragging').forEach(t => {
+                            t.classList.remove('is-dragging');
+                        });
+                    });
+
+                    el.addEventListener('pointerdown', (e) => {
+                        if (e.pointerType === 'mouse') return;
+                        startTouchPointerDrag(e, idx, el);
+                    });
+
+                    el.addEventListener('click', () => {
+                        handleTileTap(idx);
+                    });
+                }
+
+                tileGridEl.appendChild(el);
+            });
+
+            poppedTileIds.clear();
+            fitTileLabels();
+        }
+
+        tileGridEl.addEventListener('dragover', (e) => {
+            if (draggedTileIndex === null || gameState.status !== 'playing') return;
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+
+            const hit = computeInsertionFromPoint(e.clientX, e.clientY, draggedTileIndex);
+
+            if (hit) {
+                currentDropInsertion = { targetIndex: hit.targetIndex, side: hit.side };
+                showInsertionIndicator(hit, draggedTileIndex);
+            } else {
+                currentDropInsertion = null;
+                clearInsertionIndicators();
+            }
+        });
+
+        tileGridEl.addEventListener('dragleave', (e) => {
+            if (!tileGridEl.contains(e.relatedTarget)) {
+                clearInsertionIndicators();
+                currentDropInsertion = null;
+            }
+        });
+
+        tileGridEl.addEventListener('drop', (e) => {
+            if (draggedTileIndex === null || gameState.status !== 'playing') return;
+            e.preventDefault();
+
+            const hit = currentDropInsertion || computeInsertionFromPoint(e.clientX, e.clientY, draggedTileIndex);
+            const src = draggedTileIndex;
+
+            draggedTileIndex = null;
+            currentDropInsertion = null;
+            clearInsertionIndicators();
+            document.querySelectorAll('.tile.is-dragging').forEach(t => t.classList.remove('is-dragging'));
+
+            if (hit) {
+                insertAndShiftTile(src, hit.targetIndex, hit.side);
+            }
+        });
+
+        function handleTileTap(idx) {
+            if (gameState.status !== 'playing') return;
+            const tile = gameState.tiles[idx];
+            if (gameState.lockedIds.includes(tile.id)) return;
+
+            if (selectedTileIndex === null) {
+                selectedTileIndex = idx;
+                renderTiles();
+                updateControlsUI();
+            } else if (selectedTileIndex === idx) {
+                selectedTileIndex = null;
+                renderTiles();
+                updateControlsUI();
+            } else {
+                swapTiles(selectedTileIndex, idx);
+            }
+        }
+
+        function startTouchPointerDrag(e, idx, sourceEl) {
+            pointerDrag.active = true;
+            pointerDrag.sourceIndex = idx;
+            pointerDrag.insertion = null;
+            pointerDrag.startX = e.clientX;
+            pointerDrag.startY = e.clientY;
+            pointerDrag.moved = false;
+
+            const rect = sourceEl.getBoundingClientRect();
+            const offsetX = e.clientX - rect.left;
+            const offsetY = e.clientY - rect.top;
+
+            const onPointerMove = (moveEvent) => {
+                if (!pointerDrag.active) return;
+                const dx = moveEvent.clientX - pointerDrag.startX;
+                const dy = moveEvent.clientY - pointerDrag.startY;
+
+                if (!pointerDrag.moved && Math.hypot(dx, dy) > 8) {
+                    pointerDrag.moved = true;
+                    selectedTileIndex = null;
+                    updateControlsUI();
+                    sourceEl.classList.add('is-dragging');
+
+                    const ghost = document.createElement('div');
+                    ghost.className = 'drag-ghost';
+                    ghost.style.width = `${rect.width}px`;
+                    ghost.style.height = `${rect.height}px`;
+                    ghost.innerHTML = sourceEl.innerHTML;
+                    document.body.appendChild(ghost);
+                    pointerDrag.ghostEl = ghost;
+                }
+
+                if (pointerDrag.moved && pointerDrag.ghostEl) {
+                    pointerDrag.ghostEl.style.left = `${moveEvent.clientX - offsetX}px`;
+                    pointerDrag.ghostEl.style.top = `${moveEvent.clientY - offsetY}px`;
+
+                    const hit = computeInsertionFromPoint(moveEvent.clientX, moveEvent.clientY, pointerDrag.sourceIndex);
+
+                    if (hit) {
+                        pointerDrag.insertion = { targetIndex: hit.targetIndex, side: hit.side };
+                        showInsertionIndicator(hit, pointerDrag.sourceIndex);
+                    } else {
+                        pointerDrag.insertion = null;
+                        clearInsertionIndicators();
+                    }
+                }
+            };
+
+            const onPointerUp = () => {
+                window.removeEventListener('pointermove', onPointerMove);
+                window.removeEventListener('pointerup', onPointerUp);
+                window.removeEventListener('pointercancel', onPointerUp);
+
+                if (pointerDrag.ghostEl) {
+                    pointerDrag.ghostEl.remove();
+                    pointerDrag.ghostEl = null;
+                }
+
+                clearInsertionIndicators();
+                document.querySelectorAll('.tile.is-dragging').forEach(t => {
+                    t.classList.remove('is-dragging');
+                });
+
+                const wasMoved = pointerDrag.moved;
+                const src = pointerDrag.sourceIndex;
+                const ins = pointerDrag.insertion;
+
+                pointerDrag.active = false;
+                pointerDrag.sourceIndex = null;
+                pointerDrag.insertion = null;
+                pointerDrag.moved = false;
+
+                if (wasMoved) {
+                    if (ins) {
+                        insertAndShiftTile(src, ins.targetIndex, ins.side);
+                    }
+                } else {
+                    handleTileTap(src);
+                }
+            };
+
+            window.addEventListener('pointermove', onPointerMove, { passive: true });
+            window.addEventListener('pointerup', onPointerUp);
+            window.addEventListener('pointercancel', onPointerUp);
+        }
+
+        function renderAttemptsUI() {
+            const remaining = Math.max(0, MAX_ATTEMPTS - gameState.attempts.length);
+            attemptsDotsEl.innerHTML = '';
+
+            for (let i = 0; i < MAX_ATTEMPTS; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'attempt-dot' + (i >= remaining ? ' used' : '');
+                attemptsDotsEl.appendChild(dot);
+            }
+
+            historyStripEl.innerHTML = '';
+            gameState.attempts.forEach(row => {
+                const rowDiv = document.createElement('div');
+                rowDiv.className = 'history-row';
+                rowDiv.textContent = row.map(ok => (ok ? '🟩' : '🟥')).join('');
+                historyStripEl.appendChild(rowDiv);
+            });
+        }
+
+        function updateControlsUI() {
+            if (gameState.status === 'playing') {
+                const duplicate = isDuplicateGuess();
+                btnSubmit.textContent = duplicate ? 'Already Guessed' : 'Check Timeline';
+                btnSubmit.classList.toggle('is-duplicate-guess', duplicate);
+                btnSubmit.setAttribute('aria-disabled', duplicate ? 'true' : 'false');
+                btnSubmit.onclick = submitOrder;
+                swapHintEl.classList.remove('is-active-drop');
+                swapHintEl.textContent = duplicate
+                    ? 'Already guessed this order — rearrange tiles before submitting.'
+                    : 'Drag cards between slots to shift order, or tap two to swap.';
+            } else {
+                btnSubmit.classList.remove('is-duplicate-guess');
+                btnSubmit.removeAttribute('aria-disabled');
+                btnSubmit.textContent = 'View Archive';
+                btnSubmit.onclick = () => openStatsModal();
+                swapHintEl.classList.remove('is-active-drop');
+                swapHintEl.textContent = gameState.status === 'won'
+                    ? `Timeline verified in ${gameState.attempts.length}/${MAX_ATTEMPTS} attempts! New archive unlocks at midnight.`
+                    : `Archive closed for today! Return tomorrow for a fresh timeline.`;
+            }
+        }
+
+        function renderGuessDistribution() {
+            const container = document.getElementById('guess-dist-bars');
+            const dist = lifetimeStats.guessDistribution || { 1: 0, 2: 0, 3: 0, 4: 0 };
+            const counts = [1, 2, 3, 4].map(n => dist[n] || 0);
+            const maxVal = Math.max(1, ...counts);
+            const todayWinGuess = gameState.status === 'won' ? gameState.attempts.length : null;
+
+            container.innerHTML = [1, 2, 3, 4].map(guessNum => {
+                const count = dist[guessNum] || 0;
+                const pct = Math.max(10, Math.round((count / maxVal) * 100));
+                const isHighlight = todayWinGuess === guessNum;
+                return `
+                    <div class="dist-row">
+                        <span class="dist-num">${guessNum}</span>
+                        <div class="dist-bar-wrap">
+                            <div class="dist-bar ${isHighlight ? 'highlight' : ''}" style="width: ${count === 0 ? '26px' : pct + '%'}">${count}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function openStatsModal() {
+            const { played, won, currentStreak, maxStreak } = lifetimeStats;
+            const winPct = played > 0 ? Math.round((won / played) * 100) : 0;
+
+            document.getElementById('stat-played').textContent = played;
+            document.getElementById('stat-winpct').textContent = winPct;
+            document.getElementById('stat-streak').textContent = currentStreak;
+            document.getElementById('stat-maxstreak').textContent = maxStreak;
+
+            renderGuessDistribution();
+
+            const resultSection = document.getElementById('today-result-section');
+            const breakdownSection = document.getElementById('breakdown-section');
+
+            if (gameState.status !== 'playing') {
+                const isWin = gameState.status === 'won';
+                const headlines = ['Grand Archivist!', 'Master Timekeeper!', 'Sharp Historian!', 'Right on Schedule!'];
+                document.getElementById('stats-heading').textContent = isWin
+                    ? headlines[Math.min(gameState.attempts.length - 1, 3)]
+                    : 'Archive Unsolved';
+
+                const scoreText = isWin ? `${gameState.attempts.length}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`;
+                document.getElementById('stats-sub').textContent = `⏳ Chronanza #${dailyInfo.puzzleNumber} • ${scoreText} (${dailyInfo.puzzle.theme})`;
+
+                document.getElementById('stats-emoji-grid').innerHTML = gameState.attempts
+                    .map((row, idx) => {
+                        const lines = formatAttemptAs3x3(row).join('<br>');
+                        return `<div style="${idx > 0 ? 'margin-top:8px;' : ''}">${lines}</div>`;
+                    })
+                    .join('');
+
+                resultSection.classList.remove('hidden');
+
+                const canonical = [...dailyInfo.puzzle.events].sort((a, b) => a.year - b.year);
+                document.getElementById('breakdown-list').innerHTML = canonical.map((ev, i) => `
+                    <div class="breakdown-item">
+                        <div class="breakdown-top">
+                            <span>#${i + 1} • ${ev.displayYear || ev.year}</span>
+                        </div>
+                        <div class="breakdown-title">${ev.label}</div>
+                        <div class="breakdown-fact">${ev.fact}</div>
+                    </div>
+                `).join('');
+
+                breakdownSection.classList.remove('hidden');
+            } else {
+                document.getElementById('stats-heading').textContent = 'Archivist Record';
+                document.getElementById('stats-sub').textContent = `⏳ Chronanza #${dailyInfo.puzzleNumber} • ${dailyInfo.formattedDate} (In Progress)`;
+                resultSection.classList.add('hidden');
+                breakdownSection.classList.add('hidden');
+            }
+
+            openModal('modal-stats');
+        }
+
+        function shareTodayResults() {
+            const scoreText = gameState.status === 'won'
+                ? `${gameState.attempts.length}/${MAX_ATTEMPTS}`
+                : `X/${MAX_ATTEMPTS}`;
+
+            const canonical = [...dailyInfo.puzzle.events].sort((a, b) => a.year - b.year);
+            const firstYear = canonical[0].displayYear || canonical[0].year;
+            const lastYear = canonical[canonical.length - 1].displayYear || canonical[canonical.length - 1].year;
+
+            const lastAttempt = gameState.attempts[gameState.attempts.length - 1] || [];
+            const grid = formatAttemptAs3x3(lastAttempt).join('\n');
+            const shareText = `⏳ Chronanza #${dailyInfo.puzzleNumber} • ${scoreText}\n${dailyInfo.puzzle.theme} (${firstYear} ➔ ${lastYear})\n${grid}`;
+
+            const ta = document.createElement('textarea');
+            ta.value = shareText;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+
+            try {
+                document.execCommand('copy');
+                showToast('Copied timeline score to clipboard!');
+            } catch (_) {
+                showToast('Could not copy results');
+            } finally {
+                document.body.removeChild(ta);
+            }
+        }
+
+        function startMidnightCountdown() {
+            const timerEl = document.getElementById('countdown-timer');
+            const updateTimer = () => {
+                const now = new Date();
+                const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+                const diffMs = Math.max(0, midnight - now);
+
+                const hrs = Math.floor(diffMs / 3600000);
+                const mins = Math.floor((diffMs % 3600000) / 60000);
+                const secs = Math.floor((diffMs % 60000) / 1000);
+
+                timerEl.textContent = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+
+                const currentKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+                if (currentKey !== dailyInfo.dateKey) {
+                    computeTodaysPuzzle();
+                    loadOrCreatePuzzleState();
+                    renderAll();
+                }
+            };
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        function openModal(id) {
+            document.getElementById(id).classList.add('open');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('open');
+        }
+
+        let toastTimer = null;
+        function showToast(msg) {
+            const toastEl = document.getElementById('toast');
+            toastEl.textContent = msg;
+            toastEl.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2200);
+        }
+
+        function bindUIEvents() {
+            document.getElementById('btn-theme').addEventListener('click', toggleTheme);
+            document.getElementById('btn-help').addEventListener('click', () => openModal('modal-help'));
+            document.getElementById('btn-stats').addEventListener('click', openStatsModal);
+            document.getElementById('btn-share').addEventListener('click', shareTodayResults);
+
+            document.querySelectorAll('[data-close]').forEach(btn => {
+                btn.addEventListener('click', () => closeModal(btn.dataset.close));
+            });
+
+            document.querySelectorAll('.modal-overlay').forEach(overlay => {
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) closeModal(overlay.id);
+                });
+            });
+
+            window.addEventListener('resize', fitTileLabels);
+        }
+
+        if (document.readyState === 'loading') {
+            window.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html>
+Displaying Chronanza___Daily_Timeline_Puzzle.html.
