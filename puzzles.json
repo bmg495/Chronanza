@@ -1,0 +1,2994 @@
+{
+  "schemaVersion": 1,
+  "reuseCooldownDays": 90,
+  "facts": [
+    {
+      "id": "WH-FB-001",
+      "topic": "World History",
+      "subcategory": "Famous battles",
+      "label": "Battle of Marathon",
+      "year": -490,
+      "fact": "Athenian and Plataean forces repelled the first Persian invasion of Greece.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-FB-002",
+      "topic": "World History",
+      "subcategory": "Famous battles",
+      "label": "Battle of Hastings",
+      "year": 1066,
+      "fact": "William the Conqueror's Norman forces defeated King Harold Godwinson.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-FB-003",
+      "topic": "World History",
+      "subcategory": "Famous battles",
+      "label": "Battle of Agincourt",
+      "year": 1415,
+      "fact": "Henry V's smaller English force achieved a major victory against French knights.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-FB-004",
+      "topic": "World History",
+      "subcategory": "Famous battles",
+      "label": "Battle of Trafalgar",
+      "year": 1805,
+      "fact": "Royal Navy victory under Lord Nelson secured British naval dominance.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-FB-005",
+      "topic": "World History",
+      "subcategory": "Famous battles",
+      "label": "Battle of Waterloo",
+      "year": 1815,
+      "fact": "Napoleon Bonaparte suffered his final defeat in Belgium.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-FB-006",
+      "topic": "World History",
+      "subcategory": "Famous battles",
+      "label": "Battle of Gettysburg",
+      "year": 1863,
+      "fact": "Turning point of the American Civil War with heavy casualties.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-FB-007",
+      "topic": "World History",
+      "subcategory": "Famous battles",
+      "label": "Battle of the Somme",
+      "year": 1916,
+      "fact": "Major World War I offensive marked by prolonged trench warfare.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-FB-008",
+      "topic": "World History",
+      "subcategory": "Famous battles",
+      "label": "Battle of Stalingrad",
+      "year": 1942,
+      "fact": "Pivotal Eastern Front clash halting German advance into the Soviet Union.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-FB-009",
+      "topic": "World History",
+      "subcategory": "Famous battles",
+      "label": "Battle of Midway",
+      "year": 1942,
+      "fact": "Decisive Pacific naval battle turning the tide in World War II.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-BH-001",
+      "topic": "Themed History",
+      "subcategory": "black history",
+      "label": "Fifteenth Amendment Ratified",
+      "year": 1870,
+      "fact": "Prohibited denying voting rights based on race, color, or previous servitude.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-BH-002",
+      "topic": "Themed History",
+      "subcategory": "black history",
+      "label": "Tulsa Race Massacre",
+      "year": 1921,
+      "fact": "Destructive attack on the Greenwood district in Tulsa, Oklahoma.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-BH-003",
+      "topic": "Themed History",
+      "subcategory": "black history",
+      "label": "Jackie Robinson Breaks Color Line",
+      "year": 1947,
+      "fact": "Debuted with the Brooklyn Dodgers in Major League Baseball.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-BH-004",
+      "topic": "Themed History",
+      "subcategory": "black history",
+      "label": "Brown v. Board of Education",
+      "year": 1954,
+      "fact": "Supreme Court ruled racial segregation in public schools unconstitutional.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-BH-005",
+      "topic": "Themed History",
+      "subcategory": "black history",
+      "label": "Montgomery Bus Boycott",
+      "year": 1955,
+      "fact": "Mass protest sparked by Rosa Parks's arrest for refusing to give up her seat.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-BH-006",
+      "topic": "Themed History",
+      "subcategory": "black history",
+      "label": "March on Washington",
+      "year": 1963,
+      "fact": "Over 250,000 gathered in Washington, D.C., where Dr. Martin Luther King Jr. spoke.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-BH-007",
+      "topic": "Themed History",
+      "subcategory": "black history",
+      "label": "Civil Rights Act Signed",
+      "year": 1964,
+      "fact": "Outlawed discrimination based on race, color, religion, sex, or national origin.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-BH-008",
+      "topic": "Themed History",
+      "subcategory": "black history",
+      "label": "Thurgood Marshall Appointed",
+      "year": 1967,
+      "fact": "Became the first African American justice on the U.S. Supreme Court.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-BH-009",
+      "topic": "Themed History",
+      "subcategory": "black history",
+      "label": "Barack Obama Elected President",
+      "year": 2008,
+      "fact": "Elected as the first African American President of the United States.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-CC-001",
+      "topic": "Crime & Law",
+      "subcategory": "court cases",
+      "label": "Marbury v. Madison",
+      "year": 1803,
+      "fact": "Established judicial review for the U.S. Supreme Court.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-CC-002",
+      "topic": "Crime & Law",
+      "subcategory": "court cases",
+      "label": "Dred Scott v. Sandford",
+      "year": 1857,
+      "fact": "Supreme Court ruling denying U.S. citizenship to African Americans.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-CC-003",
+      "topic": "Crime & Law",
+      "subcategory": "court cases",
+      "label": "Plessy v. Ferguson",
+      "year": 1896,
+      "fact": "Upheld \"separate but equal\" racial segregation laws.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-CC-004",
+      "topic": "Crime & Law",
+      "subcategory": "court cases",
+      "label": "Scopes Monkey Trial",
+      "year": 1925,
+      "fact": "High-profile trial testing teaching evolution in Tennessee public schools.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-CC-005",
+      "topic": "Crime & Law",
+      "subcategory": "court cases",
+      "label": "Nuremberg Trials Begin",
+      "year": 1945,
+      "fact": "Military tribunals prosecuting major Nazi leaders after World War II.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-CC-006",
+      "topic": "Crime & Law",
+      "subcategory": "court cases",
+      "label": "Gideon v. Wainwright",
+      "year": 1963,
+      "fact": "Guaranteed state-appointed counsel for criminal defendants unable to afford a lawyer.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-CC-007",
+      "topic": "Crime & Law",
+      "subcategory": "court cases",
+      "label": "Miranda v. Arizona",
+      "year": 1966,
+      "fact": "Established standard warnings advising suspects of constitutional rights in custody.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-CC-008",
+      "topic": "Crime & Law",
+      "subcategory": "court cases",
+      "label": "Roe v. Wade Decided",
+      "year": 1973,
+      "fact": "Landmark U.S. Supreme Court ruling on abortion rights.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-CC-009",
+      "topic": "Crime & Law",
+      "subcategory": "court cases",
+      "label": "Citizens United v. FEC",
+      "year": 2010,
+      "fact": "Supreme Court ruling addressing independent political spending by corporations and unions.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-MC-001",
+      "topic": "Buisness & Brands",
+      "subcategory": "major companies",
+      "label": "Hudson's Bay Company Founded",
+      "year": 1670,
+      "fact": "Chartered fur-trading enterprise and one of North America's oldest companies.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-MC-002",
+      "topic": "Buisness & Brands",
+      "subcategory": "major companies",
+      "label": "Standard Oil Founded",
+      "year": 1870,
+      "fact": "John D. Rockefeller established the oil refining giant in Ohio.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-MC-003",
+      "topic": "Buisness & Brands",
+      "subcategory": "major companies",
+      "label": "General Electric Formed",
+      "year": 1892,
+      "fact": "Created through the merger of Edison General Electric and Thomson-Houston.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-MC-004",
+      "topic": "Buisness & Brands",
+      "subcategory": "major companies",
+      "label": "Ford Motor Company Founded",
+      "year": 1903,
+      "fact": "Henry Ford founded the automaker that scaled moving assembly lines.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-MC-005",
+      "topic": "Buisness & Brands",
+      "subcategory": "major companies",
+      "label": "IBM Incorporated",
+      "year": 1911,
+      "fact": "Computing-Tabulating-Recording Company later adopted the IBM name.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-MC-006",
+      "topic": "Buisness & Brands",
+      "subcategory": "major companies",
+      "label": "Walt Disney Productions Founded",
+      "year": 1923,
+      "fact": "Founded by Walt and Roy Disney as an animation studio.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-MC-007",
+      "topic": "Buisness & Brands",
+      "subcategory": "major companies",
+      "label": "Microsoft Founded",
+      "year": 1975,
+      "fact": "Bill Gates and Paul Allen founded the software company in Albuquerque.",
+      "lastUsed": "2026-11-20",
+      "usageHistory": [
+        "2026-11-20"
+      ]
+    },
+    {
+      "id": "BB-MC-008",
+      "topic": "Buisness & Brands",
+      "subcategory": "major companies",
+      "label": "Apple Computer Founded",
+      "year": 1976,
+      "fact": "Founded by Steve Jobs, Steve Wozniak, and Ronald Wayne in California.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-MC-009",
+      "topic": "Buisness & Brands",
+      "subcategory": "major companies",
+      "label": "Amazon Founded",
+      "year": 1994,
+      "fact": "Launched by Jeff Bezos as an online bookstore in Washington state.",
+      "lastUsed": "2026-11-20",
+      "usageHistory": [
+        "2026-11-20"
+      ]
+    },
+    {
+      "id": "NA-ND-001",
+      "topic": "Nature & Animals",
+      "subcategory": "natural disasters",
+      "label": "Mount Vesuvius Eruption",
+      "year": 79,
+      "fact": "Buried Pompeii and Herculaneum beneath volcanic ash and pumice.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-ND-002",
+      "topic": "Nature & Animals",
+      "subcategory": "natural disasters",
+      "label": "Lisbon Earthquake",
+      "year": 1755,
+      "fact": "Major quake, fire, and tsunami struck Lisbon, Portugal, on All Saints' Day.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-ND-003",
+      "topic": "Nature & Animals",
+      "subcategory": "natural disasters",
+      "label": "Mount Tambora Eruption",
+      "year": 1815,
+      "fact": "Caused global climate anomalies leading to the \"Year Without a Summer\".",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-ND-004",
+      "topic": "Nature & Animals",
+      "subcategory": "natural disasters",
+      "label": "Krakatoa Eruption",
+      "year": 1883,
+      "fact": "Massive volcanic explosion in the Sunda Strait heard thousands of miles away.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-ND-005",
+      "topic": "Nature & Animals",
+      "subcategory": "natural disasters",
+      "label": "Great Galveston Hurricane",
+      "year": 1900,
+      "fact": "Deadliest hurricane in U.S. history hit Galveston, Texas.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-ND-006",
+      "topic": "Nature & Animals",
+      "subcategory": "natural disasters",
+      "label": "Great Kanto Earthquake",
+      "year": 1923,
+      "fact": "Devastated Tokyo and Yokohama in Japan.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-ND-007",
+      "topic": "Nature & Animals",
+      "subcategory": "natural disasters",
+      "label": "Mount St. Helens Eruption",
+      "year": 1980,
+      "fact": "Major volcanic eruption in Washington state altering the summit profile.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-ND-008",
+      "topic": "Nature & Animals",
+      "subcategory": "natural disasters",
+      "label": "Indian Ocean Tsunami",
+      "year": 2004,
+      "fact": "Megathrust earthquake off Sumatra triggered deadly Indian Ocean tsunamis.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-ND-009",
+      "topic": "Nature & Animals",
+      "subcategory": "natural disasters",
+      "label": "Hurricane Katrina",
+      "year": 2005,
+      "fact": "Category 5 storm causing catastrophic levee failures and flooding in New Orleans.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-FF-001",
+      "topic": "Food",
+      "subcategory": "fast food chain restaurants",
+      "label": "White Castle Founded",
+      "year": 1921,
+      "fact": "Opened in Wichita, Kansas, pioneering small square burgers and chain service.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-FF-002",
+      "topic": "Food",
+      "subcategory": "fast food chain restaurants",
+      "label": "Dairy Queen First Store",
+      "year": 1940,
+      "fact": "Soft-serve ice cream shop opened in Joliet, Illinois.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-FF-003",
+      "topic": "Food",
+      "subcategory": "fast food chain restaurants",
+      "label": "KFC Original Franchise",
+      "year": 1952,
+      "fact": "Harland Sanders opened the first franchised Kentucky Fried Chicken in Utah.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-FF-004",
+      "topic": "Food",
+      "subcategory": "fast food chain restaurants",
+      "label": "Burger King Founded",
+      "year": 1954,
+      "fact": "Established in Miami, Florida, introducing the Whopper in 1957.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-FF-005",
+      "topic": "Food",
+      "subcategory": "fast food chain restaurants",
+      "label": "First McDonald's Franchise",
+      "year": 1955,
+      "fact": "Ray Kroc opened the Des Plaines, Illinois location.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-FF-006",
+      "topic": "Food",
+      "subcategory": "fast food chain restaurants",
+      "label": "Taco Bell Founded",
+      "year": 1962,
+      "fact": "Glen Bell opened the first Taco Bell in Downey, California.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-FF-007",
+      "topic": "Food",
+      "subcategory": "fast food chain restaurants",
+      "label": "Wendy's Founded",
+      "year": 1969,
+      "fact": "Dave Thomas opened the first Wendy's Old Fashioned Hamburgers in Columbus, Ohio.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-FF-008",
+      "topic": "Food",
+      "subcategory": "fast food chain restaurants",
+      "label": "Starbucks First Store",
+      "year": 1971,
+      "fact": "Opened in Seattle's Pike Place Market.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-FF-009",
+      "topic": "Food",
+      "subcategory": "fast food chain restaurants",
+      "label": "Chipotle Founded",
+      "year": 1993,
+      "fact": "Steve Ells opened the first Chipotle Mexican Grill in Denver, Colorado.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-SK-001",
+      "topic": "Art & Architecture",
+      "subcategory": "skyscrapers",
+      "label": "Home Insurance Building Completed",
+      "year": 1885,
+      "fact": "Chicago steel-frame building widely recognized as the first skyscraper.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-SK-002",
+      "topic": "Art & Architecture",
+      "subcategory": "skyscrapers",
+      "label": "Flatiron Building Completed",
+      "year": 1902,
+      "fact": "Triangular steel-framed building at Fifth Avenue and Broadway in New York.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-SK-003",
+      "topic": "Art & Architecture",
+      "subcategory": "skyscrapers",
+      "label": "Woolworth Building Completed",
+      "year": 1913,
+      "fact": "Neo-Gothic tower in Lower Manhattan once dubbed the \"Cathedral of Commerce\".",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-SK-004",
+      "topic": "Art & Architecture",
+      "subcategory": "skyscrapers",
+      "label": "Chrysler Building Completed",
+      "year": 1930,
+      "fact": "Art Deco tower in Midtown Manhattan famous for its sunburst spire.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-SK-005",
+      "topic": "Art & Architecture",
+      "subcategory": "skyscrapers",
+      "label": "Empire State Building Opens",
+      "year": 1931,
+      "fact": "Iconic New York skyscraper that held the world height record for nearly 40 years.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-SK-006",
+      "topic": "Art & Architecture",
+      "subcategory": "skyscrapers",
+      "label": "Willis Tower Completed",
+      "year": 1973,
+      "fact": "Built in Chicago as Sears Tower using a bundled-tube structural design.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-SK-007",
+      "topic": "Art & Architecture",
+      "subcategory": "skyscrapers",
+      "label": "Petronas Towers Completed",
+      "year": 1998,
+      "fact": "Twin skyscrapers in Kuala Lumpur linked by a two-story skybridge.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-SK-008",
+      "topic": "Art & Architecture",
+      "subcategory": "skyscrapers",
+      "label": "Taipei 101 Opens",
+      "year": 2004,
+      "fact": "Bamboo-inspired tower in Taipei that briefly held the world height record.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-SK-009",
+      "topic": "Art & Architecture",
+      "subcategory": "skyscrapers",
+      "label": "Burj Khalifa Opens",
+      "year": 2010,
+      "fact": "Opened in Dubai as the world's tallest building.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SD-001",
+      "topic": "Technology",
+      "subcategory": "space discoveries",
+      "label": "Sputnik 1 Launched",
+      "year": 1957,
+      "fact": "First artificial satellite placed into Earth orbit.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SD-002",
+      "topic": "Technology",
+      "subcategory": "space discoveries",
+      "label": "Explorer 1 Discovers Van Allen Belts",
+      "year": 1958,
+      "fact": "First U.S. satellite detected radiation belts encircling Earth.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SD-003",
+      "topic": "Technology",
+      "subcategory": "space discoveries",
+      "label": "Luna 2 Impacts Moon",
+      "year": 1959,
+      "fact": "First spacecraft to reach the surface of the Moon.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SD-004",
+      "topic": "Technology",
+      "subcategory": "space discoveries",
+      "label": "Mariner 2 Flies Past Venus",
+      "year": 1962,
+      "fact": "First successful spacecraft flyby of another planet.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SD-005",
+      "topic": "Technology",
+      "subcategory": "space discoveries",
+      "label": "Apollo 11 Moon Landing",
+      "year": 1969,
+      "fact": "First crewed lunar landing on the Sea of Tranquility.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SD-006",
+      "topic": "Technology",
+      "subcategory": "space discoveries",
+      "label": "Viking 1 Lands on Mars",
+      "year": 1976,
+      "fact": "First NASA lander to operate successfully on the Martian surface.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SD-007",
+      "topic": "Technology",
+      "subcategory": "space discoveries",
+      "label": "Hubble Space Telescope Launched",
+      "year": 1990,
+      "fact": "Space observatory deployed in low Earth orbit.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SD-008",
+      "topic": "Technology",
+      "subcategory": "space discoveries",
+      "label": "New Horizons Pluto Flyby",
+      "year": 2015,
+      "fact": "First spacecraft to conduct a close flyby of Pluto.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SD-009",
+      "topic": "Technology",
+      "subcategory": "space discoveries",
+      "label": "James Webb Telescope First Images",
+      "year": 2022,
+      "fact": "Released infrared deep-space views from the Sun-Earth L2 orbit.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MU-AA-001",
+      "topic": "Music",
+      "subcategory": "Albums",
+      "label": "The Beatles: Sgt. Pepper's",
+      "year": 1967,
+      "fact": "Influential concept album featuring iconic sleeve art and studio experimentation.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MU-AA-002",
+      "topic": "Music",
+      "subcategory": "Albums",
+      "label": "Pink Floyd: The Dark Side of the Moon",
+      "year": 1973,
+      "fact": "Spent hundreds of weeks on the Billboard 200 chart.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MU-AA-003",
+      "topic": "Music",
+      "subcategory": "Albums",
+      "label": "Fleetwood Mac: Rumours",
+      "year": 1977,
+      "fact": "Grammy Album of the Year winner with multiple hit singles.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MU-AA-004",
+      "topic": "Music",
+      "subcategory": "Albums",
+      "label": "Michael Jackson: Thriller",
+      "year": 1982,
+      "fact": "Best-selling album of all time globally.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MU-AA-005",
+      "topic": "Music",
+      "subcategory": "Albums",
+      "label": "Nirvana: Nevermind",
+      "year": 1991,
+      "fact": "Propelled alternative rock and grunge into mainstream popularity.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MU-AA-006",
+      "topic": "Music",
+      "subcategory": "Albums",
+      "label": "Lauryn Hill: The Miseducation",
+      "year": 1998,
+      "fact": "Acclaimed neo-soul and hip-hop album winning five Grammy Awards.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MU-AA-007",
+      "topic": "Music",
+      "subcategory": "Albums",
+      "label": "Adele: 21",
+      "year": 2011,
+      "fact": "Diamond-certified album featuring \"Rolling in the Deep\" and \"Someone like You\".",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MU-AA-008",
+      "topic": "Music",
+      "subcategory": "Albums",
+      "label": "Beyoncé: Lemonade",
+      "year": 2016,
+      "fact": "Visual album accompanying an HBO special.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MU-AA-009",
+      "topic": "Music",
+      "subcategory": "Albums",
+      "label": "Taylor Swift: 1989",
+      "year": 2014,
+      "fact": "Pop transition album that won Album of the Year at the Grammys.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "LI-FB-001",
+      "topic": "Literature",
+      "subcategory": "famous books",
+      "label": "Don Quixote Part I Published",
+      "year": 1605,
+      "fact": "Miguel de Cervantes published the first part of his Spanish novel.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "LI-FB-002",
+      "topic": "Literature",
+      "subcategory": "famous books",
+      "label": "Frankenstein Published",
+      "year": 1818,
+      "fact": "Mary Shelley published her Gothic science-fiction novel.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "LI-FB-003",
+      "topic": "Literature",
+      "subcategory": "famous books",
+      "label": "Moby-Dick Published",
+      "year": 1851,
+      "fact": "Herman Melville published his tale of Captain Ahab and the white whale.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "LI-FB-004",
+      "topic": "Literature",
+      "subcategory": "famous books",
+      "label": "Adventures of Huckleberry Finn",
+      "year": 1884,
+      "fact": "Mark Twain's novel published in the U.S. after its British release.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "LI-FB-005",
+      "topic": "Literature",
+      "subcategory": "famous books",
+      "label": "The Great Gatsby Published",
+      "year": 1925,
+      "fact": "F. Scott Fitzgerald's Jazz Age novel set on Long Island.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "LI-FB-006",
+      "topic": "Literature",
+      "subcategory": "famous books",
+      "label": "Nineteen Eighty-Four Published",
+      "year": 1949,
+      "fact": "George Orwell published his dystopian novel introducing \"Big Brother\".",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "LI-FB-007",
+      "topic": "Literature",
+      "subcategory": "famous books",
+      "label": "To Kill a Mockingbird Published",
+      "year": 1960,
+      "fact": "Harper Lee published her Pulitzer-winning novel set in Alabama.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "LI-FB-008",
+      "topic": "Literature",
+      "subcategory": "famous books",
+      "label": "One Hundred Years of Solitude",
+      "year": 1967,
+      "fact": "Gabriel Garcia Marquez published his landmark magical realism novel.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "LI-FB-009",
+      "topic": "Literature",
+      "subcategory": "famous books",
+      "label": "Harry Potter and the Philosopher's Stone",
+      "year": 1997,
+      "fact": "First book in J.K. Rowling's wizarding series debuted in the U.K..",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MO-SW-001",
+      "topic": "Movies",
+      "subcategory": "star wars movies",
+      "label": "A New Hope",
+      "year": 1977,
+      "fact": "Original film introducing Luke Skywalker, Princess Leia, and Han Solo.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MO-SW-002",
+      "topic": "Movies",
+      "subcategory": "star wars movies",
+      "label": "The Empire Strikes Back",
+      "year": 1980,
+      "fact": "Features the Battle of Hoth and Yoda's training on Dagobah.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MO-SW-003",
+      "topic": "Movies",
+      "subcategory": "star wars movies",
+      "label": "Return of the Jedi",
+      "year": 1983,
+      "fact": "Concluded the original trilogy on the forest moon of Endor.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MO-SW-004",
+      "topic": "Movies",
+      "subcategory": "star wars movies",
+      "label": "The Phantom Menace",
+      "year": 1999,
+      "fact": "Opened the prequel trilogy with young Anakin Skywalker and pod racing.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MO-SW-005",
+      "topic": "Movies",
+      "subcategory": "star wars movies",
+      "label": "Attack of the Clones",
+      "year": 2002,
+      "fact": "Second prequel film featuring the Clone Wars beginning on Geonosis.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MO-SW-006",
+      "topic": "Movies",
+      "subcategory": "star wars movies",
+      "label": "Revenge of the Sith",
+      "year": 2005,
+      "fact": "Chronicled Anakin Skywalker's turn to Darth Vader.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MO-SW-007",
+      "topic": "Movies",
+      "subcategory": "star wars movies",
+      "label": "The Force Awakens",
+      "year": 2015,
+      "fact": "Launched the sequel trilogy with new characters Rey, Finn, and Poe.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MO-SW-008",
+      "topic": "Movies",
+      "subcategory": "star wars movies",
+      "label": "Rogue One",
+      "year": 2016,
+      "fact": "First standalone anthology film following the theft of Death Star plans.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "MO-SW-009",
+      "topic": "Movies",
+      "subcategory": "star wars movies",
+      "label": "The Rise of Skywalker",
+      "year": 2019,
+      "fact": "Concluded the nine-film Skywalker saga.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TV-SC-001",
+      "topic": "Television",
+      "subcategory": "Sitcoms",
+      "label": "I Love Lucy Premieres",
+      "year": 1951,
+      "fact": "Starring Lucille Ball and Desi Arnaz, shaping modern sitcom production.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TV-SC-002",
+      "topic": "Television",
+      "subcategory": "Sitcoms",
+      "label": "The Dick Van Dyke Show Premieres",
+      "year": 1961,
+      "fact": "Created by Carl Reiner around a comedy writer's home and work life.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TV-SC-003",
+      "topic": "Television",
+      "subcategory": "Sitcoms",
+      "label": "All in the Family Premieres",
+      "year": 1971,
+      "fact": "Norman Lear sitcom addressing social and political themes.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TV-SC-004",
+      "topic": "Television",
+      "subcategory": "Sitcoms",
+      "label": "Cheers Premieres",
+      "year": 1982,
+      "fact": "Boston bar comedy that ran for eleven seasons on NBC.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TV-SC-005",
+      "topic": "Television",
+      "subcategory": "Sitcoms",
+      "label": "The Cosby Show Premieres",
+      "year": 1984,
+      "fact": "Top-rated 1980s family sitcom centered on the Huxtable household.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TV-SC-006",
+      "topic": "Television",
+      "subcategory": "Sitcoms",
+      "label": "Seinfeld Premieres",
+      "year": 1989,
+      "fact": "Billed as a show about nothing, following four New York friends.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TV-SC-007",
+      "topic": "Television",
+      "subcategory": "Sitcoms",
+      "label": "Friends Premieres",
+      "year": 1994,
+      "fact": "Six twenty-somethings living in Manhattan became a 1990s hit.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TV-SC-008",
+      "topic": "Television",
+      "subcategory": "Sitcoms",
+      "label": "The Office (U.S.) Premieres",
+      "year": 2005,
+      "fact": "Mockumentary workplace comedy adapted from Ricky Gervais and Stephen Merchant's series.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TV-SC-009",
+      "topic": "Television",
+      "subcategory": "Sitcoms",
+      "label": "Parks and Recreation Premieres",
+      "year": 2009,
+      "fact": "Mockumentary sitcom set in the parks department of Pawnee, Indiana.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "PC-SM-001",
+      "topic": "Pop Culture",
+      "subcategory": "social media",
+      "label": "SixDegrees Launches",
+      "year": 1997,
+      "fact": "Early social network allowing users to create profiles and friend lists.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "PC-SM-002",
+      "topic": "Pop Culture",
+      "subcategory": "social media",
+      "label": "Friendster Launches",
+      "year": 2002,
+      "fact": "Pioneered social networking before larger platforms scaled globally.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "PC-SM-003",
+      "topic": "Pop Culture",
+      "subcategory": "social media",
+      "label": "MySpace Launches",
+      "year": 2003,
+      "fact": "Became a major social hub with customizable profiles and music.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "PC-SM-004",
+      "topic": "Pop Culture",
+      "subcategory": "social media",
+      "label": "Facebook Launches for Colleges",
+      "year": 2004,
+      "fact": "Initially debuted for Harvard students before expanding widely.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "PC-SM-005",
+      "topic": "Pop Culture",
+      "subcategory": "social media",
+      "label": "YouTube Launches",
+      "year": 2005,
+      "fact": "Video-sharing platform founded by Chad Hurley, Steve Chen, and Jawed Karim.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "PC-SM-006",
+      "topic": "Pop Culture",
+      "subcategory": "social media",
+      "label": "Twitter Launches",
+      "year": 2006,
+      "fact": "Microblogging platform built around short status updates.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "PC-SM-007",
+      "topic": "Pop Culture",
+      "subcategory": "social media",
+      "label": "Instagram Launches",
+      "year": 2010,
+      "fact": "Photo-sharing app debuting on iOS in October 2010.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "PC-SM-008",
+      "topic": "Pop Culture",
+      "subcategory": "social media",
+      "label": "Snapchat Launches",
+      "year": 2011,
+      "fact": "Mobile messaging app centered on disappearing photos and stories.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "PC-SM-009",
+      "topic": "Pop Culture",
+      "subcategory": "social media",
+      "label": "TikTok Launches Internationally",
+      "year": 2016,
+      "fact": "Short-form video platform (following Douyin) expanded globally.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-CN-001",
+      "topic": "Toys & Videogames",
+      "subcategory": "Consoles",
+      "label": "Magnavox Odyssey Released",
+      "year": 1972,
+      "fact": "First commercial home video game console.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-CN-002",
+      "topic": "Toys & Videogames",
+      "subcategory": "Consoles",
+      "label": "Atari 2600 Released",
+      "year": 1977,
+      "fact": "Popularized interchangeable ROM cartridge home gaming.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-CN-003",
+      "topic": "Toys & Videogames",
+      "subcategory": "Consoles",
+      "label": "NES Launches in North America",
+      "year": 1985,
+      "fact": "Nintendo's 8-bit console helped revive the video game market.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-CN-004",
+      "topic": "Toys & Videogames",
+      "subcategory": "Consoles",
+      "label": "Sega Genesis Launches in North America",
+      "year": 1989,
+      "fact": "16-bit console competing directly with Nintendo in the console wars.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-CN-005",
+      "topic": "Toys & Videogames",
+      "subcategory": "Consoles",
+      "label": "Original PlayStation Launches",
+      "year": 1994,
+      "fact": "Sony entered home consoles with CD-ROM media.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-CN-006",
+      "topic": "Toys & Videogames",
+      "subcategory": "Consoles",
+      "label": "PlayStation 2 Launches",
+      "year": 2000,
+      "fact": "Became the best-selling home video game console of all time.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-CN-007",
+      "topic": "Toys & Videogames",
+      "subcategory": "Consoles",
+      "label": "Xbox 360 Launches",
+      "year": 2005,
+      "fact": "Microsoft's seventh-generation console with Xbox Live online play.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-CN-008",
+      "topic": "Toys & Videogames",
+      "subcategory": "Consoles",
+      "label": "Nintendo Wii Launches",
+      "year": 2006,
+      "fact": "Introduced accessible motion-sensing controllers.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-CN-009",
+      "topic": "Toys & Videogames",
+      "subcategory": "Consoles",
+      "label": "Nintendo Switch Launches",
+      "year": 2017,
+      "fact": "Hybrid home and portable console design.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-UW-001",
+      "topic": "World History",
+      "subcategory": "us wars",
+      "label": "American Revolutionary War Begins",
+      "year": 1775,
+      "fact": "Armed conflict began with the Battles of Lexington and Concord seeking independence from Britain.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-UW-002",
+      "topic": "World History",
+      "subcategory": "us wars",
+      "label": "War of 1812 Begins",
+      "year": 1812,
+      "fact": "Conflict fought between the United States and Great Britain over trade restrictions and impressment.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-UW-003",
+      "topic": "World History",
+      "subcategory": "us wars",
+      "label": "Mexican-American War Begins",
+      "year": 1846,
+      "fact": "War resulting in major territorial expansion across the American Southwest.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-UW-004",
+      "topic": "World History",
+      "subcategory": "us wars",
+      "label": "American Civil War Begins",
+      "year": 1861,
+      "fact": "Conflict erupted at Fort Sumter between Union states and the Confederacy.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-UW-005",
+      "topic": "World History",
+      "subcategory": "us wars",
+      "label": "Spanish-American War Begins",
+      "year": 1898,
+      "fact": "Short conflict shifting U.S. influence into the Caribbean and Pacific.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-UW-006",
+      "topic": "World History",
+      "subcategory": "us wars",
+      "label": "U.S. Enters World War I",
+      "year": 1917,
+      "fact": "Congress declared war on Germany in April 1917 during the First World War.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-UW-007",
+      "topic": "World History",
+      "subcategory": "us wars",
+      "label": "U.S. Enters World War II",
+      "year": 1941,
+      "fact": "Declared war on Japan following the attack on Pearl Harbor in December 1941.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-UW-008",
+      "topic": "World History",
+      "subcategory": "us wars",
+      "label": "Korean War Begins",
+      "year": 1950,
+      "fact": "Conflict began in June 1950 after North Korea crossed the 38th parallel.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-UW-009",
+      "topic": "World History",
+      "subcategory": "us wars",
+      "label": "Gulf War Begins",
+      "year": 1990,
+      "fact": "Coalition forces responded to Iraq's invasion of Kuwait in August 1990.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CI-001",
+      "topic": "World History",
+      "subcategory": "country independences",
+      "label": "United States Declaration of Independence",
+      "year": 1776,
+      "fact": "Thirteen American colonies declared independence from Great Britain on July 4, 1776.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CI-002",
+      "topic": "World History",
+      "subcategory": "country independences",
+      "label": "Haiti Independence Declared",
+      "year": 1804,
+      "fact": "Former French colony of Saint-Domingue became the first Black republic.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CI-003",
+      "topic": "World History",
+      "subcategory": "country independences",
+      "label": "Brazil Independence Declared",
+      "year": 1822,
+      "fact": "Dom Pedro proclaimed Brazil's independence from Portugal.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CI-004",
+      "topic": "World History",
+      "subcategory": "country independences",
+      "label": "Canadian Confederation",
+      "year": 1867,
+      "fact": "British North America Act united provinces into the Dominion of Canada.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CI-005",
+      "topic": "World History",
+      "subcategory": "country independences",
+      "label": "Irish Free State Established",
+      "year": 1922,
+      "fact": "Self-governing dominion formed following the Anglo-Irish Treaty.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CI-006",
+      "topic": "World History",
+      "subcategory": "country independences",
+      "label": "India Independence",
+      "year": 1947,
+      "fact": "Ended British colonial rule and partitioned the region into India and Pakistan.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CI-007",
+      "topic": "World History",
+      "subcategory": "country independences",
+      "label": "Ghana Independence",
+      "year": 1957,
+      "fact": "First sub-Saharan African nation to achieve independence from European colonial rule.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CI-008",
+      "topic": "World History",
+      "subcategory": "country independences",
+      "label": "Singapore Independence",
+      "year": 1965,
+      "fact": "Became an independent and sovereign republic in Southeast Asia.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CI-009",
+      "topic": "World History",
+      "subcategory": "country independences",
+      "label": "South Sudan Independence",
+      "year": 2011,
+      "fact": "Became the world's newest internationally recognized sovereign country.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-WH-001",
+      "topic": "Themed History",
+      "subcategory": "women’s history",
+      "label": "Seneca Falls Convention",
+      "year": 1848,
+      "fact": "Early women's rights convention held in Seneca Falls, New York.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-WH-002",
+      "topic": "Themed History",
+      "subcategory": "women’s history",
+      "label": "Marie Curie Second Nobel Prize",
+      "year": 1911,
+      "fact": "Won the Nobel Prize in Chemistry after earlier winning in Physics.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-WH-003",
+      "topic": "Themed History",
+      "subcategory": "women’s history",
+      "label": "Nineteenth Amendment Ratified",
+      "year": 1920,
+      "fact": "Guaranteed American women the constitutional right to vote.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-WH-004",
+      "topic": "Themed History",
+      "subcategory": "women’s history",
+      "label": "Amelia Earhart Solo Atlantic Flight",
+      "year": 1932,
+      "fact": "First woman to fly solo nonstop across the Atlantic Ocean.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-WH-005",
+      "topic": "Themed History",
+      "subcategory": "women’s history",
+      "label": "Rosalind Franklin Photo 51",
+      "year": 1952,
+      "fact": "X-ray diffraction image key to understanding DNA's double-helix structure.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-WH-006",
+      "topic": "Themed History",
+      "subcategory": "women’s history",
+      "label": "Sandra Day O'Connor Appointed",
+      "year": 1981,
+      "fact": "Became the first woman to serve as a U.S. Supreme Court Justice.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-WH-007",
+      "topic": "Themed History",
+      "subcategory": "women’s history",
+      "label": "Sally Ride Flies to Space",
+      "year": 1983,
+      "fact": "Became the first American woman in space aboard Space Shuttle Challenger.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-WH-008",
+      "topic": "Themed History",
+      "subcategory": "women’s history",
+      "label": "Toni Morrison Nobel Prize in Literature",
+      "year": 1993,
+      "fact": "Became the first African American woman awarded the Nobel Prize in Literature.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-WH-009",
+      "topic": "Themed History",
+      "subcategory": "women’s history",
+      "label": "Kamala Harris Sworn In as VP",
+      "year": 2021,
+      "fact": "Became the first female, African American, and South Asian American U.S. Vice President.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-FH-001",
+      "topic": "Crime & Law",
+      "subcategory": "famous heists",
+      "label": "Mona Lisa Stolen from Louvre",
+      "year": 1911,
+      "fact": "Vincenzo Peruggia stole the painting, which was recovered two years later in Florence.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-FH-002",
+      "topic": "Crime & Law",
+      "subcategory": "famous heists",
+      "label": "Brink's Armored Car Robbery",
+      "year": 1950,
+      "fact": "Thieves stole more than $2.7 million in cash and checks in Boston.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-FH-003",
+      "topic": "Crime & Law",
+      "subcategory": "famous heists",
+      "label": "Great Train Robbery (UK)",
+      "year": 1963,
+      "fact": "Train heist in Buckinghamshire netting over £2.6 million in banknotes.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-FH-004",
+      "topic": "Crime & Law",
+      "subcategory": "famous heists",
+      "label": "Lufthansa Heist at JFK",
+      "year": 1978,
+      "fact": "Theft of roughly $5 million in cash and jewelry at New York's Kennedy Airport.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-FH-005",
+      "topic": "Crime & Law",
+      "subcategory": "famous heists",
+      "label": "Isabella Stewart Gardner Museum Heist",
+      "year": 1990,
+      "fact": "Thirteen artworks were stolen in Boston and remain unsolved.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-FH-006",
+      "topic": "Crime & Law",
+      "subcategory": "famous heists",
+      "label": "Antwerp Diamond Heist",
+      "year": 2003,
+      "fact": "Thieves bypassed high-security vaults at the Antwerp Diamond Centre.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-FH-007",
+      "topic": "Crime & Law",
+      "subcategory": "famous heists",
+      "label": "Northern Bank Robbery",
+      "year": 2004,
+      "fact": "Major cash theft in Belfast, Northern Ireland, totaling £26.5 million.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-FH-008",
+      "topic": "Crime & Law",
+      "subcategory": "famous heists",
+      "label": "Graff Diamonds Robbery",
+      "year": 2009,
+      "fact": "Armed thieves took millions in jewelry from a London boutique.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-FH-009",
+      "topic": "Crime & Law",
+      "subcategory": "famous heists",
+      "label": "Dresden Green Vault Heist",
+      "year": 2019,
+      "fact": "Historic 18th-century diamond jewelry stolen from Dresden's Green Vault.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-CB-001",
+      "topic": "Buisness & Brands",
+      "subcategory": "car brands",
+      "label": "Peugeot Founded as Automaker",
+      "year": 1896,
+      "fact": "Armand Peugeot established his own automobile company in France.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-CB-002",
+      "topic": "Buisness & Brands",
+      "subcategory": "car brands",
+      "label": "Renault Founded",
+      "year": 1899,
+      "fact": "Louis Renault and brothers founded the French automaker in Billancourt.",
+      "lastUsed": "2026-11-20",
+      "usageHistory": [
+        "2026-11-20"
+      ]
+    },
+    {
+      "id": "BB-CB-003",
+      "topic": "Buisness & Brands",
+      "subcategory": "car brands",
+      "label": "Ford Motor Company Founded",
+      "year": 1903,
+      "fact": "Henry Ford launched the company that later introduced the Model T.",
+      "lastUsed": "2026-11-20",
+      "usageHistory": [
+        "2026-11-20"
+      ]
+    },
+    {
+      "id": "BB-CB-004",
+      "topic": "Buisness & Brands",
+      "subcategory": "car brands",
+      "label": "General Motors Founded",
+      "year": 1908,
+      "fact": "William C. Durant organized General Motors in Flint, Michigan.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-CB-005",
+      "topic": "Buisness & Brands",
+      "subcategory": "car brands",
+      "label": "Toyota Motor Corporation Founded",
+      "year": 1937,
+      "fact": "Spun off from Toyoda Automatic Loom Works in Japan.",
+      "lastUsed": "2026-11-20",
+      "usageHistory": [
+        "2026-11-20"
+      ]
+    },
+    {
+      "id": "BB-CB-006",
+      "topic": "Buisness & Brands",
+      "subcategory": "car brands",
+      "label": "Volkswagen Founded",
+      "year": 1937,
+      "fact": "Established to produce an affordable \"people's car\" in Germany.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-CB-007",
+      "topic": "Buisness & Brands",
+      "subcategory": "car brands",
+      "label": "Ferrari Founded",
+      "year": 1947,
+      "fact": "Enzo Ferrari built the first car bearing the Ferrari marque in Maranello.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-CB-008",
+      "topic": "Buisness & Brands",
+      "subcategory": "car brands",
+      "label": "Hyundai Motor Company Founded",
+      "year": 1967,
+      "fact": "Founded in South Korea, later expanding into a global automaker.",
+      "lastUsed": "2026-11-20",
+      "usageHistory": [
+        "2026-11-20"
+      ]
+    },
+    {
+      "id": "BB-CB-009",
+      "topic": "Buisness & Brands",
+      "subcategory": "car brands",
+      "label": "Tesla Motors Founded",
+      "year": 2003,
+      "fact": "Incorporated in 2003 to accelerate electric vehicle adoption.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-NP-001",
+      "topic": "Nature & Animals",
+      "subcategory": "national parks",
+      "label": "Yellowstone National Park Established",
+      "year": 1872,
+      "fact": "First national park in the United States, spanning Wyoming, Montana, and Idaho.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-NP-002",
+      "topic": "Nature & Animals",
+      "subcategory": "national parks",
+      "label": "Banff National Park Established",
+      "year": 1885,
+      "fact": "Canada's oldest national park, located in the Rocky Mountains.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-NP-003",
+      "topic": "Nature & Animals",
+      "subcategory": "national parks",
+      "label": "Yosemite National Park Established",
+      "year": 1890,
+      "fact": "Protected California's Yosemite Valley and Mariposa Grove.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-NP-004",
+      "topic": "Nature & Animals",
+      "subcategory": "national parks",
+      "label": "Kruger National Park Proclaimed",
+      "year": 1898,
+      "fact": "One of Africa's largest game reserves, located in northeastern South Africa.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-NP-005",
+      "topic": "Nature & Animals",
+      "subcategory": "national parks",
+      "label": "Grand Canyon National Park Established",
+      "year": 1919,
+      "fact": "Protected the dramatic mile-deep gorge carved by the Colorado River.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-NP-006",
+      "topic": "Nature & Animals",
+      "subcategory": "national parks",
+      "label": "Great Smoky Mountains Established",
+      "year": 1934,
+      "fact": "Straddles the North Carolina–Tennessee border and is among the most visited U.S. parks.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-NP-007",
+      "topic": "Nature & Animals",
+      "subcategory": "national parks",
+      "label": "Serengeti National Park Established",
+      "year": 1951,
+      "fact": "Famous for its annual wildebeest and zebra migration in Tanzania.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-NP-008",
+      "topic": "Nature & Animals",
+      "subcategory": "national parks",
+      "label": "Galapagos National Park Established",
+      "year": 1959,
+      "fact": "Protected the volcanic archipelago famous for endemic wildlife.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-NP-009",
+      "topic": "Nature & Animals",
+      "subcategory": "national parks",
+      "label": "Denali National Park Renamed",
+      "year": 1980,
+      "fact": "Expanded and renamed under ANILCA, centered on North America's tallest peak.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-SN-001",
+      "topic": "Food",
+      "subcategory": "snacks",
+      "label": "Potato Chips Invented",
+      "year": 1853,
+      "fact": "Thin fried potato slices traditionally linked to Saratoga Springs, New York.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-SN-002",
+      "topic": "Food",
+      "subcategory": "snacks",
+      "label": "Cracker Jack Debuts",
+      "year": 1896,
+      "fact": "Molasses-coated popcorn and peanuts snack introduced at the World's Columbian Exposition.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-SN-003",
+      "topic": "Food",
+      "subcategory": "snacks",
+      "label": "Oreo Cookie Introduced",
+      "year": 1912,
+      "fact": "Nabisco debuted the sandwich cookie in 1912.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-SN-004",
+      "topic": "Food",
+      "subcategory": "snacks",
+      "label": "Fritos Corn Chips Introduced",
+      "year": 1932,
+      "fact": "Elmer Doolin launched corn chips in San Antonio, Texas.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-SN-005",
+      "topic": "Food",
+      "subcategory": "snacks",
+      "label": "Cheetos Introduced",
+      "year": 1948,
+      "fact": "Frito-Lay introduced cheese-flavored puffed corn snacks.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-SN-006",
+      "topic": "Food",
+      "subcategory": "snacks",
+      "label": "Pringles Debuts Nationally",
+      "year": 1968,
+      "fact": "Stacked saddle-shaped potato crisps introduced in a cylindrical can.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-SN-007",
+      "topic": "Food",
+      "subcategory": "snacks",
+      "label": "Goldfish Crackers Debut",
+      "year": 1962,
+      "fact": "Pepperidge Farm introduced bite-sized fish-shaped crackers.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-SN-008",
+      "topic": "Food",
+      "subcategory": "snacks",
+      "label": "Doritos Introduced",
+      "year": 1964,
+      "fact": "Tortilla chip snack debuted at Disneyland before rolling out nationwide.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-SN-009",
+      "topic": "Food",
+      "subcategory": "snacks",
+      "label": "Hot Cheetos Introduced",
+      "year": 1992,
+      "fact": "Spicy chili-cheese version of Cheetos became a major snack hit.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-FP-001",
+      "topic": "Art & Architecture",
+      "subcategory": "famous painters",
+      "label": "Giotto Scrovegni Chapel Frescoes",
+      "year": 1305,
+      "fact": "Early Renaissance fresco cycle showcasing expressive human emotion and space.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-FP-002",
+      "topic": "Art & Architecture",
+      "subcategory": "famous painters",
+      "label": "Botticelli The Birth of Venus",
+      "year": 1485,
+      "fact": "Iconic mythological tempera painting of Venus emerging on a shell.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-FP-003",
+      "topic": "Art & Architecture",
+      "subcategory": "famous painters",
+      "label": "Leonardo da Vinci Mona Lisa",
+      "year": 1503,
+      "fact": "Renaissance portrait renowned for sfumato shading and enigmatic expression.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-FP-004",
+      "topic": "Art & Architecture",
+      "subcategory": "famous painters",
+      "label": "Michelangelo Sistine Chapel Ceiling",
+      "year": 1512,
+      "fact": "Completed the monumental fresco ceiling in Vatican City.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-FP-005",
+      "topic": "Art & Architecture",
+      "subcategory": "famous painters",
+      "label": "Rembrandt The Night Watch",
+      "year": 1642,
+      "fact": "Large Dutch Golden Age group portrait noted for dramatic light and shadow.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-FP-006",
+      "topic": "Art & Architecture",
+      "subcategory": "famous painters",
+      "label": "Goya The Third of May 1808",
+      "year": 1814,
+      "fact": "Powerful painting commemorating resistance to Napoleon's forces in Spain.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-FP-007",
+      "topic": "Art & Architecture",
+      "subcategory": "famous painters",
+      "label": "Monet Impression, Sunrise",
+      "year": 1872,
+      "fact": "Harbour scene that gave the Impressionist movement its name.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-FP-008",
+      "topic": "Art & Architecture",
+      "subcategory": "famous painters",
+      "label": "Vincent van Gogh The Starry Night",
+      "year": 1889,
+      "fact": "Post-Impressionist painting created in southern France.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-FP-009",
+      "topic": "Art & Architecture",
+      "subcategory": "famous painters",
+      "label": "Pablo Picasso Guernica",
+      "year": 1937,
+      "fact": "Large anti-war mural depicting the bombing of Guernica during the Spanish Civil War.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-MD-001",
+      "topic": "Technology",
+      "subcategory": "medical discoveries",
+      "label": "Edward Jenner Smallpox Vaccine",
+      "year": 1796,
+      "fact": "Demonstrated inoculation using cowpox material to protect against smallpox.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-MD-002",
+      "topic": "Technology",
+      "subcategory": "medical discoveries",
+      "label": "Anesthesia First Public Surgery",
+      "year": 1846,
+      "fact": "Ether anesthesia demonstrated publicly at Massachusetts General Hospital.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-MD-003",
+      "topic": "Technology",
+      "subcategory": "medical discoveries",
+      "label": "Germ Theory Advances (Pasteur)",
+      "year": 1861,
+      "fact": "Louis Pasteur's swan-neck flask experiments helped refute spontaneous generation.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-MD-004",
+      "topic": "Technology",
+      "subcategory": "medical discoveries",
+      "label": "X-Rays Discovered",
+      "year": 1895,
+      "fact": "Wilhelm Conrad Röntgen discovered X-radiation, enabling internal medical imaging.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-MD-005",
+      "topic": "Technology",
+      "subcategory": "medical discoveries",
+      "label": "Insulin Isolated for Diabetes",
+      "year": 1921,
+      "fact": "Frederick Banting and Charles Best isolated insulin in Toronto.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-MD-006",
+      "topic": "Technology",
+      "subcategory": "medical discoveries",
+      "label": "Penicillin Discovered",
+      "year": 1928,
+      "fact": "Alexander Fleming discovered penicillin, ushering in the antibiotic era.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-MD-007",
+      "topic": "Technology",
+      "subcategory": "medical discoveries",
+      "label": "DNA Double Helix Structure",
+      "year": 1953,
+      "fact": "Watson, Crick, Franklin, and Wilkins elucidated DNA's double-helix structure.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-MD-008",
+      "topic": "Technology",
+      "subcategory": "medical discoveries",
+      "label": "Salk Polio Vaccine Announced",
+      "year": 1955,
+      "fact": "Inactivated polio vaccine declared safe and effective in the U.S..",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-MD-009",
+      "topic": "Technology",
+      "subcategory": "medical discoveries",
+      "label": "Human Genome Project Completed",
+      "year": 2003,
+      "fact": "International effort announced completion of the reference human genome sequence.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-FG-001",
+      "topic": "Toys & Videogames",
+      "subcategory": "Famous games",
+      "label": "Pong Arcade Release",
+      "year": 1972,
+      "fact": "Atari's table-tennis arcade game helped launch commercial video games.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-FG-002",
+      "topic": "Toys & Videogames",
+      "subcategory": "Famous games",
+      "label": "Space Invaders Arcade Release",
+      "year": 1978,
+      "fact": "Taito's shooter became a massive arcade hit in Japan and worldwide.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-FG-003",
+      "topic": "Toys & Videogames",
+      "subcategory": "Famous games",
+      "label": "Pac-Man Arcade Debut",
+      "year": 1980,
+      "fact": "Namco's maze game became one of gaming's most recognizable icons.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-FG-004",
+      "topic": "Toys & Videogames",
+      "subcategory": "Famous games",
+      "label": "Super Mario Bros. Released",
+      "year": 1985,
+      "fact": "Side-scrolling platformer that defined NES gaming.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-FG-005",
+      "topic": "Toys & Videogames",
+      "subcategory": "Famous games",
+      "label": "Tetris Game Boy Bundle",
+      "year": 1989,
+      "fact": "Puzzle game became a phenomenon alongside Nintendo's handheld.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-FG-006",
+      "topic": "Toys & Videogames",
+      "subcategory": "Famous games",
+      "label": "Doom Shareware Release",
+      "year": 1993,
+      "fact": "First-person shooter that popularized PC multiplayer and modding.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-FG-007",
+      "topic": "Toys & Videogames",
+      "subcategory": "Famous games",
+      "label": "World of Warcraft Launches",
+      "year": 2004,
+      "fact": "Massively multiplayer online RPG with millions of subscribers.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-FG-008",
+      "topic": "Toys & Videogames",
+      "subcategory": "Famous games",
+      "label": "Minecraft Public Alpha",
+      "year": 2009,
+      "fact": "Sandbox creation game that grew into the best-selling video game ever.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-FG-009",
+      "topic": "Toys & Videogames",
+      "subcategory": "Famous games",
+      "label": "Elden Ring Released",
+      "year": 2022,
+      "fact": "Open-world action RPG from FromSoftware winning Game of the Year honors.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CWE-001",
+      "topic": "World History",
+      "subcategory": "Cold war events",
+      "label": "Berlin Blockade Begins",
+      "year": 1948,
+      "fact": "Soviet forces blocked land access to West Berlin, prompting the Berlin Airlift.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CWE-002",
+      "topic": "World History",
+      "subcategory": "Cold war events",
+      "label": "NATO Founded",
+      "year": 1949,
+      "fact": "North Atlantic Treaty Organization established collective defense among Western nations.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CWE-003",
+      "topic": "World History",
+      "subcategory": "Cold war events",
+      "label": "Warsaw Pact Signed",
+      "year": 1955,
+      "fact": "Collective defense treaty signed by the Soviet Union and Eastern Bloc states.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CWE-004",
+      "topic": "World History",
+      "subcategory": "Cold war events",
+      "label": "Hungarian Revolution",
+      "year": 1956,
+      "fact": "Nationwide uprising against Soviet-backed rule suppressed by Soviet forces.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CWE-005",
+      "topic": "World History",
+      "subcategory": "Cold war events",
+      "label": "Berlin Wall Constructed",
+      "year": 1961,
+      "fact": "Barrier erected dividing East and West Berlin.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CWE-006",
+      "topic": "World History",
+      "subcategory": "Cold war events",
+      "label": "Cuban Missile Crisis",
+      "year": 1962,
+      "fact": "Thirteen-day confrontation over Soviet ballistic missiles in Cuba.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CWE-007",
+      "topic": "World History",
+      "subcategory": "Cold war events",
+      "label": "Apollo 11 Moon Landing",
+      "year": 1969,
+      "fact": "U.S. astronauts landed on the Moon during the Cold War Space Race.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CWE-008",
+      "topic": "World History",
+      "subcategory": "Cold war events",
+      "label": "Soviet-Afghan War Begins",
+      "year": 1979,
+      "fact": "Soviet forces intervened in Afghanistan, leading to a decade-long conflict.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "WH-CWE-009",
+      "topic": "World History",
+      "subcategory": "Cold war events",
+      "label": "Berlin Wall Falls",
+      "year": 1989,
+      "fact": "Citizens dismantled the barrier in November 1989 as Eastern Europe shifted.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-SW-001",
+      "topic": "Themed History",
+      "subcategory": "shipwrecks",
+      "label": "Mary Rose Sinks",
+      "year": 1545,
+      "fact": "Tudor warship sank in the Solent off Portsmouth within view of King Henry VIII.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-SW-002",
+      "topic": "Themed History",
+      "subcategory": "shipwrecks",
+      "label": "Vasa Capsizes on Maiden Voyage",
+      "year": 1628,
+      "fact": "Swedish warship sank shortly after leaving Stockholm harbor due to top-heaviness.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-SW-003",
+      "topic": "Themed History",
+      "subcategory": "shipwrecks",
+      "label": "HMS Beagle Voyage Concludes",
+      "year": 1836,
+      "fact": "Charles Darwin returned aboard HMS Beagle after charting South America and the Pacific.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-SW-004",
+      "topic": "Themed History",
+      "subcategory": "shipwrecks",
+      "label": "SS Arctic Sinks",
+      "year": 1854,
+      "fact": "Atlantic liner collided off Newfoundland with heavy loss of life.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-SW-005",
+      "topic": "Themed History",
+      "subcategory": "shipwrecks",
+      "label": "RMS Titanic Sinks",
+      "year": 1912,
+      "fact": "Struck an iceberg in the North Atlantic on its maiden voyage.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-SW-006",
+      "topic": "Themed History",
+      "subcategory": "shipwrecks",
+      "label": "RMS Lusitania Torpedoed",
+      "year": 1915,
+      "fact": "British ocean liner sunk by a German U-boat off Ireland.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-SW-007",
+      "topic": "Themed History",
+      "subcategory": "shipwrecks",
+      "label": "Bismarck Sunk in Atlantic",
+      "year": 1941,
+      "fact": "German battleship sunk by British naval forces during World War II.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-SW-008",
+      "topic": "Themed History",
+      "subcategory": "shipwrecks",
+      "label": "Andrea Doria Sinks",
+      "year": 1956,
+      "fact": "Italian liner sank off Nantucket following a collision with MS Stockholm.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TH-SW-009",
+      "topic": "Themed History",
+      "subcategory": "shipwrecks",
+      "label": "Titanic Wreckage Discovered",
+      "year": 1985,
+      "fact": "Joint expedition led by Robert Ballard and Jean-Louis Michel located the wreck.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-AS-001",
+      "topic": "Crime & Law",
+      "subcategory": "assassinations",
+      "label": "Julius Caesar Assassinated",
+      "year": -44,
+      "fact": "Roman dictator assassinated on the Ides of March in Rome.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-AS-002",
+      "topic": "Crime & Law",
+      "subcategory": "assassinations",
+      "label": "Abraham Lincoln Assassinated",
+      "year": 1865,
+      "fact": "Shot at Ford's Theatre in Washington, D.C., by John Wilkes Booth.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-AS-003",
+      "topic": "Crime & Law",
+      "subcategory": "assassinations",
+      "label": "James A. Garfield Assassinated",
+      "year": 1881,
+      "fact": "Shot in Washington, D.C., and died weeks later from infection.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-AS-004",
+      "topic": "Crime & Law",
+      "subcategory": "assassinations",
+      "label": "William McKinley Assassinated",
+      "year": 1901,
+      "fact": "Shot at the Pan-American Exposition in Buffalo, New York.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-AS-005",
+      "topic": "Crime & Law",
+      "subcategory": "assassinations",
+      "label": "Archduke Franz Ferdinand Assassinated",
+      "year": 1914,
+      "fact": "Assassination in Sarajevo helped trigger the outbreak of World War I.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-AS-006",
+      "topic": "Crime & Law",
+      "subcategory": "assassinations",
+      "label": "Mahatma Gandhi Assassinated",
+      "year": 1948,
+      "fact": "Assassinated in New Delhi while holding an evening prayer meeting.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-AS-007",
+      "topic": "Crime & Law",
+      "subcategory": "assassinations",
+      "label": "John F. Kennedy Assassinated",
+      "year": 1963,
+      "fact": "Assassinated in Dallas, Texas, while riding in a presidential motorcade.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-AS-008",
+      "topic": "Crime & Law",
+      "subcategory": "assassinations",
+      "label": "Martin Luther King Jr. Assassinated",
+      "year": 1968,
+      "fact": "Assassinated on the balcony of the Lorraine Motel in Memphis, Tennessee.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "CL-AS-009",
+      "topic": "Crime & Law",
+      "subcategory": "assassinations",
+      "label": "Robert F. Kennedy Assassinated",
+      "year": 1968,
+      "fact": "Shot in Los Angeles following his California primary victory speech.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-FC-001",
+      "topic": "Buisness & Brands",
+      "subcategory": "financial crashes",
+      "label": "South Sea Bubble Bursts",
+      "year": 1720,
+      "fact": "Speculative British stock boom collapsed, causing widespread financial loss.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-FC-002",
+      "topic": "Buisness & Brands",
+      "subcategory": "financial crashes",
+      "label": "Panic of 1837",
+      "year": 1837,
+      "fact": "Financial crisis in the U.S. followed by bank failures and depression.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-FC-003",
+      "topic": "Buisness & Brands",
+      "subcategory": "financial crashes",
+      "label": "Panic of 1907",
+      "year": 1907,
+      "fact": "Banking panic in the U.S. helped spur creation of the Federal Reserve.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-FC-004",
+      "topic": "Buisness & Brands",
+      "subcategory": "financial crashes",
+      "label": "Wall Street Crash of 1929",
+      "year": 1929,
+      "fact": "Major stock market collapse signaling the onset of the Great Depression.",
+      "lastUsed": "2026-11-20",
+      "usageHistory": [
+        "2026-11-20"
+      ]
+    },
+    {
+      "id": "BB-FC-005",
+      "topic": "Buisness & Brands",
+      "subcategory": "financial crashes",
+      "label": "Black Monday",
+      "year": 1987,
+      "fact": "Global stock markets plunged on October 19, 1987.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-FC-006",
+      "topic": "Buisness & Brands",
+      "subcategory": "financial crashes",
+      "label": "Asian Financial Crisis",
+      "year": 1997,
+      "fact": "Currency and market crisis hit several East and Southeast Asian economies.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-FC-007",
+      "topic": "Buisness & Brands",
+      "subcategory": "financial crashes",
+      "label": "Dot-Com Bubble Peak & Crash",
+      "year": 2000,
+      "fact": "Tech-heavy Nasdaq market peaked in March 2000 before a sharp downturn.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "BB-FC-008",
+      "topic": "Buisness & Brands",
+      "subcategory": "financial crashes",
+      "label": "Lehman Brothers Bankruptcy",
+      "year": 2008,
+      "fact": "Peak crisis event of the global financial crash and Great Recession.",
+      "lastUsed": "2026-11-20",
+      "usageHistory": [
+        "2026-11-20"
+      ]
+    },
+    {
+      "id": "BB-FC-009",
+      "topic": "Buisness & Brands",
+      "subcategory": "financial crashes",
+      "label": "COVID-19 Market Crash",
+      "year": 2020,
+      "fact": "Rapid global equity sell-off in early 2020 as pandemic lockdowns began.",
+      "lastUsed": "2026-11-20",
+      "usageHistory": [
+        "2026-11-20"
+      ]
+    },
+    {
+      "id": "NA-EX-001",
+      "topic": "Nature & Animals",
+      "subcategory": "extinctions",
+      "label": "Dodo Bird Extinction",
+      "year": 1681,
+      "fact": "Flightless bird endemic to Mauritius went extinct in the late 17th century.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-EX-002",
+      "topic": "Nature & Animals",
+      "subcategory": "extinctions",
+      "label": "Steller's Sea Cow Extinction",
+      "year": 1768,
+      "fact": "Large Arctic sirenian hunted to extinction within decades of European discovery.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-EX-003",
+      "topic": "Nature & Animals",
+      "subcategory": "extinctions",
+      "label": "Quagga Last Captive Death",
+      "year": 1883,
+      "fact": "Subspecies of plains zebra died out in captivity in Amsterdam.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-EX-004",
+      "topic": "Nature & Animals",
+      "subcategory": "extinctions",
+      "label": "Passenger Pigeon Last Individual Dies",
+      "year": 1914,
+      "fact": "Martha died at the Cincinnati Zoo, marking the extinction of the species.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-EX-005",
+      "topic": "Nature & Animals",
+      "subcategory": "extinctions",
+      "label": "Carolina Parakeet Last Bird Dies",
+      "year": 1918,
+      "fact": "Last known bird died at the Cincinnati Zoo, native to the eastern U.S..",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-EX-006",
+      "topic": "Nature & Animals",
+      "subcategory": "extinctions",
+      "label": "Tasmanian Tiger Last Captive Death",
+      "year": 1936,
+      "fact": "Last known thylacine died at Hobart Zoo in Tasmania.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-EX-007",
+      "topic": "Nature & Animals",
+      "subcategory": "extinctions",
+      "label": "Golden Toad Last Sighting",
+      "year": 1989,
+      "fact": "Brightly colored amphibian of Monteverde cloud forest last seen in 1989.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-EX-008",
+      "topic": "Nature & Animals",
+      "subcategory": "extinctions",
+      "label": "West African Black Rhino Declared Extinct",
+      "year": 2011,
+      "fact": "IUCN declared the subspecies extinct after years without sightings.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "NA-EX-009",
+      "topic": "Nature & Animals",
+      "subcategory": "extinctions",
+      "label": "Pinta Island Tortoise Lonesome George Dies",
+      "year": 2012,
+      "fact": "Last known individual of the Pinta tortoise subspecies died in the Galapagos.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-CD-001",
+      "topic": "Food",
+      "subcategory": "Candy",
+      "label": "Tootsie Roll Introduced",
+      "year": 1896,
+      "fact": "Leo Hirshfield created the chocolate-flavored chewy candy in New York.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-CD-002",
+      "topic": "Food",
+      "subcategory": "Candy",
+      "label": "Hershey's Milk Chocolate Bar",
+      "year": 1900,
+      "fact": "Milton Hershey introduced the mass-produced milk chocolate bar in the U.S..",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-CD-003",
+      "topic": "Food",
+      "subcategory": "Candy",
+      "label": "Baby Ruth Candy Bar Introduced",
+      "year": 1921,
+      "fact": "Curtiss Candy Company introduced the peanut, caramel, and chocolate bar.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-CD-004",
+      "topic": "Food",
+      "subcategory": "Candy",
+      "label": "Snickers Candy Bar Introduced",
+      "year": 1930,
+      "fact": "Mars introduced the nougat, caramel, and peanut chocolate bar.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-CD-005",
+      "topic": "Food",
+      "subcategory": "Candy",
+      "label": "M&M's Introduced",
+      "year": 1941,
+      "fact": "Sugar-coated chocolate candies debuted for U.S. military rations.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-CD-006",
+      "topic": "Food",
+      "subcategory": "Candy",
+      "label": "Jolly Rancher Founded",
+      "year": 1949,
+      "fact": "Brand originally launched in Golden, Colorado, as an ice cream and candy shop.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-CD-007",
+      "topic": "Food",
+      "subcategory": "Candy",
+      "label": "Pez Candy Dispensers Marketed to Kids",
+      "year": 1952,
+      "fact": "Fruit-flavored compressed sugar candies paired with character dispensers.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-CD-008",
+      "topic": "Food",
+      "subcategory": "Candy",
+      "label": "Reese's Peanut Butter Cups Name",
+      "year": 1928,
+      "fact": "H. B. Reese introduced the chocolate and peanut butter cup candy.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "FD-CD-009",
+      "topic": "Food",
+      "subcategory": "Candy",
+      "label": "Skittles Introduced in North America",
+      "year": 1979,
+      "fact": "Fruit-flavored chewy candies expanded to North America after UK debut.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-WW-001",
+      "topic": "Art & Architecture",
+      "subcategory": "wonders of the world",
+      "label": "Great Pyramid of Giza Completed",
+      "year": -2560,
+      "fact": "Oldest of the Seven Wonders of the Ancient World and the only one still standing.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-WW-002",
+      "topic": "Art & Architecture",
+      "subcategory": "wonders of the world",
+      "label": "Temple of Artemis at Ephesus",
+      "year": -550,
+      "fact": "Greek temple dedicated to Artemis, rebuilt multiple times in antiquity.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-WW-003",
+      "topic": "Art & Architecture",
+      "subcategory": "wonders of the world",
+      "label": "Statue of Zeus at Olympia",
+      "year": -435,
+      "fact": "Chryselephantine sculpture created by Phidias for the Temple of Zeus.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-WW-004",
+      "topic": "Art & Architecture",
+      "subcategory": "wonders of the world",
+      "label": "Mausoleum at Halicarnassus",
+      "year": -351,
+      "fact": "Tomb built for Mausolus, giving rise to the term \"mausoleum\".",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-WW-005",
+      "topic": "Art & Architecture",
+      "subcategory": "wonders of the world",
+      "label": "Colossus of Rhodes Completed",
+      "year": -280,
+      "fact": "Giant bronze statue of the sun god Helios overlooking the harbor of Rhodes.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-WW-006",
+      "topic": "Art & Architecture",
+      "subcategory": "wonders of the world",
+      "label": "Lighthouse of Alexandria Completed",
+      "year": -280,
+      "fact": "Pharos lighthouse guided sailors into Alexandria's harbor for centuries.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-WW-007",
+      "topic": "Art & Architecture",
+      "subcategory": "wonders of the world",
+      "label": "Great Wall of China Ming Completion",
+      "year": 1644,
+      "fact": "Major fortification expansions along China's northern border concluded under the Ming.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-WW-008",
+      "topic": "Art & Architecture",
+      "subcategory": "wonders of the world",
+      "label": "Christ the Redeemer Unveiled",
+      "year": 1931,
+      "fact": "Art Deco statue overlooking Rio de Janeiro atop Corcovado mountain.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "AA-WW-009",
+      "topic": "Art & Architecture",
+      "subcategory": "wonders of the world",
+      "label": "New7Wonders of the World Announced",
+      "year": 2007,
+      "fact": "Global campaign named the modern list of seven wonders in 2007.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SJ-001",
+      "topic": "Technology",
+      "subcategory": "space journeys",
+      "label": "Yuri Gagarin First Human Spaceflight",
+      "year": 1961,
+      "fact": "Orbited Earth aboard Vostok 1 as the first person in space.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SJ-002",
+      "topic": "Technology",
+      "subcategory": "space journeys",
+      "label": "Valentina Tereshkova First Woman in Space",
+      "year": 1963,
+      "fact": "Flew aboard Vostok 6 and completed 48 orbits of Earth.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SJ-003",
+      "topic": "Technology",
+      "subcategory": "space journeys",
+      "label": "Apollo 8 Lunar Orbit",
+      "year": 1968,
+      "fact": "First crewed spacecraft to leave low Earth orbit and orbit the Moon.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SJ-004",
+      "topic": "Technology",
+      "subcategory": "space journeys",
+      "label": "Apollo 11 Moon Landing",
+      "year": 1969,
+      "fact": "First humans walked on the lunar surface in July 1969.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SJ-005",
+      "topic": "Technology",
+      "subcategory": "space journeys",
+      "label": "Voyager 1 & 2 Launched",
+      "year": 1977,
+      "fact": "Twin probes launched to explore the outer planets and interstellar space.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SJ-006",
+      "topic": "Technology",
+      "subcategory": "space journeys",
+      "label": "STS-1 Space Shuttle Columbia",
+      "year": 1981,
+      "fact": "First orbital flight of NASA's reusable Space Shuttle program.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SJ-007",
+      "topic": "Technology",
+      "subcategory": "space journeys",
+      "label": "Mir Space Station Core Launched",
+      "year": 1986,
+      "fact": "Long-duration modular space station operated by the Soviet Union and Russia.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SJ-008",
+      "topic": "Technology",
+      "subcategory": "space journeys",
+      "label": "ISS First Crew Expedition 1",
+      "year": 2000,
+      "fact": "First long-duration crew arrived aboard the International Space Station.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TC-SJ-009",
+      "topic": "Technology",
+      "subcategory": "space journeys",
+      "label": "Artemis I Uncrewed Lunar Flight",
+      "year": 2022,
+      "fact": "Test flight sending the Orion spacecraft around the Moon and back.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-TR-001",
+      "topic": "Toys & Videogames",
+      "subcategory": "toy releases",
+      "label": "Teddy Bear Popularized",
+      "year": 1902,
+      "fact": "Named after President Theodore Roosevelt following a hunting trip story.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-TR-002",
+      "topic": "Toys & Videogames",
+      "subcategory": "toy releases",
+      "label": "Lincoln Logs Introduced",
+      "year": 1916,
+      "fact": "Interlocking wooden toy logs designed by John Lloyd Wright.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-TR-003",
+      "topic": "Toys & Videogames",
+      "subcategory": "toy releases",
+      "label": "Slinky Invented",
+      "year": 1943,
+      "fact": "Helical metal spring toy invented by Richard James.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-TR-004",
+      "topic": "Toys & Videogames",
+      "subcategory": "toy releases",
+      "label": "LEGO Plastic Brick Patented",
+      "year": 1958,
+      "fact": "Modern interlocking stud-and-tube LEGO brick design introduced.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-TR-005",
+      "topic": "Toys & Videogames",
+      "subcategory": "toy releases",
+      "label": "Barbie Doll Debuts",
+      "year": 1959,
+      "fact": "Mattel introduced Barbie at the American International Toy Fair in New York.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-TR-006",
+      "topic": "Toys & Videogames",
+      "subcategory": "toy releases",
+      "label": "Hot Wheels Introduced",
+      "year": 1968,
+      "fact": "Mattel launched die-cast toy cars with low-friction axles and orange track.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-TR-007",
+      "topic": "Toys & Videogames",
+      "subcategory": "toy releases",
+      "label": "Rubik's Cube Invented",
+      "year": 1974,
+      "fact": "Ernő Rubik created the 3D combination puzzle in Budapest.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-TR-008",
+      "topic": "Toys & Videogames",
+      "subcategory": "toy releases",
+      "label": "Cabbage Patch Kids Craze",
+      "year": 1983,
+      "fact": "Soft-sculptured dolls became a major holiday shopping phenomenon.",
+      "lastUsed": null,
+      "usageHistory": []
+    },
+    {
+      "id": "TVG-TR-009",
+      "topic": "Toys & Videogames",
+      "subcategory": "toy relea",
+      "label": "Beanie Babies Launched",
+      "year": 1993,
+      "fact": "Ty Warner introduced plush beanbag animals collected widely in the 1990s.",
+      "lastUsed": null,
+      "usageHistory": []
+    }
+  ]
+}

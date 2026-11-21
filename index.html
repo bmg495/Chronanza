@@ -1181,7 +1181,7 @@
                 </svg>
             </button>
             <h2 class="modal-title">How to Play Chronanza</h2>
-            <p class="modal-sub">Reconstruct today's 9-event timeline in 4 attempts or fewer. A fresh historical timeline unlocks everyday at midnight.</p>
+            <p class="modal-sub">Reconstruct today's 9-event timeline in 4 attempts or fewer. A fresh historical timeline unlocks every day at midnight Eastern Time.</p>
 
             <ul class="how-list">
                 <li>
@@ -1270,7 +1270,7 @@
             <div class="countdown-box">
                 <div>
                     <div class="countdown-label">Next Timeline Unlocks In</div>
-                    <div style="font-size:11px; color:var(--ink-muted); font-weight:600;">Refreshes at midnight local time</div>
+                    <div style="font-size:11px; color:var(--ink-muted); font-weight:600;">Refreshes at midnight Eastern Time</div>
                 </div>
                 <div id="countdown-timer" class="countdown-time">00:00:00</div>
             </div>
@@ -1290,128 +1290,7 @@
          * Complete, self-contained single-file implementation.
          */
 
-        const DAILY_PUZZLES = [
-            {
-                id: "general-knowledge",
-                theme: "General Knowledge & World Milestones",
-                events: [
-                    { id: "gk1", label: "Gutenberg Prints the Movable-Type Bible", year: 1455, fact: "Johannes Gutenberg's movable-type press in Mainz sparked Europe's printing revolution." },
-                    { id: "gk2", label: "Newton Publishes Principia Mathematica", year: 1687, fact: "Isaac Newton formulated the laws of motion and universal gravitation in his landmark treatise." },
-                    { id: "gk3", label: "French Revolution Begins in Paris", year: 1789, fact: "Parisians stormed the Bastille fortress on July 14, 1789, igniting the French Revolution." },
-                    { id: "gk4", label: "Alexander Graham Bell Patents Telephone", year: 1876, fact: "Bell received U.S. Patent 174,465 and transmitted the first intelligible speech over wire." },
-                    { id: "gk5", label: "Wright Brothers' First Powered Flight", year: 1903, fact: "Orville and Wilbur Wright achieved sustained controlled powered flight at Kitty Hawk on December 17." },
-                    { id: "gk6", label: "Alexander Fleming Discovers Penicillin", year: 1928, fact: "Observing mold inhibit bacteria in a London lab dish, Fleming ushered in modern antibiotics." },
-                    { id: "gk7", label: "Apollo 11 First Moon Landing", year: 1969, fact: "Neil Armstrong and Buzz Aldrin touched down in the Sea of Tranquility on July 20, 1969." },
-                    { id: "gk8", label: "Fall of the Berlin Wall", year: 1989, fact: "Crowds dismantled the Cold War barrier dividing East and West Berlin on November 9, 1989." },
-                    { id: "gk9", label: "First Photograph of a Black Hole Unveiled", year: 2019, fact: "The Event Horizon Telescope collaboration captured the glowing shadow of supermassive black hole M87*." }
-                ]
-            },
-            {
-                id: "sports-History",
-                theme: "Sports History & Iconic Moments",
-                events: [
-                    { id: "sp1", label: "First Modern Olympics Open in Athens", year: 1896, fact: "Athens welcomed 241 athletes from 14 nations to revive the ancient Olympic Games." },
-                    { id: "sp2", label: "Babe Ruth Hits 60 Home Runs in a Season", year: 1927, fact: "New York Yankees slugger Babe Ruth set a single-season MLB record that stood for 34 years." },
-                    { id: "sp3", label: "Jesse Owens Wins Four Golds in Berlin", year: 1936, fact: "Owens captured gold in the 100m, 200m, long jump, and 4x100m relay at the 1936 Summer Games." },
-                    { id: "sp4", label: "Jackie Robinson Breaks MLB Color Barrier", year: 1947, fact: "Robinson started at first base for the Brooklyn Dodgers on April 15, integrating Major League Baseball." },
-                    { id: "sp5", label: "Roger Bannister Runs Sub-Four-Minute Mile", year: 1954, fact: "Bannister clocked 3:59.4 at Oxford's Iffley Road track, breaking a barrier long thought impossible." },
-                    { id: "sp6", label: "Muhammad Ali Upsets Sonny Liston", year: 1964, fact: "Fighting as Cassius Clay, the 22-year-old claimed the world heavyweight crown in Miami Beach." },
-                    { id: "sp7", label: "U.S. Hockey Pulls Off Miracle on Ice", year: 1980, fact: "American college players defeated the four-time defending gold medalist Soviet team at Lake Placid." },
-                    { id: "sp8", label: "Michael Jordan's Flu Game in NBA Finals", year: 1997, fact: "Battling severe illness, Jordan scored 38 points to lift Chicago to a crucial Game 5 victory in Utah." },
-                    { id: "sp9", label: "Usain Bolt Sets 100m World Record in Berlin", year: 2009, fact: "Jamaican sprinter Usain Bolt sprinted 100 meters in 9.58 seconds at the World Championships." }
-                ]
-            },
-            {
-                id: "music-eras",
-                theme: "Music & Album Eras",
-                events: [
-                    { id: "mu1", label: "Elvis Presley Records 'That's All Right'", year: 1954, fact: "Recorded at Sun Studio in Memphis, this track sparked the birth of rock and roll." },
-                    { id: "mu2", label: "The Beatles Debut on The Ed Sullivan Show", year: 1964, fact: "Over 73 million viewers watched the Fab Four's historic American television debut." },
-                    { id: "mu3", label: "Woodstock Music Festival Takes Place", year: 1969, fact: "More than 400,000 fans gathered on Max Yasgur's dairy farm in Bethel, New York." },
-                    { id: "mu4", label: "Sony Launches the First Walkman", year: 1979, fact: "The TPS-L2 portable cassette player revolutionized how people listened to music on the go." },
-                    { id: "mu5", label: "Michael Jackson Releases Thriller", year: 1982, fact: "Thriller became the best-selling album of all time and won a record 8 Grammy Awards." },
-                    { id: "mu6", label: "Nirvana Releases Nevermind", year: 1991, fact: "Driven by 'Smells Like Teen Spirit,' the album propelled Seattle grunge into the mainstream." },
-                    { id: "mu7", label: "Apple Launches the iPod & iTunes", year: 2001, fact: "Steve Jobs unveiled the pocket digital music player promising '1,000 songs in your pocket.'" },
-                    { id: "mu8", label: "Beyoncé Releases Surprise Visual Album", year: 2013, fact: "Her self-titled fifth studio album dropped overnight with zero prior promotion." },
-                    { id: "mu9", label: "Taylor Swift's Eras Tour Breaks Box Office Records", year: 2023, fact: "Launching in Glendale, Arizona, the stadium tour became the first in history to surpass $1 billion." }
-                ]
-            },
-            {
-                id: "tech-computing",
-                theme: "Tech & Computing",
-                events: [
-                    { id: "tc1", label: "Transistor Invented at Bell Labs", year: 1947, fact: "Bardeen, Brattain, and Shockley demonstrated the point-contact transistor." },
-                    { id: "tc2", label: "First Email Sent", year: 1971, fact: "Ray Tomlinson sent the first ARPANET network email and introduced the '@' symbol." },
-                    { id: "tc3", label: "Apple Macintosh Unveiled", year: 1984, fact: "Apple introduced the first mass-market personal computer with a GUI and mouse." },
-                    { id: "tc4", label: "World Wide Web Opens", year: 1991, fact: "Tim Berners-Lee published the first website at CERN for public access." },
-                    { id: "tc5", label: "Google Search Incorporated", year: 1998, fact: "Larry Page and Sergey Brin founded Google in a Menlo Park garage." },
-                    { id: "tc6", label: "Wikipedia Launches", year: 2001, fact: "The free collaborative encyclopedia went live on January 15." },
-                    { id: "tc7", label: "First iPhone Unveiled", year: 2007, fact: "Steve Jobs introduced Apple's touchscreen smartphone at Macworld." },
-                    { id: "tc8", label: "Bitcoin Whitepaper Published", year: 2008, fact: "Satoshi Nakamoto published the peer-to-peer electronic cash design." },
-                    { id: "tc9", label: "ChatGPT Released to Public", year: 2022, fact: "OpenAI launched ChatGPT, reaching 100 million monthly users in two months." }
-                ]
-            },
-            {
-                id: "cinema",
-                theme: "Classic Cinema & Blockbusters",
-                events: [
-                    { id: "mov1", label: "The Wizard of Oz Releases", year: 1939, fact: "MGM's Technicolor musical fantasy premiered in August 1939." },
-                    { id: "mov2", label: "Psycho Premieres", year: 1960, fact: "Alfred Hitchcock's thriller transformed horror cinema and theatrical release rules." },
-                    { id: "mov3", label: "The Godfather Releases", year: 1972, fact: "Francis Ford Coppola's crime epic won Best Picture at the 45th Academy Awards." },
-                    { id: "mov4", label: "Original Star Wars Releases", year: 1977, fact: "George Lucas's space opera redefined visual effects and summer blockbusters." },
-                    { id: "mov5", label: "Jurassic Park Premieres", year: 1993, fact: "Steven Spielberg's thriller blended groundbreaking CGI with full-scale animatronics." },
-                    { id: "mov6", label: "Toy Story Releases", year: 1995, fact: "Pixar released the world's first entirely computer-animated feature film." },
-                    { id: "mov7", label: "The Dark Knight Releases", year: 2008, fact: "Christopher Nolan's sequel became the first comic book film to cross $1 billion." },
-                    { id: "mov8", label: "Avengers: Endgame Releases", year: 2019, fact: "Marvel's 22-film culmination shattered opening weekend box office records globally." },
-                    { id: "mov9", label: "Parasite Wins Best Picture", year: 2020, fact: "Bong Joon-ho's thriller became the first non-English language Best Picture winner." }
-                ]
-            },
-            {
-                id: "video-games",
-                theme: "Video Game Evolution",
-                events: [
-                    { id: "vg1", label: "Atari Releases Pong", year: 1972, fact: "One of the earliest arcade hits, its prototype coin box jammed from overfilling." },
-                    { id: "vg2", label: "Pac-Man Arcade Debuts", year: 1980, fact: "Toru Iwatani's maze arcade game became an international pop culture icon." },
-                    { id: "vg3", label: "Super Mario Bros. Launches", year: 1985, fact: "Nintendo's NES platformer revitalized the North American home console market." },
-                    { id: "vg4", label: "Game Boy Launches", year: 1989, fact: "Nintendo's handheld launched bundled with Tetris and sold over 118 million units." },
-                    { id: "vg5", label: "Original PlayStation Launches", year: 1994, fact: "Sony's CD-ROM console became the first gaming system to sell 100 million units." },
-                    { id: "vg6", label: "World of Warcraft Launches", year: 2004, fact: "Blizzard's MMORPG set records for online subscription gaming." },
-                    { id: "vg7", label: "Nintendo Wii Launches", year: 2006, fact: "Motion controls brought Wii Sports into living rooms around the globe." },
-                    { id: "vg8", label: "Minecraft Public Alpha", year: 2009, fact: "Markus Persson released the sandbox builder that became the top-selling game ever." },
-                    { id: "vg9", label: "Nintendo Switch Launches", year: 2017, fact: "The hybrid console debuted worldwide alongside Breath of the Wild." }
-                ]
-            },
-            {
-                id: "literature-publishing",
-                theme: "Literature & Publishing",
-                events: [
-                    { id: "bk1", label: "Pride and Prejudice Published", year: 1813, fact: "Jane Austen's beloved novel of manners was first published in three volumes." },
-                    { id: "bk2", label: "The Great Gatsby Published", year: 1925, fact: "F. Scott Fitzgerald captured the Jazz Age on Long Island's North Shore." },
-                    { id: "bk3", label: "The Hobbit Published", year: 1937, fact: "J.R.R. Tolkien introduced Bilbo Baggins and Middle-earth to readers." },
-                    { id: "bk4", label: "George Orwell's 1984", year: 1949, fact: "Orwell's dystopian novel introduced 'Big Brother' and 'Newspeak' into everyday language." },
-                    { id: "bk5", label: "To Kill a Mockingbird", year: 1960, fact: "Harper Lee's Pulitzer Prize-winning novel was published in July 1960." },
-                    { id: "bk6", label: "Frank Herbert's Dune", year: 1965, fact: "The sci-fi epic set on desert planet Arrakis won the inaugural Nebula Award." },
-                    { id: "bk7", label: "First Harry Potter Book", year: 1997, fact: "Only 500 hardcover copies of 'Philosopher's Stone' were printed in its first UK run." },
-                    { id: "bk8", label: "The Da Vinci Code Releases", year: 2003, fact: "Dan Brown's mystery thriller became a worldwide publishing phenomenon." },
-                    { id: "bk9", label: "The Hunger Games Releases", year: 2008, fact: "Suzanne Collins introduced Katniss Everdeen and launched a YA blockbuster era." }
-                ]
-            },
-            {
-                id: "art-architecture",
-                theme: "Art & Architecture",
-                events: [
-                    { id: "ar1", label: "Brooklyn Bridge Opens", year: 1883, fact: "The hybrid cable-stayed suspension bridge linked Manhattan and Brooklyn." },
-                    { id: "ar2", label: "Eiffel Tower Completed", year: 1889, fact: "Built for the Paris World's Fair, it stood as the world's tallest structure for 41 years." },
-                    { id: "ar3", label: "Panama Canal Opens", year: 1914, fact: "The 50-mile waterway linked the Atlantic and Pacific Oceans across Central America." },
-                    { id: "ar4", label: "Empire State Building Opens", year: 1931, fact: "Constructed in just 410 days, the Art Deco skyscraper towered 102 stories." },
-                    { id: "ar5", label: "Golden Gate Bridge Opens", year: 1937, fact: "Painted International Orange, the suspension bridge spanned San Francisco Bay." },
-                    { id: "ar6", label: "Sydney Opera House Opens", year: 1973, fact: "Jørn Utzon's sail-roofed masterpiece was inaugurated by Queen Elizabeth II." },
-                    { id: "ar7", label: "Channel Tunnel Opens", year: 1994, fact: "The 31-mile undersea rail link connected England and France beneath the Channel." },
-                    { id: "ar8", label: "Millau Viaduct Opens", year: 2004, fact: "France's cable-stayed bridge became the tallest bridge structure in the world." },
-                    { id: "ar9", label: "Burj Khalifa Inaugurated", year: 2010, fact: "Dubai's supertall tower reached 828 meters (2,717 feet) into the sky." }
-                ]
-            }
-        ];
+        // The scheduled generator publishes today's shared puzzle to daily.json.
 
         // Constants
         const MAX_ATTEMPTS = 4;
@@ -1427,7 +1306,7 @@
             formattedDate: 'Nov 19, 2026',
             puzzleNumber: 1,
             dailyPuzzleIndex: 0,
-            puzzle: DAILY_PUZZLES[0]
+            puzzle: null
         };
 
         let gameState = {
@@ -1471,9 +1350,17 @@
         const swapHintEl = document.getElementById('swap-hint');
 
         // Initialize Game
-        function init() {
+        async function init() {
             initTheme();
-            computeTodaysPuzzle();
+            try {
+                await computeTodaysPuzzle();
+            } catch (error) {
+                console.error('Could not load today\'s puzzle:', error);
+                document.getElementById('daily-meta').textContent = 'Daily puzzle temporarily unavailable';
+                document.getElementById('puzzle-theme').textContent = 'Please try again shortly';
+                btnSubmit.disabled = true;
+                return;
+            }
             loadLifetimeStats();
             loadOrCreatePuzzleState();
             bindUIEvents();
@@ -1505,33 +1392,36 @@
             document.getElementById('icon-moon').classList.toggle('hidden', isDark);
         }
 
-        // Deterministic Daily Calendar Engine (Anchored so Nov 19, 2026 = Index 0: General Knowledge & World Milestones)
-        function computeTodaysPuzzle() {
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = now.getMonth();
-            const day = now.getDate();
+        // Shared daily puzzle: fetch published JSON, never generate per visitor.
+        function easternDateKey(now = new Date()) {
+            const parts = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit'
+            }).formatToParts(now);
+            const fields = Object.fromEntries(parts.filter(p => p.type !== 'literal').map(p => [p.type, p.value]));
+            return `${fields.year}-${fields.month}-${fields.day}`;
+        }
 
-            const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-            const formattedDate = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-
-            const todayUtc = Date.UTC(year, month, day);
-            const anchorUtc = Date.UTC(2026, 10, 19); // Thursday, November 19, 2026 -> Index 0 (General Knowledge & World Milestones)
-            const daysSinceAnchor = Math.floor((todayUtc - anchorUtc) / 86400000);
-
-            const puzzleNumber = Math.max(1, daysSinceAnchor + 1);
-            const dailyPuzzleIndex = ((daysSinceAnchor % DAILY_PUZZLES.length) + DAILY_PUZZLES.length) % DAILY_PUZZLES.length;
-            const puzzle = DAILY_PUZZLES[dailyPuzzleIndex];
-
+        async function computeTodaysPuzzle() {
+            const response = await fetch(`./daily.json?date=${easternDateKey()}`, { cache: 'no-store' });
+            if (!response.ok) throw new Error(`daily.json HTTP ${response.status}`);
+            const puzzle = await response.json();
+            if (puzzle.date !== easternDateKey()) throw new Error('Daily puzzle has not been published for today');
+            if (!Array.isArray(puzzle.events) || puzzle.events.length !== GRID_SIZE ||
+                new Set(puzzle.events.map(event => event.id)).size !== GRID_SIZE ||
+                new Set(puzzle.events.map(event => event.year)).size !== GRID_SIZE) {
+                throw new Error('Invalid daily puzzle: expected nine unique facts and years');
+            }
+            const formattedDate = new Date(`${puzzle.date}T12:00:00Z`).toLocaleDateString('en-US', {
+                month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC'
+            });
             dailyInfo = {
-                dateKey,
+                dateKey: puzzle.date,
                 formattedDate,
-                puzzleNumber,
-                dailyPuzzleIndex,
+                puzzleNumber: puzzle.puzzleNumber,
+                dailyPuzzleIndex: 0,
                 puzzle
             };
-
-            document.getElementById('daily-meta').textContent = `${formattedDate} • Daily Timeline`;
+            document.getElementById('daily-meta').textContent = `${formattedDate} • Daily Archive #${puzzle.puzzleNumber}`;
             document.getElementById('puzzle-theme').textContent = puzzle.theme;
         }
 
@@ -2338,25 +2228,41 @@
 
         function startMidnightCountdown() {
             const timerEl = document.getElementById('countdown-timer');
-            const updateTimer = () => {
+            let refreshing = false;
+            const updateTimer = async () => {
                 const now = new Date();
-                const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
-                const diffMs = Math.max(0, midnight - now);
-
+                const eastern = easternDateKey(now);
+                // Compute next Eastern midnight, respecting DST changes.
+                const nextDay = new Date(`${eastern}T12:00:00Z`);
+                nextDay.setUTCDate(nextDay.getUTCDate() + 1);
+                const nextKey = nextDay.toISOString().slice(0, 10);
+                const midnightUtc = new Date(`${nextKey}T00:00:00Z`);
+                const offset = new Intl.DateTimeFormat('en-US', {
+                    timeZone: 'America/New_York', timeZoneName: 'shortOffset'
+                }).formatToParts(midnightUtc).find(part => part.type === 'timeZoneName').value;
+                const match = offset.match(/GMT([+-])(\d{1,2})(?::(\d{2}))?/);
+                const offsetMinutes = match ? (match[1] === '+' ? 1 : -1) * (Number(match[2]) * 60 + Number(match[3] || 0)) : -300;
+                const target = Date.parse(`${nextKey}T00:00:00Z`) - offsetMinutes * 60000;
+                const diffMs = Math.max(0, target - now.getTime());
                 const hrs = Math.floor(diffMs / 3600000);
                 const mins = Math.floor((diffMs % 3600000) / 60000);
                 const secs = Math.floor((diffMs % 60000) / 1000);
-
                 timerEl.textContent = `${String(hrs).padStart(2, '0')}:${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-
-                const currentKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-                if (currentKey !== dailyInfo.dateKey) {
-                    computeTodaysPuzzle();
-                    loadOrCreatePuzzleState();
-                    renderAll();
+                if (eastern !== dailyInfo.dateKey && !refreshing) {
+                    refreshing = true;
+                    try {
+                        await computeTodaysPuzzle();
+                        loadOrCreatePuzzleState();
+                        renderAll();
+                        btnSubmit.disabled = gameState.status !== 'playing';
+                    } catch (error) {
+                        console.warn('New daily puzzle is not yet available:', error);
+                        btnSubmit.disabled = true;
+                    } finally {
+                        refreshing = false;
+                    }
                 }
             };
-
             updateTimer();
             setInterval(updateTimer, 1000);
         }
