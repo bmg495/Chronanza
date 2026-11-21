@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "days": {
+    "2026-11-20": {
+      "date": "2026-11-20",
+      "puzzleNumber": 2,
+      "id": "2026-11-20-buisness-&-brands",
+      "theme": "Buisness & Brands",
+      "events": [
+        {
+          "id": "BB-CB-002",
+          "label": "Renault Founded",
+          "year": 1899,
+          "fact": "Louis Renault and brothers founded the French automaker in Billancourt."
+        },
+        {
+          "id": "BB-CB-003",
+          "label": "Ford Motor Company Founded",
+          "year": 1903,
+          "fact": "Henry Ford launched the company that later introduced the Model T."
+        },
+        {
+          "id": "BB-FC-004",
+          "label": "Wall Street Crash of 1929",
+          "year": 1929,
+          "fact": "Major stock market collapse signaling the onset of the Great Depression."
+        },
+        {
+          "id": "BB-CB-005",
+          "label": "Toyota Motor Corporation Founded",
+          "year": 1937,
+          "fact": "Spun off from Toyoda Automatic Loom Works in Japan."
+        },
+        {
+          "id": "BB-CB-008",
+          "label": "Hyundai Motor Company Founded",
+          "year": 1967,
+          "fact": "Founded in South Korea, later expanding into a global automaker."
+        },
+        {
+          "id": "BB-MC-007",
+          "label": "Microsoft Founded",
+          "year": 1975,
+          "fact": "Bill Gates and Paul Allen founded the software company in Albuquerque."
+        },
+        {
+          "id": "BB-MC-009",
+          "label": "Amazon Founded",
+          "year": 1994,
+          "fact": "Launched by Jeff Bezos as an online bookstore in Washington state."
+        },
+        {
+          "id": "BB-FC-008",
+          "label": "Lehman Brothers Bankruptcy",
+          "year": 2008,
+          "fact": "Peak crisis event of the global financial crash and Great Recession."
+        },
+        {
+          "id": "BB-FC-009",
+          "label": "COVID-19 Market Crash",
+          "year": 2020,
+          "fact": "Rapid global equity sell-off in early 2020 as pandemic lockdowns began."
+        }
+      ]
+    }
+  }
+}
