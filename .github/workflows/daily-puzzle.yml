@@ -1,8 +1,8 @@
 name: Generate Chronanza daily puzzle
 on:
   schedule:
-    # 04:05 UTC covers 00:05 Eastern during daylight saving; 05:05 UTC covers standard time.
-    - cron: '5 4,5 * * *'
+  - cron: '5 0 * * *'
+    timezone: 'America/New_York'
   workflow_dispatch:
 permissions:
   contents: write
