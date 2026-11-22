@@ -1130,7 +1130,7 @@
     <main>
         <!-- Centered Daily Challenge Subtitle & Category Pill aligned with the 3x3 Grid -->
         <div class="daily-header-block">
-            <div id="daily-meta" class="daily-subtitle">Nov 19, 2026 • Daily Timeline</div>
+            <div id="daily-meta" class="daily-subtitle hidden">Nov 19, 2026 • Daily Timeline</div>
             <div class="category-pill">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
@@ -1139,15 +1139,15 @@
                 <span id="puzzle-theme">General Knowledge &amp; World Milestones</span>
             </div>
             <p class="prompt-text">
-                Order today's timeline from <strong>1 Earliest</strong> to <strong>9 Latest</strong>.
+                Order from <strong>1 Earliest</strong> to <strong>9 Latest</strong>.
             </p>
         </div>
 
         <!-- Live Emoji Timeline -->
-        <div id="Timeline-strip" class="Timeline-strip"></div>
+        <div id="Timeline-strip hidden" class="Timeline-strip"></div>
 
         <!-- Chronological Timeline Connector Bar -->
-        <div class="flow-indicator">
+        <div class="flow-indicator hidden">
             <span class="flow-node"><span class="flow-node-dot"></span>1 EARLIEST</span>
             <div class="flow-line"></div>
             <span>1–3 ➔ 4–6 ➔ 7–9</span>
@@ -2176,12 +2176,12 @@
                 const scoreText = isWin ? `${gameState.attempts.length}/${MAX_ATTEMPTS}` : `X/${MAX_ATTEMPTS}`;
                 document.getElementById('stats-sub').textContent = `⏳ Chronanza • ${scoreText} (${dailyInfo.puzzle.theme})`;
 
-                document.getElementById('stats-emoji-grid').innerHTML = gameState.attempts
-                    .map((row, idx) => {
-                        const lines = formatAttemptAs3x3(row).join('<br>');
-                        return `<div style="${idx > 0 ? 'margin-top:8px;' : ''}">${lines}</div>`;
-                    })
-                    .join('');
+               document.getElementById('stats-emoji-grid').innerHTML = gameState.attempts
+                 .map((row, idx) => {
+                   const line = row.map(ok => (ok ? '🟩' : '🟥')).join('');
+                   return `<div style="letter-spacing:1.5px; font-size:15px; white-space:nowrap; ${idx > 0 ? 'margin-top:6px;' : ''}">${line}</div>`;
+                 })
+                 .join('');
 
                 resultSection.classList.remove('hidden');
 
