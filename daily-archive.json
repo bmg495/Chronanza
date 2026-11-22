@@ -124,6 +124,68 @@
           "fact": "Historic 18th-century diamond jewelry stolen from Dresden's Green Vault."
         }
       ]
+    },
+    "2026-11-22": {
+      "date": "2026-11-22",
+      "puzzleNumber": 4,
+      "id": "2026-11-22-food",
+      "theme": "Food",
+      "events": [
+        {
+          "id": "FD-CD-002",
+          "label": "Hershey's Milk Chocolate Bar",
+          "year": 1900,
+          "fact": "Milton Hershey introduced the mass-produced milk chocolate bar in the U.S.."
+        },
+        {
+          "id": "FD-CD-008",
+          "label": "Reese's Peanut Butter Cups Name",
+          "year": 1928,
+          "fact": "H. B. Reese introduced the chocolate and peanut butter cup candy."
+        },
+        {
+          "id": "FD-FF-002",
+          "label": "Dairy Queen First Store",
+          "year": 1940,
+          "fact": "Soft-serve ice cream shop opened in Joliet, Illinois."
+        },
+        {
+          "id": "FD-CD-005",
+          "label": "M&M's Introduced",
+          "year": 1941,
+          "fact": "Sugar-coated chocolate candies debuted for U.S. military rations."
+        },
+        {
+          "id": "FD-CD-006",
+          "label": "Jolly Rancher Founded",
+          "year": 1949,
+          "fact": "Brand originally launched in Golden, Colorado, as an ice cream and candy shop."
+        },
+        {
+          "id": "FD-CD-007",
+          "label": "Pez Candy Dispensers Marketed to Kids",
+          "year": 1952,
+          "fact": "Fruit-flavored compressed sugar candies paired with character dispensers."
+        },
+        {
+          "id": "FD-SN-006",
+          "label": "Pringles Debuts Nationally",
+          "year": 1968,
+          "fact": "Stacked saddle-shaped potato crisps introduced in a cylindrical can."
+        },
+        {
+          "id": "FD-SN-009",
+          "label": "Hot Cheetos Introduced",
+          "year": 1992,
+          "fact": "Spicy chili-cheese version of Cheetos became a major snack hit."
+        },
+        {
+          "id": "FD-FF-009",
+          "label": "Chipotle Founded",
+          "year": 1993,
+          "fact": "Steve Ells opened the first Chipotle Mexican Grill in Denver, Colorado."
+        }
+      ]
     }
   }
 }
