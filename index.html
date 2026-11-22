@@ -26,11 +26,11 @@
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="900">
-    <meta property="og:image:alt" content="Chronanza — Daily Timeline Puzzle">
+    <meta property="og:image:alt" content="Chronanza —  Puzzle">
 
     <!-- Twitter / X Large Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Chronanza — Daily Timeline Puzzle">
+    <meta name="twitter:title" content="Chronanza —  Puzzle">
     <meta name="twitter:description" content="Reconstruct today's 9-event timeline in 4 attempts or fewer. A new theme every day.">
     <meta name="twitter:image" content="https://chronanza.com/og-image.jpg">
 
@@ -67,6 +67,11 @@
             --shadow-tactile-sm: 0 2px 0 #23201E;
             --modal-backdrop: rgba(35, 32, 30, 0.58);
         }
+
+       .tile-known-wrong {
+        background-color: #FEF3C7;
+        border-color: #D97706;
+      }
 
         html.dark {
             --bg-page: #191715;
@@ -1176,7 +1181,7 @@
     </main>
 
     <footer>
-        &copy; 2026 Chronanza. Daily Timeline Puzzle.
+        &copy; 2026 Chronanza.  Puzzle.
     </footer>
 
     <!-- Toast Notification -->
@@ -1297,7 +1302,7 @@
     <script>
         /**
          * CHRONANZA — DAILY CHRONOLOGICAL SORTING PUZZLE
-         * Featured Daily Timeline (Thursday, Nov 19, 2026): General Knowledge & World Milestones
+         * Featured  (Thursday, Nov 19, 2026): General Knowledge & World Milestones
          * Complete, self-contained single-file implementation.
          */
 
@@ -1352,6 +1357,29 @@
             ghostEl: null,
             moved: false
         };
+
+       // Known Wrong Slots
+       const knownWrongSlots = new Map();
+
+      function getTileKey(eventObj) {
+        return String(eventObj?.id ?? eventObj?.label ?? '');
+      }
+
+      function recordAttemptWrongSlots(orderedEvents, attemptResultRow) {
+        orderedEvents.forEach((ev, idx) => {
+          if (attemptResultRow && attemptResultRow[idx] === false) {
+            const key = getTileKey(ev);
+            if (!key) return;
+            if (!knownWrongSlots.has(key)) knownWrongSlots.set(key, new Set());
+            knownWrongSlots.get(key).add(idx);
+          }
+        });
+      }
+
+      function isTileInKnownWrongSlot(eventObj, slotIndex) {
+        const key = getTileKey(eventObj);
+        return Boolean(key && knownWrongSlots.get(key)?.has(slotIndex));
+      }
 
         // DOM References
         const tileGridEl = document.getElementById('tile-grid');
@@ -1432,7 +1460,7 @@
                 dailyPuzzleIndex: 0,
                 puzzle
             };
-            document.getElementById('daily-meta').textContent = `${formattedDate} • Daily Timeline`;
+            document.getElementById('daily-meta').textContent = `${formattedDate} • Daily Puzzle`;
             document.getElementById('puzzle-theme').textContent = puzzle.theme;
         }
 
@@ -1515,6 +1543,7 @@
                 status: 'playing'
             };
             savePuzzleState();
+           knownWrongSlots.clear();
         }
 
         function savePuzzleState() {
@@ -1799,7 +1828,7 @@
             });
 
             gameState.attempts.push(roundResults);
-
+           recordAttemptWrongSlots(gameState.tiles, roundResults);
             const solved = gameState.lockedIds.length === GRID_SIZE && roundResults.every(Boolean);
             const exhausted = gameState.attempts.length >= MAX_ATTEMPTS;
 
@@ -1864,6 +1893,7 @@
                 const isSelected = selectedTileIndex === idx;
                 const isWrong = wrongIndices.includes(idx);
                 const isPopped = poppedTileIds.has(tile.id);
+               const isKnownWrong = isTileInKnownWrongSlot(tile, idx);
 
                 const el = document.createElement('div');
                 el.className = 'tile';
@@ -1874,6 +1904,7 @@
                 if (isSelected) el.classList.add('is-selected');
                 if (isWrong) el.classList.add('is-wrong');
                 if (isPopped && !isLocked && !isWrong) el.classList.add('swap-pop');
+               if (isKnownWrong && !isLocked && !isWrong) el.classList.add('tile-known-wrong');
                 if (gameState.status !== 'playing') el.classList.add('is-disabled');
 
                 const badge = document.createElement('span');
