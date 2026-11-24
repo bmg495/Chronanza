@@ -248,6 +248,68 @@
           "fact": "First book in J.K. Rowling's wizarding series debuted in the U.K.."
         }
       ]
+    },
+    "2026-11-24": {
+      "date": "2026-11-24",
+      "puzzleNumber": 6,
+      "id": "2026-11-24-movies",
+      "theme": "Movies",
+      "events": [
+        {
+          "id": "MO-SW-001",
+          "label": "A New Hope",
+          "year": 1977,
+          "fact": "Original film introducing Luke Skywalker, Princess Leia, and Han Solo."
+        },
+        {
+          "id": "MO-SW-002",
+          "label": "The Empire Strikes Back",
+          "year": 1980,
+          "fact": "Features the Battle of Hoth and Yoda's training on Dagobah."
+        },
+        {
+          "id": "MO-SW-003",
+          "label": "Return of the Jedi",
+          "year": 1983,
+          "fact": "Concluded the original trilogy on the forest moon of Endor."
+        },
+        {
+          "id": "MO-SW-004",
+          "label": "The Phantom Menace",
+          "year": 1999,
+          "fact": "Opened the prequel trilogy with young Anakin Skywalker and pod racing."
+        },
+        {
+          "id": "MO-SW-005",
+          "label": "Attack of the Clones",
+          "year": 2002,
+          "fact": "Second prequel film featuring the Clone Wars beginning on Geonosis."
+        },
+        {
+          "id": "MO-SW-006",
+          "label": "Revenge of the Sith",
+          "year": 2005,
+          "fact": "Chronicled Anakin Skywalker's turn to Darth Vader."
+        },
+        {
+          "id": "MO-SW-007",
+          "label": "The Force Awakens",
+          "year": 2015,
+          "fact": "Launched the sequel trilogy with new characters Rey, Finn, and Poe."
+        },
+        {
+          "id": "MO-SW-008",
+          "label": "Rogue One",
+          "year": 2016,
+          "fact": "First standalone anthology film following the theft of Death Star plans."
+        },
+        {
+          "id": "MO-SW-009",
+          "label": "The Rise of Skywalker",
+          "year": 2019,
+          "fact": "Concluded the nine-film Skywalker saga."
+        }
+      ]
     }
   }
 }
