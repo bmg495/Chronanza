@@ -310,6 +310,68 @@
           "fact": "Concluded the nine-film Skywalker saga."
         }
       ]
+    },
+    "2026-11-25": {
+      "date": "2026-11-25",
+      "puzzleNumber": 7,
+      "id": "2026-11-25-music",
+      "theme": "Music",
+      "events": [
+        {
+          "id": "MU-AA-001",
+          "label": "The Beatles: Sgt. Pepper's",
+          "year": 1967,
+          "fact": "Influential concept album featuring iconic sleeve art and studio experimentation."
+        },
+        {
+          "id": "MU-AA-002",
+          "label": "Pink Floyd: The Dark Side of the Moon",
+          "year": 1973,
+          "fact": "Spent hundreds of weeks on the Billboard 200 chart."
+        },
+        {
+          "id": "MU-AA-003",
+          "label": "Fleetwood Mac: Rumours",
+          "year": 1977,
+          "fact": "Grammy Album of the Year winner with multiple hit singles."
+        },
+        {
+          "id": "MU-AA-004",
+          "label": "Michael Jackson: Thriller",
+          "year": 1982,
+          "fact": "Best-selling album of all time globally."
+        },
+        {
+          "id": "MU-AA-005",
+          "label": "Nirvana: Nevermind",
+          "year": 1991,
+          "fact": "Propelled alternative rock and grunge into mainstream popularity."
+        },
+        {
+          "id": "MU-AA-006",
+          "label": "Lauryn Hill: The Miseducation",
+          "year": 1998,
+          "fact": "Acclaimed neo-soul and hip-hop album winning five Grammy Awards."
+        },
+        {
+          "id": "MU-AA-007",
+          "label": "Adele: 21",
+          "year": 2011,
+          "fact": "Diamond-certified album featuring \"Rolling in the Deep\" and \"Someone like You\"."
+        },
+        {
+          "id": "MU-AA-009",
+          "label": "Taylor Swift: 1989",
+          "year": 2014,
+          "fact": "Pop transition album that won Album of the Year at the Grammys."
+        },
+        {
+          "id": "MU-AA-008",
+          "label": "Beyoncé: Lemonade",
+          "year": 2016,
+          "fact": "Visual album accompanying an HBO special."
+        }
+      ]
     }
   }
 }
