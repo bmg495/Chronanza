@@ -1,62 +1,62 @@
 {
-  "date": "2026-11-25",
-  "puzzleNumber": 7,
-  "id": "2026-11-25-music",
-  "theme": "Music",
+  "date": "2026-11-26",
+  "puzzleNumber": 8,
+  "id": "2026-11-26-nature-&-animals",
+  "theme": "Nature & Animals",
   "events": [
     {
-      "id": "MU-AA-001",
-      "label": "The Beatles: Sgt. Pepper's",
-      "year": 1967,
-      "fact": "Influential concept album featuring iconic sleeve art and studio experimentation."
+      "id": "NA-ND-003",
+      "label": "Mount Tambora Eruption",
+      "year": 1815,
+      "fact": "Caused global climate anomalies leading to the \"Year Without a Summer\"."
     },
     {
-      "id": "MU-AA-002",
-      "label": "Pink Floyd: The Dark Side of the Moon",
-      "year": 1973,
-      "fact": "Spent hundreds of weeks on the Billboard 200 chart."
+      "id": "NA-NP-001",
+      "label": "Yellowstone National Park Established",
+      "year": 1872,
+      "fact": "First national park in the United States, spanning Wyoming, Montana, and Idaho."
     },
     {
-      "id": "MU-AA-003",
-      "label": "Fleetwood Mac: Rumours",
-      "year": 1977,
-      "fact": "Grammy Album of the Year winner with multiple hit singles."
+      "id": "NA-NP-003",
+      "label": "Yosemite National Park Established",
+      "year": 1890,
+      "fact": "Protected California's Yosemite Valley and Mariposa Grove."
     },
     {
-      "id": "MU-AA-004",
-      "label": "Michael Jackson: Thriller",
-      "year": 1982,
-      "fact": "Best-selling album of all time globally."
+      "id": "NA-NP-004",
+      "label": "Kruger National Park Proclaimed",
+      "year": 1898,
+      "fact": "One of Africa's largest game reserves, located in northeastern South Africa."
     },
     {
-      "id": "MU-AA-005",
-      "label": "Nirvana: Nevermind",
-      "year": 1991,
-      "fact": "Propelled alternative rock and grunge into mainstream popularity."
+      "id": "NA-EX-004",
+      "label": "Passenger Pigeon Last Individual Dies",
+      "year": 1914,
+      "fact": "Martha died at the Cincinnati Zoo, marking the extinction of the species."
     },
     {
-      "id": "MU-AA-006",
-      "label": "Lauryn Hill: The Miseducation",
-      "year": 1998,
-      "fact": "Acclaimed neo-soul and hip-hop album winning five Grammy Awards."
+      "id": "NA-EX-006",
+      "label": "Tasmanian Tiger Last Captive Death",
+      "year": 1936,
+      "fact": "Last known thylacine died at Hobart Zoo in Tasmania."
     },
     {
-      "id": "MU-AA-007",
-      "label": "Adele: 21",
-      "year": 2011,
-      "fact": "Diamond-certified album featuring \"Rolling in the Deep\" and \"Someone like You\"."
+      "id": "NA-NP-007",
+      "label": "Serengeti National Park Established",
+      "year": 1951,
+      "fact": "Famous for its annual wildebeest and zebra migration in Tanzania."
     },
     {
-      "id": "MU-AA-009",
-      "label": "Taylor Swift: 1989",
-      "year": 2014,
-      "fact": "Pop transition album that won Album of the Year at the Grammys."
+      "id": "NA-EX-007",
+      "label": "Golden Toad Last Sighting",
+      "year": 1989,
+      "fact": "Brightly colored amphibian of Monteverde cloud forest last seen in 1989."
     },
     {
-      "id": "MU-AA-008",
-      "label": "Beyoncé: Lemonade",
-      "year": 2016,
-      "fact": "Visual album accompanying an HBO special."
+      "id": "NA-EX-009",
+      "label": "Pinta Island Tortoise Lonesome George Dies",
+      "year": 2012,
+      "fact": "Last known individual of the Pinta tortoise subspecies died in the Galapagos."
     }
   ]
 }

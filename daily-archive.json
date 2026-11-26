@@ -372,6 +372,68 @@
           "fact": "Visual album accompanying an HBO special."
         }
       ]
+    },
+    "2026-11-26": {
+      "date": "2026-11-26",
+      "puzzleNumber": 8,
+      "id": "2026-11-26-nature-&-animals",
+      "theme": "Nature & Animals",
+      "events": [
+        {
+          "id": "NA-ND-003",
+          "label": "Mount Tambora Eruption",
+          "year": 1815,
+          "fact": "Caused global climate anomalies leading to the \"Year Without a Summer\"."
+        },
+        {
+          "id": "NA-NP-001",
+          "label": "Yellowstone National Park Established",
+          "year": 1872,
+          "fact": "First national park in the United States, spanning Wyoming, Montana, and Idaho."
+        },
+        {
+          "id": "NA-NP-003",
+          "label": "Yosemite National Park Established",
+          "year": 1890,
+          "fact": "Protected California's Yosemite Valley and Mariposa Grove."
+        },
+        {
+          "id": "NA-NP-004",
+          "label": "Kruger National Park Proclaimed",
+          "year": 1898,
+          "fact": "One of Africa's largest game reserves, located in northeastern South Africa."
+        },
+        {
+          "id": "NA-EX-004",
+          "label": "Passenger Pigeon Last Individual Dies",
+          "year": 1914,
+          "fact": "Martha died at the Cincinnati Zoo, marking the extinction of the species."
+        },
+        {
+          "id": "NA-EX-006",
+          "label": "Tasmanian Tiger Last Captive Death",
+          "year": 1936,
+          "fact": "Last known thylacine died at Hobart Zoo in Tasmania."
+        },
+        {
+          "id": "NA-NP-007",
+          "label": "Serengeti National Park Established",
+          "year": 1951,
+          "fact": "Famous for its annual wildebeest and zebra migration in Tanzania."
+        },
+        {
+          "id": "NA-EX-007",
+          "label": "Golden Toad Last Sighting",
+          "year": 1989,
+          "fact": "Brightly colored amphibian of Monteverde cloud forest last seen in 1989."
+        },
+        {
+          "id": "NA-EX-009",
+          "label": "Pinta Island Tortoise Lonesome George Dies",
+          "year": 2012,
+          "fact": "Last known individual of the Pinta tortoise subspecies died in the Galapagos."
+        }
+      ]
     }
   }
 }
