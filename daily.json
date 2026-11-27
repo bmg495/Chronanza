@@ -1,62 +1,62 @@
 {
-  "date": "2026-11-26",
-  "puzzleNumber": 8,
-  "id": "2026-11-26-nature-&-animals",
-  "theme": "Nature & Animals",
+  "date": "2026-11-27",
+  "puzzleNumber": 9,
+  "id": "2026-11-27-pop-culture",
+  "theme": "Pop Culture",
   "events": [
     {
-      "id": "NA-ND-003",
-      "label": "Mount Tambora Eruption",
-      "year": 1815,
-      "fact": "Caused global climate anomalies leading to the \"Year Without a Summer\"."
+      "id": "PC-SM-001",
+      "label": "SixDegrees Launches",
+      "year": 1997,
+      "fact": "Early social network allowing users to create profiles and friend lists."
     },
     {
-      "id": "NA-NP-001",
-      "label": "Yellowstone National Park Established",
-      "year": 1872,
-      "fact": "First national park in the United States, spanning Wyoming, Montana, and Idaho."
+      "id": "PC-SM-002",
+      "label": "Friendster Launches",
+      "year": 2002,
+      "fact": "Pioneered social networking before larger platforms scaled globally."
     },
     {
-      "id": "NA-NP-003",
-      "label": "Yosemite National Park Established",
-      "year": 1890,
-      "fact": "Protected California's Yosemite Valley and Mariposa Grove."
+      "id": "PC-SM-003",
+      "label": "MySpace Launches",
+      "year": 2003,
+      "fact": "Became a major social hub with customizable profiles and music."
     },
     {
-      "id": "NA-NP-004",
-      "label": "Kruger National Park Proclaimed",
-      "year": 1898,
-      "fact": "One of Africa's largest game reserves, located in northeastern South Africa."
+      "id": "PC-SM-004",
+      "label": "Facebook Launches for Colleges",
+      "year": 2004,
+      "fact": "Initially debuted for Harvard students before expanding widely."
     },
     {
-      "id": "NA-EX-004",
-      "label": "Passenger Pigeon Last Individual Dies",
-      "year": 1914,
-      "fact": "Martha died at the Cincinnati Zoo, marking the extinction of the species."
+      "id": "PC-SM-005",
+      "label": "YouTube Launches",
+      "year": 2005,
+      "fact": "Video-sharing platform founded by Chad Hurley, Steve Chen, and Jawed Karim."
     },
     {
-      "id": "NA-EX-006",
-      "label": "Tasmanian Tiger Last Captive Death",
-      "year": 1936,
-      "fact": "Last known thylacine died at Hobart Zoo in Tasmania."
+      "id": "PC-SM-006",
+      "label": "Twitter Launches",
+      "year": 2006,
+      "fact": "Microblogging platform built around short status updates."
     },
     {
-      "id": "NA-NP-007",
-      "label": "Serengeti National Park Established",
-      "year": 1951,
-      "fact": "Famous for its annual wildebeest and zebra migration in Tanzania."
+      "id": "PC-SM-007",
+      "label": "Instagram Launches",
+      "year": 2010,
+      "fact": "Photo-sharing app debuting on iOS in October 2010."
     },
     {
-      "id": "NA-EX-007",
-      "label": "Golden Toad Last Sighting",
-      "year": 1989,
-      "fact": "Brightly colored amphibian of Monteverde cloud forest last seen in 1989."
+      "id": "PC-SM-008",
+      "label": "Snapchat Launches",
+      "year": 2011,
+      "fact": "Mobile messaging app centered on disappearing photos and stories."
     },
     {
-      "id": "NA-EX-009",
-      "label": "Pinta Island Tortoise Lonesome George Dies",
-      "year": 2012,
-      "fact": "Last known individual of the Pinta tortoise subspecies died in the Galapagos."
+      "id": "PC-SM-009",
+      "label": "TikTok Launches Internationally",
+      "year": 2016,
+      "fact": "Short-form video platform (following Douyin) expanded globally."
     }
   ]
 }

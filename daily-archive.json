@@ -434,6 +434,68 @@
           "fact": "Last known individual of the Pinta tortoise subspecies died in the Galapagos."
         }
       ]
+    },
+    "2026-11-27": {
+      "date": "2026-11-27",
+      "puzzleNumber": 9,
+      "id": "2026-11-27-pop-culture",
+      "theme": "Pop Culture",
+      "events": [
+        {
+          "id": "PC-SM-001",
+          "label": "SixDegrees Launches",
+          "year": 1997,
+          "fact": "Early social network allowing users to create profiles and friend lists."
+        },
+        {
+          "id": "PC-SM-002",
+          "label": "Friendster Launches",
+          "year": 2002,
+          "fact": "Pioneered social networking before larger platforms scaled globally."
+        },
+        {
+          "id": "PC-SM-003",
+          "label": "MySpace Launches",
+          "year": 2003,
+          "fact": "Became a major social hub with customizable profiles and music."
+        },
+        {
+          "id": "PC-SM-004",
+          "label": "Facebook Launches for Colleges",
+          "year": 2004,
+          "fact": "Initially debuted for Harvard students before expanding widely."
+        },
+        {
+          "id": "PC-SM-005",
+          "label": "YouTube Launches",
+          "year": 2005,
+          "fact": "Video-sharing platform founded by Chad Hurley, Steve Chen, and Jawed Karim."
+        },
+        {
+          "id": "PC-SM-006",
+          "label": "Twitter Launches",
+          "year": 2006,
+          "fact": "Microblogging platform built around short status updates."
+        },
+        {
+          "id": "PC-SM-007",
+          "label": "Instagram Launches",
+          "year": 2010,
+          "fact": "Photo-sharing app debuting on iOS in October 2010."
+        },
+        {
+          "id": "PC-SM-008",
+          "label": "Snapchat Launches",
+          "year": 2011,
+          "fact": "Mobile messaging app centered on disappearing photos and stories."
+        },
+        {
+          "id": "PC-SM-009",
+          "label": "TikTok Launches Internationally",
+          "year": 2016,
+          "fact": "Short-form video platform (following Douyin) expanded globally."
+        }
+      ]
     }
   }
 }
