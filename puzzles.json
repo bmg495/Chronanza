@@ -671,8 +671,10 @@
       "label": "Luna 2 Impacts Moon",
       "year": 1959,
       "fact": "First spacecraft to reach the surface of the Moon.",
-      "lastUsed": null,
-      "usageHistory": []
+      "lastUsed": "2026-11-28",
+      "usageHistory": [
+        "2026-11-28"
+      ]
     },
     {
       "id": "TC-SD-004",
@@ -691,8 +693,10 @@
       "label": "Apollo 11 Moon Landing",
       "year": 1969,
       "fact": "First crewed lunar landing on the Sea of Tranquility.",
-      "lastUsed": null,
-      "usageHistory": []
+      "lastUsed": "2026-11-28",
+      "usageHistory": [
+        "2026-11-28"
+      ]
     },
     {
       "id": "TC-SD-006",
@@ -2111,8 +2115,10 @@
       "label": "Anesthesia First Public Surgery",
       "year": 1846,
       "fact": "Ether anesthesia demonstrated publicly at Massachusetts General Hospital.",
-      "lastUsed": null,
-      "usageHistory": []
+      "lastUsed": "2026-11-28",
+      "usageHistory": [
+        "2026-11-28"
+      ]
     },
     {
       "id": "TC-MD-003",
@@ -2141,8 +2147,10 @@
       "label": "Insulin Isolated for Diabetes",
       "year": 1921,
       "fact": "Frederick Banting and Charles Best isolated insulin in Toronto.",
-      "lastUsed": null,
-      "usageHistory": []
+      "lastUsed": "2026-11-28",
+      "usageHistory": [
+        "2026-11-28"
+      ]
     },
     {
       "id": "TC-MD-006",
@@ -2161,8 +2169,10 @@
       "label": "DNA Double Helix Structure",
       "year": 1953,
       "fact": "Watson, Crick, Franklin, and Wilkins elucidated DNA's double-helix structure.",
-      "lastUsed": null,
-      "usageHistory": []
+      "lastUsed": "2026-11-28",
+      "usageHistory": [
+        "2026-11-28"
+      ]
     },
     {
       "id": "TC-MD-008",
@@ -2171,8 +2181,10 @@
       "label": "Salk Polio Vaccine Announced",
       "year": 1955,
       "fact": "Inactivated polio vaccine declared safe and effective in the U.S..",
-      "lastUsed": null,
-      "usageHistory": []
+      "lastUsed": "2026-11-28",
+      "usageHistory": [
+        "2026-11-28"
+      ]
     },
     {
       "id": "TC-MD-009",
@@ -2181,8 +2193,10 @@
       "label": "Human Genome Project Completed",
       "year": 2003,
       "fact": "International effort announced completion of the reference human genome sequence.",
-      "lastUsed": null,
-      "usageHistory": []
+      "lastUsed": "2026-11-28",
+      "usageHistory": [
+        "2026-11-28"
+      ]
     },
     {
       "id": "TVG-FG-001",
@@ -2963,8 +2977,10 @@
       "label": "Apollo 8 Lunar Orbit",
       "year": 1968,
       "fact": "First crewed spacecraft to leave low Earth orbit and orbit the Moon.",
-      "lastUsed": null,
-      "usageHistory": []
+      "lastUsed": "2026-11-28",
+      "usageHistory": [
+        "2026-11-28"
+      ]
     },
     {
       "id": "TC-SJ-004",
@@ -2983,8 +2999,10 @@
       "label": "Voyager 1 & 2 Launched",
       "year": 1977,
       "fact": "Twin probes launched to explore the outer planets and interstellar space.",
-      "lastUsed": null,
-      "usageHistory": []
+      "lastUsed": "2026-11-28",
+      "usageHistory": [
+        "2026-11-28"
+      ]
     },
     {
       "id": "TC-SJ-006",

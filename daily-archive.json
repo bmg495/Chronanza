@@ -496,6 +496,68 @@
           "fact": "Short-form video platform (following Douyin) expanded globally."
         }
       ]
+    },
+    "2026-11-28": {
+      "date": "2026-11-28",
+      "puzzleNumber": 10,
+      "id": "2026-11-28-technology",
+      "theme": "Technology",
+      "events": [
+        {
+          "id": "TC-MD-002",
+          "label": "Anesthesia First Public Surgery",
+          "year": 1846,
+          "fact": "Ether anesthesia demonstrated publicly at Massachusetts General Hospital."
+        },
+        {
+          "id": "TC-MD-005",
+          "label": "Insulin Isolated for Diabetes",
+          "year": 1921,
+          "fact": "Frederick Banting and Charles Best isolated insulin in Toronto."
+        },
+        {
+          "id": "TC-MD-007",
+          "label": "DNA Double Helix Structure",
+          "year": 1953,
+          "fact": "Watson, Crick, Franklin, and Wilkins elucidated DNA's double-helix structure."
+        },
+        {
+          "id": "TC-MD-008",
+          "label": "Salk Polio Vaccine Announced",
+          "year": 1955,
+          "fact": "Inactivated polio vaccine declared safe and effective in the U.S.."
+        },
+        {
+          "id": "TC-SD-003",
+          "label": "Luna 2 Impacts Moon",
+          "year": 1959,
+          "fact": "First spacecraft to reach the surface of the Moon."
+        },
+        {
+          "id": "TC-SJ-003",
+          "label": "Apollo 8 Lunar Orbit",
+          "year": 1968,
+          "fact": "First crewed spacecraft to leave low Earth orbit and orbit the Moon."
+        },
+        {
+          "id": "TC-SD-005",
+          "label": "Apollo 11 Moon Landing",
+          "year": 1969,
+          "fact": "First crewed lunar landing on the Sea of Tranquility."
+        },
+        {
+          "id": "TC-SJ-005",
+          "label": "Voyager 1 & 2 Launched",
+          "year": 1977,
+          "fact": "Twin probes launched to explore the outer planets and interstellar space."
+        },
+        {
+          "id": "TC-MD-009",
+          "label": "Human Genome Project Completed",
+          "year": 2003,
+          "fact": "International effort announced completion of the reference human genome sequence."
+        }
+      ]
     }
   }
 }
